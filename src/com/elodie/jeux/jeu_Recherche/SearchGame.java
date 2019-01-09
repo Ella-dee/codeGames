@@ -1,5 +1,8 @@
 package com.elodie.jeux.jeu_Recherche;
 
+import com.elodie.jeux.Exceptions.ExceptionNaN;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -41,17 +44,18 @@ import java.util.Scanner;
  */
 
 public class SearchGame {
-    public   int[] nbr = {0,1,2,3,4,5,6,7,8,9};
-
+    public static  String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     int first = (int)(Math.random() * 10);
     int second = (int)(Math.random() * 10);
     int third = (int)(Math.random() * 10);
     int fourth = (int)(Math.random() * 10);
     private int[] secretCode = {first, second, third, fourth};
-    int userInput = 0;
+    String userInput = "";
     ArrayList reponse = new ArrayList();
-    String reponseToString="";
-//TODO changer userInput en string car en int le zéro en première position n'est pas pris en compte
+    String reponseToString = "";
+    String winwin = "====";
+
+
     public SearchGame(){
         //affichage du code secret pour mode développeur
         System.out.print( "(Code Secret: " );
@@ -60,68 +64,95 @@ public class SearchGame {
         }
         System.out.print( ")" );
 
-
         //le jeu:
         Scanner sc = new Scanner( System.in );
         boolean catched = false;
-        int[] inputToArray = {};
+        ArrayList inputToArray = new ArrayList();
         do {
 
             do{
                 try{
                     catched = false;
                     System.out.println( "\nquelle est votre proposition?" );
-                    userInput = sc.nextInt();
+                    userInput = sc.nextLine();
                     inputToArray = createArrayFromInput( userInput );
-                } catch (InputMismatchException e) {
-                    System.out.println( "Saisie erronée, votre choix n'est pas un nombre" );
+                    if(!checkOccurencesFromListInArray(inputToArray, nbr)){
+                        throw new ExceptionNaN();
+                    }
+                } catch (ExceptionNaN e) {
                     catched = true;
-                    sc.next();
                 }
                 finally {
-                    if ( inputToArray.length > secretCode.length || inputToArray.length < secretCode.length) {
+                    if ( inputToArray.size() > secretCode.length || inputToArray.size() < secretCode.length) {
                         System.out.print( "Vous devez saisir une combinaison à " + secretCode.length + " chiffres." );
                         catched = false;
                     }
                 }
-            }while(inputToArray.length>secretCode.length||inputToArray.length<secretCode.length||catched);
+            }while(inputToArray.size()>secretCode.length||inputToArray.size()<secretCode.length||catched);
 
             //vérification réponse/code
             String equal = "=";
             String minus = "-";
             String plus = "+";
             System.out.print( "Votre proposition: " + userInput + " -> Réponse: " );
-            for (int i = 0; i < inputToArray.length; i++) {
-                if (inputToArray[i] == secretCode[i]) {
-                    System.out.print( "=" );
-                    reponse.add( equal );
-
-                } else if (inputToArray[i] < secretCode[i]) {
-                    System.out.print( "+" );
-                    reponse.add( plus );
-                } else if (inputToArray[i] > secretCode[i]) {
-                    System.out.print( "-" );
-                    reponse.add( minus );
+            int i=0;
+            for (Object o:inputToArray) {
+                    if (Integer.parseInt( o.toString())== secretCode[i]) {
+                        System.out.print( "=" );
+                        reponse.add( equal );
+                    } else if (Integer.parseInt( o.toString())< secretCode[i]) {
+                        System.out.print( "+" );
+                        reponse.add( plus );
+                    } else if (Integer.parseInt( o.toString())> secretCode[i]) {
+                        System.out.print( "-" );
+                        reponse.add( minus );
+                    }
+                    i++;
                 }
-            }
             reponseToString = myTrimString(reponse.toString());
-        }while(!(reponseToString.equals("====")));
+            reponse.clear();
+        }while(!(reponseToString.equals(winwin)));
         System.out.println( "\nBravo vous avez trouvé la combinaison: "+userInput );
     }
 
     /**
-     * Méthode prend la réponse de l'utilisateur et transforme chaque chiffre en élément de tableau
-     * @param number
-     * @return un tableau rempli de chaque chiffre composant la réponse utilisateur
+     * Méthode prend la réponse de l'utilisateur et transforme chaque chiffre en élément de liste
+     * @param str
+     * @return une liste remplie de chaque chiffre composant la réponse utilisateur
      */
-    private int[] createArrayFromInput(int number) {
-        String str = Integer.toString( number );
+    public ArrayList createArrayFromInput(String str) {
         char[] charr = str.toCharArray();
-        int[] arr = new int[charr.length];
+        ArrayList arr = new ArrayList(charr.length);
         for (int i = 0; i< charr.length; i++) {
-            arr[i] = Character.getNumericValue(charr[i]);
+            arr.add(Character.toString(charr[i]));
         }
         return arr;
+    }
+
+    /**
+     * Méthode prend une liste, et compare ses entrées avec un tableau.
+     * si une entrée de la liste est comprise dans le tableau on ajoute 1 à un compteur.
+     * Si le total du compteur n'est pas égal à la longueur du tableau,
+     * alors une ou plusieurs entrées de la liste ne sont pas comprises dans le tableau.
+     * @param arrLi
+     * @param str
+     * @return un booléen "appears" qui renvoie "false" si une ou plusieurs entrées de la liste ne sont pas dans le tableau
+     */
+    private boolean checkOccurencesFromListInArray(ArrayList arrLi, String[] str){
+        boolean appears = true;
+        int count = 0;
+        for(Object o:arrLi){
+            for(int j=0;j<str.length;j++){
+                if(o.toString().equals(str[j])){
+                    count += 1;
+                }
+            }
+            if(count == arrLi.size()){
+                appears = true;
+            }
+            else appears = false;
+        }
+        return appears;
     }
     /**
      * <b>Méthode de formatage du texte</b>
