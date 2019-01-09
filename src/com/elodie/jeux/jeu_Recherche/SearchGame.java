@@ -88,7 +88,7 @@ public class SearchGame {
      * On récupère une liste composée des caractères de cette chaine, puis on la parcoure.
      * On compare ainsi chaque entrée de la liste avec lse entrées d'un tableau de chiffres.
      * Selon si les entrées de la liste sont supérieures, inférieures ou égales aux entrées du tableau,
-     * on affichera en sortie "<", ">", ou "=".
+     * on affichera en sortie "-", "+", ou "=".
      * Ces résultats seront stocker dans une liste, puis transformés en chaine de caractères pour l'affichage sortie.
      * @param liste une liste composée de chaque chiffre de la chaine de caractères input
      * @param secret un tableau composé de chiffres définis
