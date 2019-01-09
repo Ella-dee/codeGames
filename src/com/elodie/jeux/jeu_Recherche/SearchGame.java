@@ -1,6 +1,7 @@
 package com.elodie.jeux.jeu_Recherche;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -50,21 +51,40 @@ public class SearchGame {
     int userInput = 0;
     ArrayList reponse = new ArrayList();
     String reponseToString="";
-
+//TODO changer userInput en string car en int le zéro en première position n'est pas pris en compte
     public SearchGame(){
-        //affichage du code secret
+        //affichage du code secret pour mode développeur
         System.out.print( "(Code Secret: " );
         for(int i =0;i<secretCode.length;i++){
             System.out.print( secretCode[i] );
         }
         System.out.print( ")" );
 
-        //interraction user:
+
+        //le jeu:
+        Scanner sc = new Scanner( System.in );
+        boolean catched = false;
+        int[] inputToArray = {};
         do {
-            System.out.println( "\nquelle est votre proposition?" );
-            Scanner sc = new Scanner( System.in );
-            userInput = sc.nextInt();
-            int[] inputToArray = createArrayFromInput( userInput );
+
+            do{
+                try{
+                    catched = false;
+                    System.out.println( "\nquelle est votre proposition?" );
+                    userInput = sc.nextInt();
+                    inputToArray = createArrayFromInput( userInput );
+                } catch (InputMismatchException e) {
+                    System.out.println( "Saisie erronée, votre choix n'est pas un nombre" );
+                    catched = true;
+                    sc.next();
+                }
+                finally {
+                    if ( inputToArray.length > secretCode.length || inputToArray.length < secretCode.length) {
+                        System.out.print( "Vous devez saisir une combinaison à " + secretCode.length + " chiffres." );
+                        catched = false;
+                    }
+                }
+            }while(inputToArray.length>secretCode.length||inputToArray.length<secretCode.length||catched);
 
             //vérification réponse/code
             String equal = "=";
