@@ -55,7 +55,6 @@ public class SearchGame {
     String reponseToString = "";
     String winwin = "====";
 
-
     public SearchGame(){
         //affichage du code secret pour mode développeur
         System.out.print( "(Code Secret: " );
@@ -120,7 +119,7 @@ public class SearchGame {
      * @param str
      * @return une liste remplie de chaque chiffre composant la réponse utilisateur
      */
-    public ArrayList createArrayFromInput(String str) {
+    public static ArrayList createArrayFromInput(String str) {
         char[] charr = str.toCharArray();
         ArrayList arr = new ArrayList(charr.length);
         for (int i = 0; i< charr.length; i++) {
@@ -138,7 +137,7 @@ public class SearchGame {
      * @param str
      * @return un booléen "appears" qui renvoie "false" si une ou plusieurs entrées de la liste ne sont pas dans le tableau
      */
-    private boolean checkOccurencesFromListInArray(ArrayList arrLi, String[] str){
+    public static boolean checkOccurencesFromListInArray(ArrayList arrLi, String[] str){
         boolean appears = true;
         int count = 0;
         for(Object o:arrLi){
@@ -161,7 +160,7 @@ public class SearchGame {
      * @param str chaîne de caractères donnée
      * @return la chaine de caractères donnée reformatée sans espace
      */
-    private static String myTrimString(String str){
+    public static String myTrimString(String str){
         StringBuilder sb = new StringBuilder();
         sb.append(str.replaceAll("[\\[\\],]", "").replace( " ", "" ));
         str.trim();
