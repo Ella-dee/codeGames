@@ -2,10 +2,10 @@ package com.elodie.jeux;
 
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
-import static com.elodie.jeux.jeu_Recherche.SearchGame.*;
+import static com.elodie.jeux.GeneralMethodes.Methodes.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class SearchGameTest {
+class Test_Methodes {
 
     @Test
     void WhenGiven_String_PutsEachElementOfItIn_ArrayList() {
@@ -21,7 +21,6 @@ class SearchGameTest {
     @Test
     void WhenGiven_ArrayListAndArrayOfString_ValidateIfEachEntryOfListInArray(){
         boolean expected = true;
-        int count = 0;
         ArrayList testListe = new ArrayList();
         testListe.add( "a" );
         testListe.add( "b" );

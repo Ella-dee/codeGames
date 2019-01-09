@@ -1,0 +1,70 @@
+package com.elodie.jeux.GeneralMethodes;
+
+import java.util.ArrayList;
+
+/**
+ * <b>Contient les méthodes généralistes nécessaires au divers jeux</b>
+ * <p>Ne contient aucun mécanisme de jeu.</p>
+ * <ul> Les méthodes:
+ *     <li>formatage de texte</li>
+ *     <li>comparaison des entrées d'une liste avec les entrées d'un tableau</li>
+ *     <li>transformation d'une chaine de caractères en tableau rempli par chaque caractère de cette chaine</li>
+ * </ul>
+ */
+public class Methodes {
+    /**
+     * <b>Méthode de formatage du texte</b>
+     * <p>Permet de transformer un ArrayList en chaîne de caractères,
+     * et d'enlever la mise en forme "liste"</p>
+     * @param str chaîne de caractères donnée
+     * @return la chaine de caractères donnée reformatée sans espace
+     */
+    public static String myTrimString(String str){
+        StringBuilder sb = new StringBuilder();
+        sb.append(str.replaceAll("[\\[\\],]", "").replace( " ", "" ));
+        str.trim();
+        return sb.substring( 0, sb.length());
+    }
+    /**
+     * Méthode prend une liste, et compare ses entrées avec un tableau.
+     * si une entrée de la liste est comprise dans le tableau on ajoute 1 à un compteur.
+     * Si le total du compteur n'est pas égal à la longueur du tableau,
+     * alors une ou plusieurs entrées de la liste ne sont pas comprises dans le tableau.
+     * @param arrLi une liste remplie de données
+     * @param str un tableau de chaine de caractère données
+     * @return un booléen "appears" qui renvoie "false" si une ou plusieurs entrées de la liste ne sont pas dans le tableau
+     */
+    public static boolean checkOccurencesFromListInArray(ArrayList arrLi, String[] str){
+        boolean appears = true;
+        int count = 0;
+        for(Object o:arrLi){
+            for(int j=0;j<str.length;j++){
+                if(o.toString().equals(str[j])){
+                    count += 1;
+                }
+            }
+            if(count == arrLi.size()){
+                appears = true;
+            }
+            else appears = false;
+        }
+        return appears;
+    }
+
+    /**
+     * Méthode prend la réponse de l'utilisateur et transforme chaque chiffre en élément de liste
+     * @param str une chaîne de caractère donnée
+     * @return une liste remplie de chaque chiffre composant la réponse utilisateur
+     */
+    public static ArrayList createArrayFromInput(String str) {
+        char[] charr = str.toCharArray();
+        ArrayList arr = new ArrayList(charr.length);
+        for (int i = 0; i< charr.length; i++) {
+            arr.add(Character.toString(charr[i]));
+        }
+        return arr;
+    }
+
+
+
+}

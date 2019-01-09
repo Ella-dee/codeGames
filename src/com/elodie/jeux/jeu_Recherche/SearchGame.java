@@ -2,10 +2,9 @@ package com.elodie.jeux.jeu_Recherche;
 
 import com.elodie.jeux.Exceptions.ExceptionNaN;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
+import static com.elodie.jeux.GeneralMethodes.Methodes.*;
 
 /**
  * <b>Recherche +/-</b>
@@ -44,17 +43,17 @@ import java.util.Scanner;
  */
 
 public class SearchGame {
-    public static  String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
-    int first = (int)(Math.random() * 10);
-    int second = (int)(Math.random() * 10);
-    int third = (int)(Math.random() * 10);
-    int fourth = (int)(Math.random() * 10);
-    private int[] secretCode = {first, second, third, fourth};
+    public static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
+    final int first = (int)(Math.random() * 10);
+    final int second = (int)(Math.random() * 10);
+    final int third = (int)(Math.random() * 10);
+    final int fourth = (int)(Math.random() * 10);
+    private final int[] secretCode = {first, second, third, fourth};
     String userInput = "";
-    ArrayList reponse = new ArrayList();
+    final ArrayList reponse = new ArrayList();
     String reponseToString = "";
-    String winwin = "====";
-
+    final String winwin = "====";
+//TODO ajout d'une limite d'essais
     public SearchGame(){
         //affichage du code secret pour mode développeur
         System.out.print( "(Code Secret: " );
@@ -113,58 +112,4 @@ public class SearchGame {
         }while(!(reponseToString.equals(winwin)));
         System.out.println( "\nBravo vous avez trouvé la combinaison: "+userInput );
     }
-
-    /**
-     * Méthode prend la réponse de l'utilisateur et transforme chaque chiffre en élément de liste
-     * @param str
-     * @return une liste remplie de chaque chiffre composant la réponse utilisateur
-     */
-    public static ArrayList createArrayFromInput(String str) {
-        char[] charr = str.toCharArray();
-        ArrayList arr = new ArrayList(charr.length);
-        for (int i = 0; i< charr.length; i++) {
-            arr.add(Character.toString(charr[i]));
-        }
-        return arr;
-    }
-
-    /**
-     * Méthode prend une liste, et compare ses entrées avec un tableau.
-     * si une entrée de la liste est comprise dans le tableau on ajoute 1 à un compteur.
-     * Si le total du compteur n'est pas égal à la longueur du tableau,
-     * alors une ou plusieurs entrées de la liste ne sont pas comprises dans le tableau.
-     * @param arrLi
-     * @param str
-     * @return un booléen "appears" qui renvoie "false" si une ou plusieurs entrées de la liste ne sont pas dans le tableau
-     */
-    public static boolean checkOccurencesFromListInArray(ArrayList arrLi, String[] str){
-        boolean appears = true;
-        int count = 0;
-        for(Object o:arrLi){
-            for(int j=0;j<str.length;j++){
-                if(o.toString().equals(str[j])){
-                    count += 1;
-                }
-            }
-            if(count == arrLi.size()){
-                appears = true;
-            }
-            else appears = false;
-        }
-        return appears;
-    }
-    /**
-     * <b>Méthode de formatage du texte</b>
-     * <p>Permet de transformer un ArrayList en chaîne de caractères,
-     * et d'enlever la mise en forme "liste"</p>
-     * @param str chaîne de caractères donnée
-     * @return la chaine de caractères donnée reformatée sans espace
-     */
-    public static String myTrimString(String str){
-        StringBuilder sb = new StringBuilder();
-        sb.append(str.replaceAll("[\\[\\],]", "").replace( " ", "" ));
-        str.trim();
-        return sb.substring( 0, sb.length());
-    }
-
 }

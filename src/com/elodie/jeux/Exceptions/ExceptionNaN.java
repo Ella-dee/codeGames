@@ -1,7 +1,5 @@
 package com.elodie.jeux.Exceptions;
 
-import java.util.Scanner;
-
 public class ExceptionNaN extends Exception {
     public ExceptionNaN()
     {
