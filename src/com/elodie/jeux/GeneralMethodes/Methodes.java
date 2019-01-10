@@ -15,13 +15,26 @@ public class Methodes {
     /**
      * <b>Méthode de formatage du texte</b>
      * <p>Permet de transformer un ArrayList en chaîne de caractères,
-     * et d'enlever la mise en forme "liste"</p>
+     * et d'enlever la mise en forme "liste", ainsi que les espaces</p>
      * @param str chaîne de caractères donnée
      * @return la chaine de caractères donnée reformatée sans espace
      */
     public static String myTrimString(String str){
         StringBuilder sb = new StringBuilder();
         sb.append(str.replaceAll("[\\[\\],]", "").replace( " ", "" ));
+        str.trim();
+        return sb.substring( 0, sb.length());
+    }
+    /**
+     * <b>Méthode de formatage du texte</b>
+     * <p>Permet de transformer un ArrayList en chaîne de caractères,
+     * et d'enlever la mise en forme "liste", mais gardes les espaces</p>
+     * @param str chaîne de caractères donnée
+     * @return la chaine de caractères donnée reformatée sans espace
+     */
+    public static String myTrimStringWithSpaces(String str){
+        StringBuilder sb = new StringBuilder();
+        sb.append(str.replaceAll("[\\[\\],]", ""));
         str.trim();
         return sb.substring( 0, sb.length());
     }
