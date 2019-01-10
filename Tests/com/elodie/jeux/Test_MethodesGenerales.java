@@ -2,15 +2,15 @@ package com.elodie.jeux;
 
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
-import static com.elodie.jeux.GeneralMethodes.Methodes.*;
+import static com.elodie.jeux.GeneralMethodes.Methodes_Generales.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class Test_Methodes {
+class Test_MethodesGenerales {
 
     @Test
     void WhenGiven_String_PutsEachElementOfItIn_ArrayList() {
         String testInput = "abcd";
-        ArrayList testListe = createArrayFromInput(testInput);
+        ArrayList testListe = createArrayListeFromInput(testInput);
 
         String result = myTrimString(testListe.toString());
         String expected = testInput;

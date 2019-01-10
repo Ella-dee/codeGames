@@ -1,5 +1,6 @@
 package com.elodie.jeux.GeneralMethodes;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  *     <li>transformation d'une chaine de caractères en tableau rempli par chaque caractère de cette chaine</li>
  * </ul>
  */
-public class Methodes {
+public class Methodes_Generales {
     /**
      * <b>Méthode de formatage du texte</b>
      * <p>Permet de transformer un ArrayList en chaîne de caractères,
@@ -69,7 +70,7 @@ public class Methodes {
      * @param str une chaîne de caractère donnée
      * @return une liste remplie de chaque chiffre composant la réponse utilisateur
      */
-    public static ArrayList createArrayFromInput(String str) {
+    public static ArrayList createArrayListeFromInput(String str) {
         char[] charr = str.toCharArray();
         ArrayList arr = new ArrayList(charr.length);
         for (int i = 0; i< charr.length; i++) {
@@ -78,6 +79,8 @@ public class Methodes {
         return arr;
     }
 
-
-
+    public static int randomInRange(int arg1, int arg2) {
+        int i = (int)Math.ceil(Math.random() * (arg1 - arg2) + arg2);
+        return i;
+    }
 }

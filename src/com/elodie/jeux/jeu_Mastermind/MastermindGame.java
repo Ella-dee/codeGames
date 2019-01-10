@@ -4,7 +4,7 @@ import com.elodie.jeux.Exceptions.ExceptionNaN;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-import static com.elodie.jeux.GeneralMethodes.Methodes.*;
+import static com.elodie.jeux.GeneralMethodes.Methodes_Generales.*;
 
 /**
  * <b>Mastermind</b>
@@ -149,7 +149,7 @@ public class MastermindGame {
                 catched = false;
                 System.out.println( "\nquelle est votre proposition?" );
                 userInput = sc.nextLine();
-                inputToArray = createArrayFromInput( userInput );
+                inputToArray = createArrayListeFromInput( userInput );
                 if(!checkOccurencesFromListInArray(inputToArray, nbr)){
                     throw new ExceptionNaN();
                 }
