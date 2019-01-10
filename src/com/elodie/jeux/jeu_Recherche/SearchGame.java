@@ -2,8 +2,9 @@ package com.elodie.jeux.jeu_Recherche;
 
 import com.elodie.jeux.Exceptions.ExceptionNaN;
 import java.util.ArrayList;
-import java.util.Scanner;
 import static com.elodie.jeux.GeneralMethodes.Methodes.*;
+import static com.elodie.jeux.Modes.Challenger.*;
+import static com.elodie.jeux.Modes.Defenseur.startDefenseurSearchGame;
 
 /**
  * <b>Recherche +/-</b>
@@ -78,7 +79,7 @@ public class SearchGame {
         do {
             start();
         }while(!(reponseToString.equals(winwin)));
-        System.out.println( "\nBravo vous avez trouvé la combinaison: "+userInput );
+        System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
     }
 
     /**
@@ -98,16 +99,16 @@ public class SearchGame {
         String equal = "=";
         String minus = "-";
         String plus = "+";
-        System.out.print( "Votre proposition: " + input + " -> Réponse: " );
+        System.out.print( "Proposition: " + input + " -> Réponse: " );
         int i=0;
         for (Object o:liste) {
-            if (Integer.parseInt( o.toString())== secretCode[i]) {
+            if (Integer.parseInt( o.toString())== secret[i]) {
                 System.out.print( "=" );
                 output.add( equal );
-            } else if (Integer.parseInt( o.toString())< secretCode[i]) {
+            } else if (Integer.parseInt( o.toString())< secret[i]) {
                 System.out.print( "+" );
                 output.add( plus );
-            } else if (Integer.parseInt( o.toString())> secretCode[i]) {
+            } else if (Integer.parseInt( o.toString())> secret[i]) {
                 System.out.print( "-" );
                 output.add( minus );
             }
@@ -119,38 +120,11 @@ public class SearchGame {
 
     /**
      * Méthode comprend la mécanique du jeu.
-     * <p>On demande à l'utilisateur d'entrer une combinaison</p>
-     * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
-     * @see ExceptionNaN#ExceptionNaN()
-     * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see SearchGame#tryOutCheck(ArrayList, int[], String, ArrayList)
+     * <p>On lance le jeu selon le mode choisi.
+     * @see com.elodie.jeux.Modes.Challenger#startChallengerSearchGame(String, String[], int[], String, ArrayList)
      */
     public static void start(){
-        Scanner sc = new Scanner( System.in );
-        boolean catched;
-        ArrayList inputToArray = new ArrayList();
-        do{
-            try{
-                catched = false;
-                System.out.println( "\nquelle est votre proposition?" );
-                userInput = sc.nextLine();
-                inputToArray = createArrayFromInput( userInput );
-                if(!checkOccurencesFromListInArray(inputToArray, nbr)){
-                    throw new ExceptionNaN();
-                }
-            } catch (ExceptionNaN e) {
-                catched = true;
-            }
-            finally {
-                if ( inputToArray.size() > secretCode.length || inputToArray.size() < secretCode.length) {
-                    System.out.print( "Vous devez saisir une combinaison à " + secretCode.length + " chiffres." );
-                    catched = false;
-                }
-            }
-        }while(inputToArray.size()>secretCode.length||inputToArray.size()<secretCode.length||catched);
-
-        //vérification réponse/code
-        reponseToString = tryOutCheck( inputToArray, secretCode, userInput, reponse);
-        reponse.clear();
+       //reponseToString = startChallengerSearchGame(userInput, nbr, secretCode, reponseToString, reponse);
+       reponseToString = startDefenseurSearchGame(userInput, nbr, secretCode, reponseToString, reponse);
     }
 }

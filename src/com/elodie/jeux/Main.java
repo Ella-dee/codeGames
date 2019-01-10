@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        //SearchGame searchgame = new SearchGame();
-        MastermindGame mastermindGame = new MastermindGame();
+        SearchGame searchgame = new SearchGame();
+        //MastermindGame mastermindGame = new MastermindGame();
     }
 }
