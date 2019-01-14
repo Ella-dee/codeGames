@@ -25,6 +25,10 @@ public class Methodes_MecaniqueJeu {
         return secretCode;
     }
 
+    /**
+     * Méthode qui demande à l'utilisateur s'il souhaite refaire une partie du même jeu.
+     * @return chaine de caractère représentant O ou N
+     */
     public static String stopOuEncore(){
         boolean catched;
         Scanner sc = new Scanner( System.in );
@@ -48,6 +52,34 @@ public class Methodes_MecaniqueJeu {
            }
        }while (catched);
         return playAgain;
+    }
+    /**
+     * Méthode qui demande à l'utilisateur s'il souhaite refaire une partie.
+     * @return chaine de caractère représentant O ou N
+     */
+    public static String backToMenu(){
+        boolean catched;
+        Scanner sc = new Scanner( System.in );
+        String startAgain = "";
+       do{
+           try {
+               catched = false;
+               System.out.println( "Souhaitez-vous jouer à un autre jeu? O/N" );
+               startAgain = myTrimString(sc.nextLine()).toUpperCase();
+               if(!startAgain.matches( "[a-zA-Z]" )){
+                   throw new ExceptionNaL();
+               }
+           } catch (ExceptionNaL e) {
+               catched = true;
+           } finally {
+               if (!startAgain.equals("O") && !startAgain.equals("N")) {
+                   catched = true;
+                   System.out.println( "Vous n'avez pas saisi O ou N." );
+                   System.out.println( "Vous avez saisi: "+startAgain );
+               }
+           }
+       }while (catched);
+        return startAgain;
     }
     /**
      * Méthode génère un code aléatoire de 4 chiffres compris entre 0 et 9

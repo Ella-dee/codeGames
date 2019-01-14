@@ -49,7 +49,9 @@ public class MastermindGame_Challenger {
      * @see ExceptionNaN#ExceptionNaN()
      * <p>On compare à la combinaison secrète puis affiche si les chiffres sont bien placés ou au moins présents.</p>
      * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String)
-     * <p>Si l'utilisateur trouve alors apparait "4 bien placés", le jeu s'arrête</p>
+     * <p>Si l'utilisateur trouve alors apparait "4 bien placés", la partie s'arrête,
+     * on demande à l'utilisateur s'il veut rejouer.
+     * @see Methodes_MecaniqueJeu#stopOuEncore()
      */
         int[] secretCode = computedSecretCode();
         Scanner sc = new Scanner( System.in );

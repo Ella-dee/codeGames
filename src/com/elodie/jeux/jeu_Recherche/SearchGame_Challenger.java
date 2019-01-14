@@ -52,7 +52,9 @@ public class SearchGame_Challenger {
      * @see ExceptionNaN#ExceptionNaN()
      * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
      * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
-     * <p>Si l'utilisateur trouve alors apparait "====", le jeu s'arrête</p>
+     * <p>Si l'utilisateur trouve alors apparait "====", la partie s'arrête,
+     * on demande à l'utilisateur s'il veut rejouer.
+     * @see Methodes_MecaniqueJeu#stopOuEncore()
      */
 
     public SearchGame_Challenger() {
