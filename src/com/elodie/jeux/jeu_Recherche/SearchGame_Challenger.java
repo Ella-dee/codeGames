@@ -2,11 +2,10 @@ package com.elodie.jeux.jeu_Recherche;
 
 import com.elodie.jeux.Exceptions.ExceptionNaN;
 import com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu;
-
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import static com.elodie.jeux.GeneralMethodes.Methodes_Generales.*;
+import static com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu.*;
 
 /**
  * <b>Recherche +/- // Mode challenger où vous devez trouver la combinaison secrète de l'ordinateur</b>
@@ -49,11 +48,7 @@ public class SearchGame_Challenger {
     public SearchGame_Challenger(){
 
         //affichage du code secret pour mode développeur
-        System.out.print( "(Code Secret: " );
-        for(int i =0;i<secretCode.length;i++){
-            System.out.print( secretCode[i] );
-        }
-        System.out.println( ")" );
+        showSecretCode( secretCode );
         //On lance le jeu
         do {
             startChallengerSearchGame();
@@ -68,7 +63,6 @@ public class SearchGame_Challenger {
      * @see ExceptionNaN#ExceptionNaN()
      * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
      * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
-     * @return essai utilisateur sous forme de chaine de caractères
      */
     public static void startChallengerSearchGame(){
         Scanner sc = new Scanner( System.in );
@@ -95,6 +89,6 @@ public class SearchGame_Challenger {
         }while(catched);
 
         //vérification réponse/code
-        reponseToString = Methodes_MecaniqueJeu.tryOutCheckSearchGame(inputToArray, secretCode, userInput);
+        reponseToString = tryOutCheckSearchGame(inputToArray, secretCode, userInput);
     }
 }

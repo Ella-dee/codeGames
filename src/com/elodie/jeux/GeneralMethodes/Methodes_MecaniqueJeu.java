@@ -8,7 +8,22 @@ import java.util.Scanner;
 import static com.elodie.jeux.GeneralMethodes.Methodes_Generales.*;
 
 public class Methodes_MecaniqueJeu {
-
+    /**
+     * Méthode affiche le code secret à trouver.
+     * @param code le tableau d'entiers représentant le code secret
+     * @return une chaine de caractères donnant le code secret
+     */
+    public static String showSecretCode(int[] code){
+        //affichage du code secret pour mode développeur
+        StringBuilder sb = new StringBuilder();
+        sb.append("(Code Secret: " );
+        for(int i =0;i<code.length;i++){
+            sb.append( code[i] );
+        }
+        sb.append( ")" );
+        String secretCode = sb.toString();
+        return secretCode;
+    }
     /**
      * Méthode génère un code aléatoire de 4 chiffres compris entre 0 et 9
      * @return un code secret sous forme de tableau d'entiers

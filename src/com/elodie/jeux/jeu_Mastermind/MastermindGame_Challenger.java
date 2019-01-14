@@ -46,11 +46,8 @@ public class MastermindGame_Challenger {
     public MastermindGame_Challenger(){
 
         //affichage du code secret pour mode développeur
-        System.out.print( "(Code Secret: " );
-        for(int i =0;i<secretCode.length;i++){
-            System.out.print( secretCode[i] );
-        }
-        System.out.println( ")" );
+        showSecretCode( secretCode );
+
         //On lance le jeu
         do {
             startChallengerMastermindGame();

@@ -3,6 +3,7 @@ package com.elodie.jeux.jeu_Recherche;
 import com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu;
 import java.util.ArrayList;
 import static com.elodie.jeux.GeneralMethodes.Methodes_Generales.*;
+import static com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu.*;
 import static java.lang.Character.getNumericValue;
 
 /**
@@ -46,11 +47,7 @@ public class SearchGame_Defenseur {
 
     public SearchGame_Defenseur(){
         //affichage du code secret pour mode développeur
-        System.out.print( "(Code Secret: " );
-        for(int i =0;i<secretCode.length;i++){
-            System.out.print( secretCode[i] );
-        }
-        System.out.println( ")" );
+        showSecretCode( secretCode );
         //On lance le jeu
         do {
             startDefenseurSearchGame();
@@ -90,13 +87,13 @@ public class SearchGame_Defenseur {
                 //S'il est supérieur à celui du code secret, on lance un random avec en entier max ce chiffre essai
                 else if(reponseToString.charAt(i) == '-'){
                     int minus = getNumericValue(AIinput.charAt(i));
-                    minus = randomInRange( -1, getNumericValue( AIinput.charAt(i)));
+                    minus = randomInRange( -1, minus);
                     inputToArray.add( minus );
                 }
                 //S'il est inférieur à celui du code secret, on lance un random avec en entier min ce chiffre essai
                 else if(reponseToString.charAt(i) == '+'){
                     int plus = getNumericValue(AIinput.charAt(i));
-                    plus = randomInRange( getNumericValue(AIinput.charAt(i))-1, nbr.length-1);
+                    plus = randomInRange( plus-1, nbr.length-1);
                     inputToArray.add( plus );
                 }
             }
@@ -117,6 +114,6 @@ public class SearchGame_Defenseur {
             e.printStackTrace();
         }
         //vérification réponse/code
-        reponseToString = Methodes_MecaniqueJeu.tryOutCheckSearchGame(inputToArray, secretCode, AIinput);
+        reponseToString = tryOutCheckSearchGame(inputToArray, secretCode, AIinput);
     }
 }
