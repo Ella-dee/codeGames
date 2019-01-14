@@ -55,7 +55,7 @@ public class SearchGame_Defenseur {
         do {
             startDefenseurSearchGame();
         }while(!(reponseToString.equals(winwin)));
-        System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
+        System.out.println( "\nL'ordinateur  trouvé votre combinaison!" );
     }
 
     /**

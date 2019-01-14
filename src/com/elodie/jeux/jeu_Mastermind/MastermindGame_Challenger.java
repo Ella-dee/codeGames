@@ -40,7 +40,6 @@ public class MastermindGame_Challenger {
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     public static final int[] secretCode = computedSecretCode();
     static String userInput = "";
-    static ArrayList reponse = new ArrayList();
     static String reponseToString = "";
     final String winwin = "4 bien placés";
 

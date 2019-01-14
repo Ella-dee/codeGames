@@ -162,4 +162,38 @@ public class Methodes_MecaniqueJeu {
         System.out.println( outputToString );
         return outputToString;
     }
+
+    public static int chooseModeForGame(){
+        boolean catched = false;
+        Scanner sc = new Scanner( System.in );
+        String chosenMode = "";
+        int chosenModeParsed = 0;
+        final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
+        ArrayList inputToArray = new ArrayList();
+
+        do{
+            try {
+                catched = false;
+                System.out.println( "Veuillez choisir votre mode de jeu: 1 - Challenger, 2 - Défenseur" );
+                chosenMode = sc.nextLine();
+                inputToArray = createArrayListeFromInput( chosenMode );
+                if(!checkOccurencesFromListInArray(inputToArray, nbr)){
+                    throw new ExceptionNaN();
+                }
+                else{
+                    chosenModeParsed = Integer.parseInt( myTrimString(chosenMode) );
+                }
+            }catch (ExceptionNaN e){
+                catched = true;
+            }
+            finally {
+                if(chosenModeParsed < 1|| chosenModeParsed > 2) {
+                    System.out.println( "Vous devez saisir un choix parmis ceux disponibles." );
+                    catched = true;
+                }
+            }
+        }while(catched);
+        chosenModeParsed = Integer.parseInt( chosenMode);
+        return chosenModeParsed;
+    }
 }
