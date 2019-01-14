@@ -25,56 +25,27 @@ public class Methodes_MecaniqueJeu {
         return secretCode;
     }
 
-//    public static void stopOuEncore(){
-//        boolean catched;
-//        Scanner sc = new Scanner( System.in );
-//        String playAgain = "";
-//        try {
-//            catched = false;
-//            System.out.println( "Souhaitez-vous rejouez? O/N" );
-//            playAgain = myTrimString(sc.nextLine()).toUpperCase();
-//            if(!playAgain.matches( "[a-zA-Z]" )){
-//                throw new ExceptionNaL();
-//            }
-//        } catch (ExceptionNaL e) {
-//            catched = true;
-//        } finally {
-//            if (!playAgain.equals("O") && !playAgain.equals("N")) {
-//                catched = true;
-//                System.out.println( "Vous n'avez pas saisi O ou N." );
-//                System.out.println( "Vous avez saisi: "+playAgain );
-//            }
-//        }
-//    }
-//
-//    public static void startGame(Class game){
-//
-//        String regex = "/^[a-zA-Z]+$/";
-//        String playAgain = "";
-//        boolean catched = false;
-//        do {
-//            game = new game();
-//        } while (playAgain.equals("O"));
-//        do{
-//            try {
-//                catched = false;
-//                System.out.println( "Souhaitez-vous rejouez? O/N" );
-//                Scanner sc = new Scanner( System.in );
-//                playAgain = myTrimString(sc.nextLine()).toUpperCase();
-//                if(!playAgain.matches( "[a-zA-Z]" )){
-//                    throw new ExceptionNaL();
-//                }
-//            } catch (ExceptionNaL e) {
-//                catched = true;
-//            } finally {
-//                if (!playAgain.equals("O") && !playAgain.equals("N")) {
-//                    catched = true;
-//                    System.out.println( "Vous n'avez pas saisi O ou N." );
-//                    System.out.println( "Vous avez saisi: "+playAgain );
-//                }
-//            }
-//        }while(catched);
-//    }
+    public static void stopOuEncore(){
+        boolean catched;
+        Scanner sc = new Scanner( System.in );
+        String playAgain = "";
+        try {
+            catched = false;
+            System.out.println( "Souhaitez-vous rejouez? O/N" );
+            playAgain = myTrimString(sc.nextLine()).toUpperCase();
+            if(!playAgain.matches( "[a-zA-Z]" )){
+                throw new ExceptionNaL();
+            }
+        } catch (ExceptionNaL e) {
+            catched = true;
+        } finally {
+            if (!playAgain.equals("O") && !playAgain.equals("N")) {
+                catched = true;
+                System.out.println( "Vous n'avez pas saisi O ou N." );
+                System.out.println( "Vous avez saisi: "+playAgain );
+            }
+        }
+    }
     /**
      * Méthode génère un code aléatoire de 4 chiffres compris entre 0 et 9
      * @return un code secret sous forme de tableau d'entiers
