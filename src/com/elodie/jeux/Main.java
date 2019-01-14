@@ -1,78 +1,54 @@
 package com.elodie.jeux;
 
-import com.elodie.jeux.Exceptions.ExceptionNaL;
-import com.elodie.jeux.Exceptions.ExceptionNaN;
 import com.elodie.jeux.jeu_Mastermind.MastermindGame_Challenger;
 import com.elodie.jeux.jeu_Mastermind.MastermindGame_Defenseur;
 import com.elodie.jeux.jeu_Recherche.SearchGame_Challenger;
 import com.elodie.jeux.jeu_Recherche.SearchGame_Defenseur;
-import java.util.ArrayList;
-import java.util.Scanner;
-import static com.elodie.jeux.GeneralMethodes.Methodes_Generales.*;
-import static com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu.*;
+import static com.elodie.jeux.Methodes.Methodes_MecaniqueJeu.*;
 
 public class Main {
 
     public static void main(String[] args) {
-
-        String chosenGame = "";
-        int chosenGameParsed = 0;
-        int chosenModeParsed = 0;
-        final String[] nbr = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-        ArrayList inputToArray = new ArrayList();
-        String chooseAgain ="";
-        boolean catched;
-
         System.out.println( "Bienvenu-e-s!" );
         System.out.println( "-------------------------------------" );
-        Scanner sc = new Scanner( System.in );
-        do {
-            do {
-                try {
-                    catched = false;
-                    System.out.println( "Veuillez choisir votre jeu: 1 - Recherche +/-, 2 - MasterMind" );
-                    chosenGame = sc.nextLine();
-                    inputToArray = createArrayListeFromInput( chosenGame );
-                    if (!checkOccurencesFromListInArray( inputToArray, nbr )) {
-                        throw new ExceptionNaN();
-                    } else {
-                        chosenGameParsed = Integer.parseInt( myTrimString( chosenGame ) );
-                    }
-                } catch (ExceptionNaN e) {
-                    catched = true;
-                } finally {
-                    if (chosenGameParsed < 1 || chosenGameParsed > 2) {
-                        System.out.println( "Vous devez saisir un choix parmis ceux disponibles." );
-                        catched = true;
-                    }
-                }
-            } while (catched);
 
-            chosenGameParsed = Integer.parseInt( chosenGame );
+        int game = 0;
+        int mode = 0;
+        String chooseAgain ="";
+
+        do {
+            game = menuJeu();
             //TODO gérer les modes avec le package Modes
-            switch (chosenGameParsed) {
+            String playAgain = "";
+            switch (game) {
+                //Jeu Recherche
                 case 1:
-                    chosenModeParsed = chooseModeForGame();
-                    if (chosenModeParsed == 1) {
-                        String playAgain = "";
+                    mode = chooseModeForGame();
+                    if (mode == 1) {
                         do {
                             SearchGame_Challenger searchgame = new SearchGame_Challenger();
                             playAgain = stopOuEncore();
                         } while (playAgain.equals( "O" ));
-                    } else if (chosenModeParsed == 2) {
-                        SearchGame_Defenseur searchgame = new SearchGame_Defenseur();
+                    } else if (mode == 2) {
+                        do {
+                            SearchGame_Defenseur searchgame = new SearchGame_Defenseur();
+                            playAgain = stopOuEncore();
+                        } while (playAgain.equals( "O" ));
                     }
                     break;
+                //Jeu Mastermind
                 case 2:
-                    chosenModeParsed = chooseModeForGame();
-                    if (chosenModeParsed == 1) {
-                        String playAgain = "";
+                    mode = chooseModeForGame();
+                    if (mode == 1) {
                         do {
                             MastermindGame_Challenger mastermind = new MastermindGame_Challenger();
                             playAgain = stopOuEncore();
                         } while (playAgain.equals( "O" ));
-                    } else if (chosenModeParsed == 2) {
-                        MastermindGame_Defenseur mastermindGame = new MastermindGame_Defenseur();
+                    } else if (mode == 2) {
+                        do {
+                            MastermindGame_Defenseur mastermindGame = new MastermindGame_Defenseur();
+                            playAgain = stopOuEncore();
+                        } while (playAgain.equals( "O" ));
                     }
                     break;
                 default:

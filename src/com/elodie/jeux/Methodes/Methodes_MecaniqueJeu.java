@@ -1,13 +1,15 @@
-package com.elodie.jeux.GeneralMethodes;
+package com.elodie.jeux.Methodes;
 
 import com.elodie.jeux.Exceptions.ExceptionNaL;
 import com.elodie.jeux.Exceptions.ExceptionNaN;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.elodie.jeux.GeneralMethodes.Methodes_Generales.*;
+import static com.elodie.jeux.Methodes.Methodes_Generales.*;
 
 public class Methodes_MecaniqueJeu {
+
+    //Méthodes communes
     /**
      * Méthode affiche le code secret à trouver.
      * @param code le tableau d'entiers représentant le code secret
@@ -25,62 +27,6 @@ public class Methodes_MecaniqueJeu {
         return secretCode;
     }
 
-    /**
-     * Méthode qui demande à l'utilisateur s'il souhaite refaire une partie du même jeu.
-     * @return chaine de caractère représentant O ou N
-     */
-    public static String stopOuEncore(){
-        boolean catched;
-        Scanner sc = new Scanner( System.in );
-        String playAgain = "";
-       do{
-           try {
-               catched = false;
-               System.out.println( "Souhaitez-vous rejouez? O/N" );
-               playAgain = myTrimString(sc.nextLine()).toUpperCase();
-               if(!playAgain.matches( "[a-zA-Z]" )){
-                   throw new ExceptionNaL();
-               }
-           } catch (ExceptionNaL e) {
-               catched = true;
-           } finally {
-               if (!playAgain.equals("O") && !playAgain.equals("N")) {
-                   catched = true;
-                   System.out.println( "Vous n'avez pas saisi O ou N." );
-                   System.out.println( "Vous avez saisi: "+playAgain );
-               }
-           }
-       }while (catched);
-        return playAgain;
-    }
-    /**
-     * Méthode qui demande à l'utilisateur s'il souhaite refaire une partie.
-     * @return chaine de caractère représentant O ou N
-     */
-    public static String backToMenu(){
-        boolean catched;
-        Scanner sc = new Scanner( System.in );
-        String startAgain = "";
-       do{
-           try {
-               catched = false;
-               System.out.println( "Souhaitez-vous jouer à un autre jeu? O/N" );
-               startAgain = myTrimString(sc.nextLine()).toUpperCase();
-               if(!startAgain.matches( "[a-zA-Z]" )){
-                   throw new ExceptionNaL();
-               }
-           } catch (ExceptionNaL e) {
-               catched = true;
-           } finally {
-               if (!startAgain.equals("O") && !startAgain.equals("N")) {
-                   catched = true;
-                   System.out.println( "Vous n'avez pas saisi O ou N." );
-                   System.out.println( "Vous avez saisi: "+startAgain );
-               }
-           }
-       }while (catched);
-        return startAgain;
-    }
     /**
      * Méthode génère un code aléatoire de 4 chiffres compris entre 0 et 9
      * @return un code secret sous forme de tableau d'entiers
@@ -135,8 +81,10 @@ public class Methodes_MecaniqueJeu {
         return code;
     }
 
+    //Méthodes pour le jeu Recherche
     /**
-     * Méthode affiche le résultat de l'essai pour trouver la combinaison.
+     * Méthode pour le jeu Recherche:
+     * affiche le résultat de l'essai pour trouver la combinaison.
      * On récupère une liste composée des essais, qu'on compare avec lse entrées d'un tableau de chiffres.
      * Selon si les entrées de la liste sont supérieures, inférieures ou égales aux entrées du tableau,
      * on affichera en sortie "-", "+", ou "=".
@@ -152,7 +100,7 @@ public class Methodes_MecaniqueJeu {
         String equal = "=";
         String minus = "-";
         String plus = "+";
-        System.out.print( "Proposition: " + input + " -> Réponse: " );
+        System.out.println( "Proposition: " + input + " -> Réponse: " );
         int i=0;
         for (Object o:liste) {
             if (Integer.parseInt( o.toString())== secret[i]) {
@@ -172,8 +120,10 @@ public class Methodes_MecaniqueJeu {
         return outputToString;
     }
 
+    //Méthode pour le jeu Mastermind
     /**
-     * Méthode affiche le résultat de l'essai pour trouver la combinaison.
+     * Méthode pour le jeu Mastermind:
+     * affiche le résultat de l'essai pour trouver la combinaison.
      * On récupère une liste composée des essais, qu'on compare avec lse entrées d'un tableau de chiffres.
      * Selon si les entrées de la liste sont trouvées et à la bonne place, ou présentes dans la combinaison
      * mais mal placées, on affichera en sortie "x bien placé" ou "x présent".
@@ -193,7 +143,7 @@ public class Methodes_MecaniqueJeu {
         ArrayList output = new ArrayList();
         int found = 0;
         int somewhere = 0;
-        System.out.print( "Proposition: " + input + " -> Réponse: " );
+        System.out.println( "Proposition: " + input + " -> Réponse: " );
         int i=0;
         //On parcoure la liste des entrées utilisateurs en parsant chaque entrée en chiffre entier
         for (Object o:liste) {
@@ -234,6 +184,41 @@ public class Methodes_MecaniqueJeu {
         return outputToString;
     }
 
+    //Méthodes pour le menu principal
+    /**
+     * Méthode qui demande à l'utilisateur s'il souhaite refaire une partie.
+     * @return chaine de caractère représentant O ou N
+     */
+    public static String backToMenu(){
+        boolean catched;
+        Scanner sc = new Scanner( System.in );
+        String startAgain = "";
+        do{
+            try {
+                catched = false;
+                System.out.println( "Souhaitez-vous jouer à un autre jeu? O/N" );
+                startAgain = myTrimString(sc.nextLine()).toUpperCase();
+                if(!startAgain.matches( "[a-zA-Z]" )){
+                    throw new ExceptionNaL();
+                }
+            } catch (ExceptionNaL e) {
+                catched = true;
+            } finally {
+                if (!startAgain.equals("O") && !startAgain.equals("N")) {
+                    catched = true;
+                    System.out.println( "Vous n'avez pas saisi O ou N." );
+                    System.out.println( "Vous avez saisi: "+startAgain );
+                }
+            }
+        }while (catched);
+        return startAgain;
+    }
+
+    /**
+     * Méthode demande à l'utilisateur de choisir un jeu.
+     * On vérifie que son choix est viable, puis on enregistre son choix.
+     * @return un entier représentant le jeu choisi
+     */
     public static int chooseModeForGame(){
         boolean catched = false;
         Scanner sc = new Scanner( System.in );
@@ -266,5 +251,63 @@ public class Methodes_MecaniqueJeu {
         }while(catched);
         chosenModeParsed = Integer.parseInt( chosenMode);
         return chosenModeParsed;
+    }
+    /**
+     * Méthode qui demande à l'utilisateur s'il souhaite refaire une partie du même jeu.
+     * @return chaine de caractère représentant O ou N
+     */
+    public static String stopOuEncore(){
+        boolean catched;
+        Scanner sc = new Scanner( System.in );
+        String playAgain = "";
+        do{
+            try {
+                catched = false;
+                System.out.println( "Souhaitez-vous rejouez? O/N" );
+                playAgain = myTrimString(sc.nextLine()).toUpperCase();
+                if(!playAgain.matches( "[a-zA-Z]" )){
+                    throw new ExceptionNaL();
+                }
+            } catch (ExceptionNaL e) {
+                catched = true;
+            } finally {
+                if (!playAgain.equals("O") && !playAgain.equals("N")) {
+                    catched = true;
+                    System.out.println( "Vous n'avez pas saisi O ou N." );
+                    System.out.println( "Vous avez saisi: "+playAgain );
+                }
+            }
+        }while (catched);
+        return playAgain;
+    }
+    public static int menuJeu() {
+        boolean catched = false;
+        String chosenGame = "";
+        Scanner sc = new Scanner( System.in );
+        ArrayList inputToArray = new ArrayList();
+        int chosenGameParsed = 0;
+        final String[] nbr = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        do {
+            try {
+                catched = false;
+                System.out.println( "Veuillez choisir votre jeu: 1 - Recherche +/-, 2 - MasterMind" );
+                chosenGame = sc.nextLine();
+                inputToArray = createArrayListeFromInput( chosenGame );
+                if (!checkOccurencesFromListInArray( inputToArray, nbr )) {
+                    throw new ExceptionNaN();
+                } else {
+                    chosenGameParsed = Integer.parseInt( myTrimString( chosenGame ) );
+                }
+            } catch (ExceptionNaN e) {
+                catched = true;
+            } finally {
+                if (chosenGameParsed < 1 || chosenGameParsed > 2) {
+                    System.out.println( "Vous devez saisir un choix parmis ceux disponibles." );
+                    catched = true;
+                }
+            }
+        } while (catched);
+        chosenGameParsed = Integer.parseInt( chosenGame );
+        return chosenGameParsed;
     }
 }

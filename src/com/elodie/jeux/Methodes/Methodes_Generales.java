@@ -1,4 +1,4 @@
-package com.elodie.jeux.GeneralMethodes;
+package com.elodie.jeux.Methodes;
 
 import java.util.ArrayList;
 

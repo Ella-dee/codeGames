@@ -1,11 +1,11 @@
 package com.elodie.jeux.jeu_Mastermind;
 
 import com.elodie.jeux.Exceptions.ExceptionNaN;
-import com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu;
+import com.elodie.jeux.Methodes.Methodes_MecaniqueJeu;
 import java.util.ArrayList;
 import java.util.Scanner;
-import static com.elodie.jeux.GeneralMethodes.Methodes_Generales.*;
-import static com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu.*;
+import static com.elodie.jeux.Methodes.Methodes_Generales.*;
+import static com.elodie.jeux.Methodes.Methodes_MecaniqueJeu.*;
 
 /**
  * <b>Mastermind // Mode challenger où vous devez trouver la combinaison secrète de l'ordinateur</b>
