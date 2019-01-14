@@ -34,64 +34,53 @@ public class MastermindGame_Challenger {
      * <li>une chaine de caractère "4 bien placés" représentant l'affichage sortie si la combinaison est trouvée</li>
      * </ul>
      * <p>On lance le jeu</p>
-     * @see MastermindGame_Challenger#startChallengerMastermindGame()
-     * <p>Si l'utilisateur trouve alors apparait "4 bien placés", le jeu s'arrête</p>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
-    public static final int[] secretCode = computedSecretCode();
     static String userInput = "";
     static String reponseToString = "";
     final String winwin = "4 bien placés";
 
     public MastermindGame_Challenger(){
-
-        //affichage du code secret pour mode développeur
-        showSecretCode( secretCode );
-
-        //On lance le jeu
-        do {
-            startChallengerMastermindGame();
-        }while(!(reponseToString.equals(winwin)));
-        System.out.println( "\nBravo vous avez trouvé la combinaison!");
-    }
-
     /**
      * Méthode comprend la mécanique du jeu.
+     * <p>On créée une combinaison secrète.</p>
      * <p>On demande à l'utilisateur d'entrer une combinaison</p>
      * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
      * @see ExceptionNaN#ExceptionNaN()
      * <p>On compare à la combinaison secrète puis affiche si les chiffres sont bien placés ou au moins présents.</p>
      * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String)
+     * <p>Si l'utilisateur trouve alors apparait "4 bien placés", le jeu s'arrête</p>
      */
-    public static void startChallengerMastermindGame(){
+        int[] secretCode = computedSecretCode();
         Scanner sc = new Scanner( System.in );
         boolean catched;
         ArrayList inputToArray = new ArrayList();
+        //affichage du code secret pour mode développeur
+        System.out.println(showSecretCode( secretCode ));
         do{
-            try{
-                catched = false;
-                System.out.println( "\nquelle est votre proposition?" );
-                userInput = sc.nextLine();
-                //on passe la réponse utilisateur en liste
-                inputToArray = createArrayListeFromInput( userInput );
-                //on vérifie que cette liste ne contient que des chiffres soit ce qui est présent dans le tableau nbr
-                if(!checkOccurencesFromListInArray(inputToArray, nbr)){
-                    throw new ExceptionNaN();
-                }
-            } catch (ExceptionNaN e) {
-                catched = true;
-            }
-            //on vérifie que le bon nombre de chiffre a été saisi
-            finally {
-                if ( inputToArray.size() > secretCode.length || inputToArray.size() < secretCode.length) {
-                    System.out.print( "Vous devez saisir une combinaison à " + secretCode.length + " chiffres." );
+            do{
+                try{
+                    catched = false;
+                    System.out.println( "\nQuelle est votre proposition?" );
+                    userInput = sc.nextLine();
+                    inputToArray = createArrayListeFromInput( userInput );
+                    if(!checkOccurencesFromListInArray(inputToArray, nbr)){
+                        throw new ExceptionNaN();
+                    }
+                } catch (ExceptionNaN e) {
                     catched = true;
                 }
-            }
-        }while(catched);
-
-        //vérification réponse/code
-        reponseToString = tryOutCheckMastermindGame(inputToArray, secretCode, userInput);
+                finally {
+                    if ( inputToArray.size() > secretCode.length || inputToArray.size() < secretCode.length) {
+                        System.out.print( "Vous devez saisir une combinaison à " + secretCode.length + " chiffres." );
+                        catched = true;
+                    }
+                }
+            }while (catched);
+            //vérification réponse/code
+            reponseToString = tryOutCheckMastermindGame(inputToArray, secretCode, userInput);
+        }while(!(reponseToString.equals( winwin )));
+        System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
     }
 }
 

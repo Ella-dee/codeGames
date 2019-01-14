@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import static com.elodie.jeux.GeneralMethodes.Methodes_Generales.*;
 import static com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu.chooseModeForGame;
+import static com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu.stopOuEncore;
 
 public class Main {
 
@@ -58,25 +59,7 @@ public class Main {
                     String playAgain = "";
                     do {
                         SearchGame_Challenger searchgame = new SearchGame_Challenger();
-                        do{
-                            try {
-                                catched = false;
-                                System.out.println( "Souhaitez-vous rejouez? O/N" );
-                                sc = new Scanner( System.in );
-                                playAgain = myTrimString(sc.nextLine()).toUpperCase();
-                                if(!playAgain.matches( "[a-zA-Z]" )){
-                                    throw new ExceptionNaL();
-                                }
-                            } catch (ExceptionNaL e) {
-                                catched = true;
-                            } finally {
-                                if (!playAgain.equals("O") && !playAgain.equals("N")) {
-                                    catched = true;
-                                    System.out.println( "Vous n'avez pas saisi O ou N." );
-                                    System.out.println( "Vous avez saisi: "+playAgain );
-                                }
-                            }
-                        }while(catched);
+                        playAgain=stopOuEncore();
                     }while (playAgain.equals("O"));
                 }
                 else if(chosenModeParsed == 2){
@@ -86,7 +69,11 @@ public class Main {
             case 2:
                 chosenModeParsed = chooseModeForGame();
                 if(chosenModeParsed == 1){
-                    MastermindGame_Challenger mastermindGame = new MastermindGame_Challenger();
+                    String playAgain = "";
+                    do {
+                        MastermindGame_Challenger mastermind = new MastermindGame_Challenger();
+                        playAgain=stopOuEncore();
+                    }while (playAgain.equals("O"));
                 }
                 else if(chosenModeParsed == 2){
                     MastermindGame_Defenseur mastermindGame = new MastermindGame_Defenseur();

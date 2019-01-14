@@ -25,26 +25,29 @@ public class Methodes_MecaniqueJeu {
         return secretCode;
     }
 
-    public static void stopOuEncore(){
+    public static String stopOuEncore(){
         boolean catched;
         Scanner sc = new Scanner( System.in );
         String playAgain = "";
-        try {
-            catched = false;
-            System.out.println( "Souhaitez-vous rejouez? O/N" );
-            playAgain = myTrimString(sc.nextLine()).toUpperCase();
-            if(!playAgain.matches( "[a-zA-Z]" )){
-                throw new ExceptionNaL();
-            }
-        } catch (ExceptionNaL e) {
-            catched = true;
-        } finally {
-            if (!playAgain.equals("O") && !playAgain.equals("N")) {
-                catched = true;
-                System.out.println( "Vous n'avez pas saisi O ou N." );
-                System.out.println( "Vous avez saisi: "+playAgain );
-            }
-        }
+       do{
+           try {
+               catched = false;
+               System.out.println( "Souhaitez-vous rejouez? O/N" );
+               playAgain = myTrimString(sc.nextLine()).toUpperCase();
+               if(!playAgain.matches( "[a-zA-Z]" )){
+                   throw new ExceptionNaL();
+               }
+           } catch (ExceptionNaL e) {
+               catched = true;
+           } finally {
+               if (!playAgain.equals("O") && !playAgain.equals("N")) {
+                   catched = true;
+                   System.out.println( "Vous n'avez pas saisi O ou N." );
+                   System.out.println( "Vous avez saisi: "+playAgain );
+               }
+           }
+       }while (catched);
+        return playAgain;
     }
     /**
      * Méthode génère un code aléatoire de 4 chiffres compris entre 0 et 9
