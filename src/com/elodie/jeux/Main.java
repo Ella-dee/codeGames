@@ -1,5 +1,6 @@
 package com.elodie.jeux;
 
+import com.elodie.jeux.Exceptions.ExceptionNaL;
 import com.elodie.jeux.Exceptions.ExceptionNaN;
 import com.elodie.jeux.jeu_Mastermind.MastermindGame_Challenger;
 import com.elodie.jeux.jeu_Mastermind.MastermindGame_Defenseur;
@@ -13,6 +14,7 @@ import static com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu.chooseModeFo
 public class Main {
 
     public static void main(String[] args) {
+
         String chosenGame = "";
         int chosenGameParsed = 0;
         int chosenModeParsed = 0;
@@ -48,12 +50,34 @@ public class Main {
         }while(catched);
 
         chosenGameParsed = Integer.parseInt( chosenGame );
-
+        //TODO gérer les modes avec le package Modes
         switch (chosenGameParsed){
             case 1:
                 chosenModeParsed = chooseModeForGame();
                 if(chosenModeParsed == 1){
-                    SearchGame_Challenger searchgame = new SearchGame_Challenger();
+                    String playAgain = "";
+                    do {
+                        SearchGame_Challenger searchgame = new SearchGame_Challenger();
+                        do{
+                            try {
+                                catched = false;
+                                System.out.println( "Souhaitez-vous rejouez? O/N" );
+                                sc = new Scanner( System.in );
+                                playAgain = myTrimString(sc.nextLine()).toUpperCase();
+                                if(!playAgain.matches( "[a-zA-Z]" )){
+                                    throw new ExceptionNaL();
+                                }
+                            } catch (ExceptionNaL e) {
+                                catched = true;
+                            } finally {
+                                if (!playAgain.equals("O") && !playAgain.equals("N")) {
+                                    catched = true;
+                                    System.out.println( "Vous n'avez pas saisi O ou N." );
+                                    System.out.println( "Vous avez saisi: "+playAgain );
+                                }
+                            }
+                        }while(catched);
+                    }while (playAgain.equals("O"));
                 }
                 else if(chosenModeParsed == 2){
                     SearchGame_Defenseur searchgame = new SearchGame_Defenseur();

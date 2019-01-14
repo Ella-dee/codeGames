@@ -1,8 +1,10 @@
 package com.elodie.jeux.jeu_Recherche;
 
+import com.elodie.jeux.Exceptions.ExceptionNaL;
 import com.elodie.jeux.Exceptions.ExceptionNaN;
 import com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import static com.elodie.jeux.GeneralMethodes.Methodes_Generales.*;
 import static com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu.*;
@@ -28,7 +30,6 @@ public class SearchGame_Challenger {
      * <b>Pose les bases et paramètres de base du jeu</b>
      * <ul>Possède les attributs de bases:
      * <li>tableau de chiffres de 0 à 9</li>
-     * <li>tableau de 4 chiffres comportant la combinaison secrète</li>
      * @see Methodes_MecaniqueJeu#computedSecretCode()
      * <li>une chaine de caractère vide pour les entrées utilisateur à venir</li>
      * <li>une liste vide représentant les indices "+-=+" à venir</li>
@@ -40,55 +41,57 @@ public class SearchGame_Challenger {
      * <p>Si l'utilisateur trouve alors apparait "====", le jeu s'arrête</p>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
-    public static final int[] secretCode = Methodes_MecaniqueJeu.computedSecretCode();
     static String userInput = "";
     static String reponseToString = "";
     final String winwin = "====";
+    boolean catched = false;
 
-    public SearchGame_Challenger(){
-
-        //affichage du code secret pour mode développeur
-        showSecretCode( secretCode );
+    public SearchGame_Challenger() {
         //On lance le jeu
-        do {
-            startChallengerSearchGame();
-        }while(!(reponseToString.equals(winwin)));
-        System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
+            do {
+                startChallengerSearchGame();
+            } while (!(reponseToString.equals( winwin )));
+            System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
     }
 
-    /**
-     * Méthode comprend la mécanique du jeu pour le Mode Challenger (utilisateur VS AI).
-     * <p>On demande à l'utilisateur d'entrer une combinaison</p>
-     * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
-     * @see ExceptionNaN#ExceptionNaN()
-     * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
-     */
-    public static void startChallengerSearchGame(){
-        Scanner sc = new Scanner( System.in );
-        boolean catched;
-        ArrayList inputToArray = new ArrayList();
-        do{
-            try{
-                catched = false;
-                System.out.println( "\nquelle est votre proposition?" );
-                userInput = sc.nextLine();
-                inputToArray = createArrayListeFromInput( userInput );
-                if(!checkOccurencesFromListInArray(inputToArray, nbr)){
-                    throw new ExceptionNaN();
-                }
-            } catch (ExceptionNaN e) {
-                catched = true;
-            }
-            finally {
-                if ( inputToArray.size() > secretCode.length || inputToArray.size() < secretCode.length) {
-                    System.out.print( "Vous devez saisir une combinaison à " + secretCode.length + " chiffres." );
+        /**
+         * Méthode comprend la mécanique du jeu pour le Mode Challenger (utilisateur VS AI).
+         * <p>On créée une combinaison secrète.</p>
+         * @see Methodes_MecaniqueJeu#computedSecretCode()
+         * <p>On demande à l'utilisateur d'entrer une combinaison</p>
+         * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
+         * @see ExceptionNaN#ExceptionNaN()
+         * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
+         * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
+         */
+        public static void startChallengerSearchGame(){
+            int[] secretCode = computedSecretCode();
+            Scanner sc = new Scanner( System.in );
+            boolean catched;
+            ArrayList inputToArray = new ArrayList();
+            do{
+                //affichage du code secret pour mode développeur
+                System.out.println(showSecretCode( secretCode ));
+                try{
+                    catched = false;
+                    System.out.println( "Quelle est votre proposition?" );
+                    userInput = sc.nextLine();
+                    inputToArray = createArrayListeFromInput( userInput );
+                    if(!checkOccurencesFromListInArray(inputToArray, nbr)){
+                        throw new ExceptionNaN();
+                    }
+                } catch (ExceptionNaN e) {
                     catched = true;
                 }
-            }
-        }while(catched);
+                finally {
+                    if ( inputToArray.size() > secretCode.length || inputToArray.size() < secretCode.length) {
+                        System.out.print( "Vous devez saisir une combinaison à " + secretCode.length + " chiffres." );
+                        catched = true;
+                    }
+                }
+            }while(catched);
 
-        //vérification réponse/code
-        reponseToString = tryOutCheckSearchGame(inputToArray, secretCode, userInput);
+            //vérification réponse/code
+            reponseToString = tryOutCheckSearchGame(inputToArray, secretCode, userInput);
+        }
     }
-}

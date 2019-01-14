@@ -1,7 +1,7 @@
 package com.elodie.jeux.GeneralMethodes;
 
+import com.elodie.jeux.Exceptions.ExceptionNaL;
 import com.elodie.jeux.Exceptions.ExceptionNaN;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -24,18 +24,68 @@ public class Methodes_MecaniqueJeu {
         String secretCode = sb.toString();
         return secretCode;
     }
+
+//    public static void stopOuEncore(){
+//        boolean catched;
+//        Scanner sc = new Scanner( System.in );
+//        String playAgain = "";
+//        try {
+//            catched = false;
+//            System.out.println( "Souhaitez-vous rejouez? O/N" );
+//            playAgain = myTrimString(sc.nextLine()).toUpperCase();
+//            if(!playAgain.matches( "[a-zA-Z]" )){
+//                throw new ExceptionNaL();
+//            }
+//        } catch (ExceptionNaL e) {
+//            catched = true;
+//        } finally {
+//            if (!playAgain.equals("O") && !playAgain.equals("N")) {
+//                catched = true;
+//                System.out.println( "Vous n'avez pas saisi O ou N." );
+//                System.out.println( "Vous avez saisi: "+playAgain );
+//            }
+//        }
+//    }
+//
+//    public static void startGame(Class game){
+//
+//        String regex = "/^[a-zA-Z]+$/";
+//        String playAgain = "";
+//        boolean catched = false;
+//        do {
+//            game = new game();
+//        } while (playAgain.equals("O"));
+//        do{
+//            try {
+//                catched = false;
+//                System.out.println( "Souhaitez-vous rejouez? O/N" );
+//                Scanner sc = new Scanner( System.in );
+//                playAgain = myTrimString(sc.nextLine()).toUpperCase();
+//                if(!playAgain.matches( "[a-zA-Z]" )){
+//                    throw new ExceptionNaL();
+//                }
+//            } catch (ExceptionNaL e) {
+//                catched = true;
+//            } finally {
+//                if (!playAgain.equals("O") && !playAgain.equals("N")) {
+//                    catched = true;
+//                    System.out.println( "Vous n'avez pas saisi O ou N." );
+//                    System.out.println( "Vous avez saisi: "+playAgain );
+//                }
+//            }
+//        }while(catched);
+//    }
     /**
      * Méthode génère un code aléatoire de 4 chiffres compris entre 0 et 9
      * @return un code secret sous forme de tableau d'entiers
      */
     public static int[] computedSecretCode(){
-        final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
-        final int first = (int)(Math.random() * 10);
-        final int second = (int)(Math.random() * 10);
-        final int third = (int)(Math.random() * 10);
-        final int fourth = (int)(Math.random() * 10);
-        final int[] code = {first, second, third, fourth};
-        return code;
+         int first = (int)(Math.random() * 10);
+         int second = (int)(Math.random() * 10);
+         int third = (int)(Math.random() * 10);
+         int fourth = (int)(Math.random() * 10);
+         int[] code = {first, second, third, fourth};
+         return code;
     }
 
     /**
@@ -70,11 +120,11 @@ public class Methodes_MecaniqueJeu {
         }while(catched);
 
         int i = 0;
-            for (Object o:inputToArray){
-                int oInt = Integer.parseInt(o.toString());
-                code[i] = oInt;
-                i++;
-            }
+        for (Object o:inputToArray){
+            int oInt = Integer.parseInt(o.toString());
+            code[i] = oInt;
+            i++;
+        }
 
         return code;
     }
@@ -127,7 +177,7 @@ public class Methodes_MecaniqueJeu {
      * @param liste une liste composée de chaque chiffre de la chaine de caractères input
      * @param secret un tableau composé de chiffres définis
      * @param input entrée utilisateur composée de chiffres
-  //   * @param output liste composée des chaines de caractères définissant les chiffres de "liste" comme étant
+    //   * @param output liste composée des chaines de caractères définissant les chiffres de "liste" comme étant
      *               présents ou bien placés par rapport à "secret" à l'aide des attributs entiers
      *               found et somewhere.
      * @return une chaine de caractères composées des entrées de la liste "output"
