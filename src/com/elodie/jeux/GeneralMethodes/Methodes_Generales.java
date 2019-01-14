@@ -1,6 +1,5 @@
 package com.elodie.jeux.GeneralMethodes;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
