@@ -28,13 +28,13 @@ public class Methodes_Generales {
     /**
      * <b>Méthode de formatage du texte</b>
      * <p>Permet de transformer un ArrayList en chaîne de caractères,
-     * et d'enlever la mise en forme "liste", mais gardes les espaces</p>
+     * et d'enlever la mise en forme "liste", mais garde les espaces et la virgule de séparation.</p>
      * @param str chaîne de caractères donnée
-     * @return la chaine de caractères donnée reformatée sans espace
+     * @return la chaine de caractères donnée reformatée
      */
-    public static String myTrimStringWithSpaces(String str){
+    public static String trimStringKeepSpacesAndComas(String str){
         StringBuilder sb = new StringBuilder();
-        sb.append(str.replaceAll("[\\[\\],]", ""));
+        sb.append(str.replaceAll("[\\[\\]]", ""));
         str.trim();
         return sb.substring( 0, sb.length());
     }
