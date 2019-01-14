@@ -50,7 +50,7 @@ public class SearchGame_Defenseur {
         for(int i =0;i<secretCode.length;i++){
             System.out.print( secretCode[i] );
         }
-        System.out.print( ")" );
+        System.out.println( ")" );
         //On lance le jeu
         do {
             startDefenseurSearchGame();
@@ -62,23 +62,21 @@ public class SearchGame_Defenseur {
      * Méthode comprend la mécanique du jeu pour le Mode Defenseur (AI VS utilisateur).
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
      * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String, ArrayList)
+     * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
      * <p>Contient les attributs suivants:
      * <ul>
      *     <li>liste contenant l'essai de l'AI</li>
      *     <li>4 entiers random pour l'essai de l'AI</li>
      * </ul>
-     * @return essai AI sous forme de chaine de caractères
      */
-    public static String startDefenseurSearchGame(){
+    public static void startDefenseurSearchGame(){
         ArrayList inputToArray = new ArrayList();
         int first = (int) (Math.random() * 10);
         int second = (int) (Math.random() * 10);
         int third = (int) (Math.random() * 10);
         int fourth = (int) (Math.random() * 10);
 
-        System.out.println( "\nProposition de l'ordinateur." );
-//TODO écarter les propositions déjà faites
+        System.out.println( "Proposition de l'ordinateur." );
         //Si des essais ont déjà été faits par l'AI:
         if(!reponseToString.isEmpty()){
             inputToArray.clear(); // on vide la liste de l'essai AI
@@ -88,6 +86,7 @@ public class SearchGame_Defenseur {
                     String ok = ""+ getNumericValue(AIinput.charAt(i));
                     inputToArray.add( ok );
                 }
+                //TODO écarter les propositions déjà faites
                 //S'il est supérieur à celui du code secret, on lance un random avec en entier max ce chiffre essai
                 else if(reponseToString.charAt(i) == '-'){
                     int minus = getNumericValue(AIinput.charAt(i));
@@ -118,8 +117,6 @@ public class SearchGame_Defenseur {
             e.printStackTrace();
         }
         //vérification réponse/code
-        reponseToString = Methodes_MecaniqueJeu.tryOutCheckSearchGame(inputToArray, secretCode, AIinput, output);
-        output.clear();
-        return reponseToString;
+        reponseToString = Methodes_MecaniqueJeu.tryOutCheckSearchGame(inputToArray, secretCode, AIinput);
     }
 }

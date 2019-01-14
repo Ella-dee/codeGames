@@ -51,7 +51,7 @@ public class MastermindGame_Challenger {
         for(int i =0;i<secretCode.length;i++){
             System.out.print( secretCode[i] );
         }
-        System.out.print( ")" );
+        System.out.println( ")" );
         //On lance le jeu
         do {
             startChallengerMastermindGame();
@@ -65,7 +65,7 @@ public class MastermindGame_Challenger {
      * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
      * @see ExceptionNaN#ExceptionNaN()
      * <p>On compare à la combinaison secrète puis affiche si les chiffres sont bien placés ou au moins présents.</p>
-     * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String, ArrayList)
+     * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String)
      */
     public static void startChallengerMastermindGame(){
         Scanner sc = new Scanner( System.in );
@@ -95,8 +95,7 @@ public class MastermindGame_Challenger {
         }while(catched);
 
         //vérification réponse/code
-        reponseToString = tryOutCheckMastermindGame(inputToArray, secretCode, userInput, reponse);
-        reponse.clear();
+        reponseToString = tryOutCheckMastermindGame(inputToArray, secretCode, userInput);
     }
 }
 

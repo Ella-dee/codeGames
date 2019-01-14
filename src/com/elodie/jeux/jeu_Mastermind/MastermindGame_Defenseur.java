@@ -2,6 +2,8 @@ package com.elodie.jeux.jeu_Mastermind;
 
 import com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu;
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import static com.elodie.jeux.GeneralMethodes.Methodes_Generales.*;
 import static com.elodie.jeux.GeneralMethodes.Methodes_MecaniqueJeu.*;
 import static java.lang.Character.getNumericValue;
@@ -29,9 +31,10 @@ public class MastermindGame_Defenseur {
      * <li>tableau de chiffres de 0 à 9</li>
      * <li>tableau de 4 chiffres comportant la combinaison secrète</li>
      * @see Methodes_MecaniqueJeu#computedSecretCode()
-     * <li>un tableau formant une combinaison secrète avec ces 4 chiffres</li>
-     * <li>une chaine de caractère vide pour les entrées utilisateur à venir</li>
-     * <li>une chaine de caractère "====" représentant l'affichage sortie si la combinaison est trouvée</li>
+     * <li>une chaine de caractère vide pour les entrées AI à venir</li>
+     * <li>une liste vide représentant les indices "x bien placés ou présents" à venir</li>
+     * <li>une chaine de caractère vide représentant la liste ci dessus</li>
+     * <li>une chaine de caractère "4 bien placés" représentant l'affichage sortie si la combinaison est trouvée</li>
      * </ul>
      * <p>On lance le jeu</p>
      * @see MastermindGame_Defenseur#startDefenseurMastermindGame()
@@ -41,7 +44,6 @@ public class MastermindGame_Defenseur {
     public static final int[] secretCode = inputSecretCode();
     static String AIinput = "";
     static ArrayList output = new ArrayList();
-    static ArrayList reponse = new ArrayList();
     static String reponseToString = "";
     final String winwin = "4 bien placés";
 
@@ -51,7 +53,7 @@ public class MastermindGame_Defenseur {
         for(int i =0;i<secretCode.length;i++){
             System.out.print( secretCode[i] );
         }
-        System.out.print( ")" );
+        System.out.println( ")" );
         //On lance le jeu
         do {
             startDefenseurMastermindGame();
@@ -63,32 +65,42 @@ public class MastermindGame_Defenseur {
      * Méthode comprend la mécanique du jeu pour le Mode Defenseur (AI VS utilisateur).
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
      * <p>On compare à la combinaison secrète puis affiche les indices bien placés ou présents</p>
-     * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String, ArrayList)
+     * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String)
      */
-    public static String startDefenseurMastermindGame(){
+    public static void startDefenseurMastermindGame(){
         ArrayList inputToArray = new ArrayList();
         int first = (int) (Math.random() * 10);
         int second = (int) (Math.random() * 10);
         int third = (int) (Math.random() * 10);
         int fourth = (int) (Math.random() * 10);
 
-        System.out.println( "\nProposition de l'ordinateur." );
+        System.out.println( "Proposition de l'ordinateur." );
+        //Si des essais ont déjà été faits par l'AI:
         if(!reponseToString.isEmpty()){
+            // on vide la liste de l'essai AI
             inputToArray.clear();
-            for (int i = 0; i < reponseToString.length(); i++) {
+            for (int i = 0; i < AIinput.length(); i++) {
+                //On garde le chiffre donné s'il est bon et à la bonne place
                 if (AIinput.charAt(i) == secretCode[i]) {
                     String ok = ""+ getNumericValue(AIinput.charAt(i));
                     inputToArray.add( ok );
+                    System.out.println( ok );
                 }
-                else if(AIinput.charAt(i) != secretCode[i]){
-                    int minus = getNumericValue(AIinput.charAt(i));
-                    minus = randomInRange( -1, getNumericValue( AIinput.charAt(i)));
-                    inputToArray.add( minus );
+
+                //TODO écarter les propositions déjà faites
+                //S'il est bon mais pas à la bonne place
+                else if((AIinput.charAt(i) != secretCode[i]) && (Arrays.asList( secretCode ).contains( AIinput.charAt(i)))){
+                    //TODO à implémenter (random en attendant)
+                    inputToArray.add((int) (Math.random() * 10));
+                }
+                //Si non trouvé
+                else{
+                    inputToArray.add((int) (Math.random() * 10));
                 }
             }
             AIinput = myTrimString(inputToArray.toString());
         }
-
+        //Si c'est le premier essai, on lance 4 randoms
         else{
             inputToArray.add( first );
             inputToArray.add( second );
@@ -102,8 +114,6 @@ public class MastermindGame_Defenseur {
             e.printStackTrace();
         }
         //vérification réponse/code
-        reponseToString = tryOutCheckMastermindGame(inputToArray, secretCode, AIinput, output);
-        output.clear();
-        return reponseToString;
+        reponseToString = tryOutCheckMastermindGame(inputToArray, secretCode, AIinput);
     }
 }

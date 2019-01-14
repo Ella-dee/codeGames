@@ -43,7 +43,6 @@ public class SearchGame_Challenger {
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     public static final int[] secretCode = Methodes_MecaniqueJeu.computedSecretCode();
     static String userInput = "";
-    static ArrayList output = new ArrayList();
     static String reponseToString = "";
     final String winwin = "====";
 
@@ -54,7 +53,7 @@ public class SearchGame_Challenger {
         for(int i =0;i<secretCode.length;i++){
             System.out.print( secretCode[i] );
         }
-        System.out.print( ")" );
+        System.out.println( ")" );
         //On lance le jeu
         do {
             startChallengerSearchGame();
@@ -68,10 +67,10 @@ public class SearchGame_Challenger {
      * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
      * @see ExceptionNaN#ExceptionNaN()
      * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String, ArrayList)
+     * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
      * @return essai utilisateur sous forme de chaine de caractères
      */
-    public static String startChallengerSearchGame(){
+    public static void startChallengerSearchGame(){
         Scanner sc = new Scanner( System.in );
         boolean catched;
         ArrayList inputToArray = new ArrayList();
@@ -96,8 +95,6 @@ public class SearchGame_Challenger {
         }while(catched);
 
         //vérification réponse/code
-        reponseToString = Methodes_MecaniqueJeu.tryOutCheckSearchGame(inputToArray, secretCode, userInput, output);
-        output.clear();
-        return reponseToString;
+        reponseToString = Methodes_MecaniqueJeu.tryOutCheckSearchGame(inputToArray, secretCode, userInput);
     }
 }

@@ -73,10 +73,11 @@ public class Methodes_MecaniqueJeu {
      * @param liste une liste composée de chaque chiffre de la chaine de caractères input
      * @param secret un tableau composé de chiffres définis
      * @param input entrée utilisateur composée de chiffres
-     * @param output liste composée des opérateurs de comparaison entre "liste" et "secret"
+    // * @param output liste composée des opérateurs de comparaison entre "liste" et "secret"
      * @return une chaine de caractères composées des entrées de la liste "output"
      */
-    public static String tryOutCheckSearchGame(ArrayList liste, int[] secret, String input, ArrayList output){
+    public static String tryOutCheckSearchGame(ArrayList liste, int[] secret, String input){
+        ArrayList output = new ArrayList();
         String equal = "=";
         String minus = "-";
         String plus = "+";
@@ -96,6 +97,7 @@ public class Methodes_MecaniqueJeu {
             i++;
         }
         String outputToString = myTrimString(output.toString());
+        output.clear();
         return outputToString;
     }
 
@@ -110,13 +112,14 @@ public class Methodes_MecaniqueJeu {
      * @param liste une liste composée de chaque chiffre de la chaine de caractères input
      * @param secret un tableau composé de chiffres définis
      * @param input entrée utilisateur composée de chiffres
-     * @param output liste composée des chaines de caractères définissant les chiffres de "liste" comme étant
+  //   * @param output liste composée des chaines de caractères définissant les chiffres de "liste" comme étant
      *               présents ou bien placés par rapport à "secret" à l'aide des attributs entiers
      *               found et somewhere.
      * @return une chaine de caractères composées des entrées de la liste "output"
      */
 
-    public static String tryOutCheckMastermindGame(ArrayList liste, int[] secret, String input, ArrayList output){
+    public static String tryOutCheckMastermindGame(ArrayList liste, int[] secret, String input){
+        ArrayList output = new ArrayList();
         int found = 0;
         int somewhere = 0;
         System.out.print( "Proposition: " + input + " -> Réponse: " );
@@ -155,7 +158,8 @@ public class Methodes_MecaniqueJeu {
             output.add( somewhere+" présents" );
         }
         String outputToString = trimStringKeepSpacesAndComas(output.toString());
-        System.out.println(outputToString);
+        output.clear();
+        System.out.println( outputToString );
         return outputToString;
     }
 }
