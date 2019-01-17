@@ -3,6 +3,7 @@ package com.elodie.jeux;
 import com.elodie.jeux.Methodes.Methodes_MecaniqueJeu;
 import com.elodie.jeux.jeu_Mastermind.MastermindGame_Challenger;
 import com.elodie.jeux.jeu_Mastermind.MastermindGame_Defenseur;
+import com.elodie.jeux.jeu_Mastermind.MastermindGame_Duel;
 import com.elodie.jeux.jeu_Recherche.SearchGame_Challenger;
 import com.elodie.jeux.jeu_Recherche.SearchGame_Defenseur;
 import com.elodie.jeux.jeu_Recherche.SearchGame_Duel;
@@ -95,6 +96,12 @@ public class Main {
                     } else if (mode == 2) {
                         do {
                             MastermindGame_Defenseur mastermindGame = new MastermindGame_Defenseur();
+                            playAgain = stopOuEncore();
+                        } while (playAgain.equals( "O" ));
+                    }
+                        else if (mode == 3) {
+                        do {
+                            MastermindGame_Duel mastermindGame = new MastermindGame_Duel();
                             playAgain = stopOuEncore();
                         } while (playAgain.equals( "O" ));
                     }

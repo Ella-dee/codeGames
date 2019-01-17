@@ -1,40 +1,43 @@
-package com.elodie.jeux.jeu_Recherche;
+package com.elodie.jeux.jeu_Mastermind;
 
 import com.elodie.jeux.Exceptions.ExceptionNaN;
 import com.elodie.jeux.Methodes.Methodes_MecaniqueJeu;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+
 import static com.elodie.jeux.Methodes.Methodes_Generales.*;
 import static com.elodie.jeux.Methodes.Methodes_MecaniqueJeu.*;
 import static java.lang.Character.getNumericValue;
 
 /**
- * <b>Recherche +/- Mode duel où l'ordinateur et vous jouez tour à tour, le premier à trouver la combinaison gagne.</b>
- * <p>Le but : découvrir la combinaison à x chiffres de l'adversaire (le défenseur) en premier.
- * <p>Pour ce faire, l'attaquant fait une proposition. Le défenseur indique pour chaque
- * chiffre de la combinaison proposée si le chiffre de sa combinaison est plus grand (+),
- * plus petit (-) ou si c'est le bon chiffre (=). Puis les rôles s'inversent.
+ * <b>Mastermind //Mode duel où l'ordinateur et vous jouez tour à tour, le premier à trouver la combinaison gagne.</b>
+ * <p>Le but : découvrir la combinaison à x chiffres de l'adversaire (le défenseur).
+ * <p>Pour ce faire, l'attaquant fait une proposition. Le défenseur indique pour
+ * chaque proposition le nombre de chiffres de la proposition qui apparaissent
+ * à la bonne place et à la mauvaise place dans la combinaison secrète.
+ *<p>L'attaquant doit deviner la combinaison secrète en un nombre limité d'essais. Puis les rôles s'inversent.
  *<p>Le joueur et l'ordinateur doivent deviner la combinaison secrète en un nombre limité d'essais.
  *<section>
  *<p><i>(Combinaison secrète : 1234)</i></p>
- *<p><i>(Proposition : 4278 -> Réponse : -=--</i></p>
- *<p><i>(Proposition : 2214 -> Réponse : -=+=</i></p>
+ *<p><i>(Proposition : 4278 -> Réponse : 1 présent, 1 bien placé</i></p>
+ *<p><i>(Proposition : 2214 -> Réponse : 2 bien placés</i></p>
  *</section>
  * @author elojito
  * @version 1.0
  */
 
-public class SearchGame_Duel {
+public class MastermindGame_Duel {
     /**
      * <b>Variables globales:</b>
      * <ul>
      * <li>tableau de chiffres de 0 à 9</li>
      * <li>une chaine de caractère vide pour les entrées utilisateur à venir</li>
      * <li>une chaine de caractère vide pour les entrées AI à venir</li>
-     * <li>une chaine de caractère vide représentant les indices "+-=+" à venir pour l'utilisateur</li>
-     * <li>une chaine de caractère vide représentant les indices "+-=+" à venir pour l'AI</li>
-     * <li>une chaine de caractère "====" représentant l'affichage sortie si la combinaison est trouvée</li>
-     * <li>un booléen pour les exceptions</li>
+     * <li>une chaine de caractère vide représentant les indices "x bien placés, x présents" à venir pour l'utilisateur</li>
+     * <li>une chaine de caractère vide représentant les indices "x bien placés, x présents" à venir pour l'AI</li>
+     * <li>une chaine de caractère "4 bien placés" représentant l'affichage sortie si la combinaison est trouvée</li>
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
@@ -42,29 +45,27 @@ public class SearchGame_Duel {
     static String AIinput = "";
     static String userReponseToString = "";
     static String AIReponseToString = "";
-    static final String winwin = "====";
-    boolean catched = false;
+    final String winwin = "4 bien placés";
 
+    public MastermindGame_Duel(){
     /**
-     * Méthode comprend la mécanique du jeu pour le Mode Duel (ustilisateur et AI à chaque tour).
+     * Méthode comprend la mécanique du jeu.
      * <p>On créée une combinaison secrète.</p>
      * @see Methodes_MecaniqueJeu#computedSecretCode()
      * <p>On demande à l'utilisateur d'entrer une combinaison</p>
      * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
      * @see ExceptionNaN#ExceptionNaN()
-     * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
+     * <p>On compare à la combinaison secrète puis affiche si les chiffres sont bien placés ou au moins présents.</p>
+     * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String)
      * <p>Puis c'est au tour de l'ordinateur de jouer:
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
      * @see Methodes_MecaniqueJeu#inputSecretCode()
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
-     * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
-     * <p>Si l'utilisateur ou l'ordinateur trouve la bonne combinaison alors apparait "====", la partie s'arrête.
+     * <p>On compare à la combinaison secrète puis affiche les indices bien placés ou présents</p>
+     * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String)
+     * <p>Si l'utilisateur ou l'ordinateur trouve la bonne combinaison alors apparait "4 bien placés", la partie s'arrête.
      * @see Methodes_MecaniqueJeu#stopOuEncore()
      */
-
-    public SearchGame_Duel() {
         int[] secretCodeForUser = computedSecretCode();
         int[] secretCodeForAI = inputSecretCode();
         Scanner sc = new Scanner( System.in );
@@ -73,8 +74,9 @@ public class SearchGame_Duel {
         //affichage du code secret pour mode développeur
         System.out.println("code que l'utilisateur doit trouver: "+showSecretCode( secretCodeForUser ));
         System.out.println("code que l'ordinateur doit trouver: "+showSecretCode( secretCodeForAI ));
+
+        //Tour de l'utilisateur
         do{
-            //Tour de l'utilisateur
             do{
                 try{
                     catched = false;
@@ -95,43 +97,39 @@ public class SearchGame_Duel {
                 }
             }while (catched);
             //vérification réponse/code
-            userReponseToString = tryOutCheckSearchGame(userInputToArray, secretCodeForUser, userInput);
+            userReponseToString = tryOutCheckMastermindGame(userInputToArray, secretCodeForUser, userInput);
             if(!userReponseToString.equals( winwin )) {
-
                 //Tour de l'ordinateur
                 ArrayList AIinputToArray = new ArrayList();
                 int first = (int) (Math.random() * 10);
                 int second = (int) (Math.random() * 10);
                 int third = (int) (Math.random() * 10);
                 int fourth = (int) (Math.random() * 10);
-
                 System.out.println( "\nProposition de l'ordinateur:" );
                 //Si des essais ont déjà été faits par l'AI:
                 if (!AIReponseToString.isEmpty()) {
-                    AIinputToArray.clear(); // on vide la liste de l'essai AI
-                    for (int i = 0; i < AIReponseToString.length(); i++) {
-                        //On garde le chiffre donné s'il est bon
-                        if (AIReponseToString.charAt( i ) == '=') {
+                    // on vide la liste de l'essai AI
+                    AIinputToArray.clear();
+                    for (int i = 0; i < AIinput.length(); i++) {
+                        //On garde le chiffre donné s'il est bon et à la bonne place
+                        if (AIinput.charAt( i ) == secretCodeForAI[i]) {
                             String ok = "" + getNumericValue( AIinput.charAt( i ) );
                             AIinputToArray.add( ok );
+                            System.out.println( ok );
                         }
                         //TODO écarter les propositions déjà faites
-                        //S'il est supérieur à celui du code secret, on lance un random avec en entier max ce chiffre essai
-                        else if (AIReponseToString.charAt( i ) == '-') {
-                            int minus = getNumericValue( AIinput.charAt( i ) );
-                            minus = randomInRange( -1, minus );
-                            AIinputToArray.add( minus );
+                        //S'il est bon mais pas à la bonne place
+                        else if ((AIinput.charAt( i ) != secretCodeForAI[i]) && (Arrays.asList( secretCodeForAI ).contains( AIinput.charAt( i ) ))) {
+                            //TODO à implémenter (random en attendant)
+                            AIinputToArray.add( (int) (Math.random() * 10) );
                         }
-                        //S'il est inférieur à celui du code secret, on lance un random avec en entier min ce chiffre essai
-                        else if (AIReponseToString.charAt( i ) == '+') {
-                            int plus = getNumericValue( AIinput.charAt( i ) );
-                            plus = randomInRange( plus - 1, nbr.length - 1 );
-                            AIinputToArray.add( plus );
+                        //Si non trouvé
+                        else {
+                            AIinputToArray.add( (int) (Math.random() * 10) );
                         }
                     }
                     AIinput = myTrimString( AIinputToArray.toString() );
                 }
-
                 //Si c'est le premier essai, on lance 4 randoms
                 else {
                     AIinputToArray.add( first );
@@ -146,7 +144,7 @@ public class SearchGame_Duel {
                     e.printStackTrace();
                 }
                 //vérification réponse/code
-                AIReponseToString = tryOutCheckSearchGame( AIinputToArray, secretCodeForAI, AIinput );
+                AIReponseToString = tryOutCheckMastermindGame( AIinputToArray, secretCodeForAI, AIinput );
             }
         }while(!(userReponseToString.equals( winwin )) && !(AIReponseToString.equals( winwin )));
         if(userReponseToString.equals( winwin )) {
@@ -157,3 +155,4 @@ public class SearchGame_Duel {
         }
     }
 }
+

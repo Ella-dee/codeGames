@@ -25,15 +25,13 @@ import static com.elodie.jeux.Methodes.Methodes_MecaniqueJeu.*;
 
 public class MastermindGame_Challenger {
     /**
-     * <b>Pose les bases et paramètres de base du jeu</b>
-     * <ul>Possède les attributs de bases:
+     * <b>Variables globales:</b>
+     * <ul>
      * <li>tableau de chiffres de 0 à 9</li>
-     * <li>tableau de 4 chiffres comportant la combinaison secrète</li>
-     * @see Methodes_MecaniqueJeu#computedSecretCode()
      * <li>une chaine de caractère vide pour les entrées utilisateur à venir</li>
+     * <li>une chaine de caractère vide représentant les indices "x bien placés, x présents" à venir</li>
      * <li>une chaine de caractère "4 bien placés" représentant l'affichage sortie si la combinaison est trouvée</li>
      * </ul>
-     * <p>On lance le jeu</p>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String userInput = "";

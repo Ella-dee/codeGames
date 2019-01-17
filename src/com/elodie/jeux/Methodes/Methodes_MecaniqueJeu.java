@@ -37,7 +37,7 @@ public class Methodes_MecaniqueJeu {
         do{
             try{
                 catched = false;
-                System.out.println( "\nSaisissez une combinaison secrète à quatre chiffres:" );
+                System.out.println( "Saisissez une combinaison secrète à quatre chiffres:" );
                 input = sc.nextLine();
                 inputToArray = createArrayListeFromInput( input );
                 if(!checkOccurencesFromListInArray(inputToArray, nbr)){
@@ -83,7 +83,7 @@ public class Methodes_MecaniqueJeu {
         String equal = "=";
         String minus = "-";
         String plus = "+";
-        System.out.print( "\nProposition: " + input + " -> Réponse: " );
+        System.out.print( "Proposition: " + input + " -> Réponse: " );
         int i=0;
         for (Object o:liste) {
             if (Integer.parseInt( o.toString())== secret[i]) {
@@ -126,7 +126,7 @@ public class Methodes_MecaniqueJeu {
         ArrayList output = new ArrayList();
         int found = 0;
         int somewhere = 0;
-        System.out.println( "Proposition: " + input + " -> Réponse: " );
+        System.out.print( "Proposition: " + input + " -> Réponse: " );
         int i=0;
         //On parcoure la liste des entrées utilisateurs en parsant chaque entrée en chiffre entier
         for (Object o:liste) {
