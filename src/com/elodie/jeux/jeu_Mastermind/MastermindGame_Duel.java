@@ -38,14 +38,18 @@ public class MastermindGame_Duel {
      * <li>une chaine de caractère vide représentant les indices "x bien placés, x présents" à venir pour l'utilisateur</li>
      * <li>une chaine de caractère vide représentant les indices "x bien placés, x présents" à venir pour l'AI</li>
      * <li>une chaine de caractère "4 bien placés" représentant l'affichage sortie si la combinaison est trouvée</li>
+     * <li>un compteur d'essais pouyr l'utilisateur</li>
+     * <li>un compteur d'essais pour l'ordinateur</li>
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String userInput = "";
     static String AIinput = "";
-    static String userReponseToString = "";
-    static String AIReponseToString = "";
+    static String verifReponseUser = "";
+    static String verifReponseAI = "";
     final String winwin = "4 bien placés";
+    static int counterUser = 0;
+    static int counterAI = 0;
 
     public MastermindGame_Duel(){
     /**
@@ -97,8 +101,9 @@ public class MastermindGame_Duel {
                 }
             }while (catched);
             //vérification réponse/code
-            userReponseToString = tryOutCheckMastermindGame(userInputToArray, secretCodeForUser, userInput);
-            if(!userReponseToString.equals( winwin )) {
+            verifReponseUser = tryOutCheckMastermindGame(userInputToArray, secretCodeForUser, userInput);
+            counterUser++;
+            if(!verifReponseUser.equals( winwin ) && counterUser < 6) {
                 //Tour de l'ordinateur
                 ArrayList AIinputToArray = new ArrayList();
                 int first = (int) (Math.random() * 10);
@@ -107,7 +112,7 @@ public class MastermindGame_Duel {
                 int fourth = (int) (Math.random() * 10);
                 System.out.println( "\nProposition de l'ordinateur:" );
                 //Si des essais ont déjà été faits par l'AI:
-                if (!AIReponseToString.isEmpty()) {
+                if (!verifReponseAI.isEmpty()) {
                     // on vide la liste de l'essai AI
                     AIinputToArray.clear();
                     for (int i = 0; i < AIinput.length(); i++) {
@@ -144,14 +149,19 @@ public class MastermindGame_Duel {
                     e.printStackTrace();
                 }
                 //vérification réponse/code
-                AIReponseToString = tryOutCheckMastermindGame( AIinputToArray, secretCodeForAI, AIinput );
+                verifReponseAI = tryOutCheckMastermindGame( AIinputToArray, secretCodeForAI, AIinput );
+                counterAI++;
             }
-        }while(!(userReponseToString.equals( winwin )) && !(AIReponseToString.equals( winwin )));
-        if(userReponseToString.equals( winwin )) {
+        }while(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin ) && counterAI <6 && counterUser <6);
+        if(verifReponseUser.equals( winwin )) {
             System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
         }
-        else if(AIReponseToString.equals( winwin )) {
+        else if(verifReponseAI.equals( winwin )) {
             System.out.println( "\nL'ordinateur a trouvé votre combinaison: !" );
+            System.out.println( "La combinaison de l'ordinateur était: "+ secretCodeForUser );
+        }
+        else if(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin )){
+            System.out.println( "Aucune combinaison trouvée. Le code de l'ordinateur était : " + showSecretCode( secretCodeForUser ));
         }
     }
 }

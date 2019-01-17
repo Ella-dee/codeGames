@@ -30,13 +30,14 @@ public class SearchGame_Defenseur {
      * <li>une chaine de caractère vide pour les entrées AI à venir</li>
      * <li>une chaine de caractère vide représentant les indices "+-=+" à venir</li>
      * <li>une chaine de caractère représentant "====" soit l'affichage de sortie pour une combinaison gagnante. </li>
+     * <li>un compteur d'essais</li>
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String AIinput = "";
-    static String reponseToString = "";
+    static String verifReponseComp = "";
     final String winwin = "====";
-
+    static int counter = 0;
     /**
      * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
@@ -46,11 +47,13 @@ public class SearchGame_Defenseur {
      * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
      * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
      * <p>Si l'ordinateur trouve alors apparait "====", la partie s'arrête.
+     * <p>Si l'ordinateur ne trouve pas en moins de 6 essais, la partie s'arrête.</p>
+     * @see Methodes_MecaniqueJeu#showSecretCode(int[])
      */
     public SearchGame_Defenseur(){
         int[] secretCode = inputSecretCode();
-        ArrayList inputToArray = new ArrayList();
-        int first = (int) (Math.random() * 10);
+       ArrayList AIinputToArray = new ArrayList();
+       int first = (int) (Math.random() * 10);
         int second = (int) (Math.random() * 10);
         int third = (int) (Math.random() * 10);
         int fourth = (int) (Math.random() * 10);
@@ -59,38 +62,38 @@ public class SearchGame_Defenseur {
         //On lance le jeu
         do{
             //Si des essais ont déjà été faits par l'AI:
-                if(!reponseToString.isEmpty()){
-                    inputToArray.clear(); // on vide la liste de l'essai AI
-                    for (int i = 0; i < reponseToString.length(); i++) {
+                if(!verifReponseComp.isEmpty()){
+                    AIinputToArray.clear(); // on vide la liste de l'essai AI
+                    for (int i = 0; i < verifReponseComp.length(); i++) {
                         //On garde le chiffre donné s'il est bon
-                        if (reponseToString.charAt(i) == '=') {
+                        if (verifReponseComp.charAt(i) == '=') {
                             String ok = ""+ getNumericValue(AIinput.charAt(i));
-                            inputToArray.add( ok );
+                            AIinputToArray.add( ok );
                         }
                         //TODO écarter les propositions déjà faites
                         //S'il est supérieur à celui du code secret, on lance un random avec en entier max ce chiffre essai
-                        else if(reponseToString.charAt(i) == '-'){
+                        else if(verifReponseComp.charAt(i) == '-'){
                             int minus = getNumericValue(AIinput.charAt(i));
                             minus = randomInRange( -1, minus);
-                            inputToArray.add( minus );
+                            AIinputToArray.add( minus );
                         }
                         //S'il est inférieur à celui du code secret, on lance un random avec en entier min ce chiffre essai
-                        else if(reponseToString.charAt(i) == '+'){
+                        else if(verifReponseComp.charAt(i) == '+'){
                             int plus = getNumericValue(AIinput.charAt(i));
                             plus = randomInRange( plus-1, nbr.length-1);
-                            inputToArray.add( plus );
+                            AIinputToArray.add( plus );
                         }
                     }
-                    AIinput = myTrimString(inputToArray.toString());
+                    AIinput = myTrimString(AIinputToArray.toString());
                 }
 
                 //Si c'est le premier essai, on lance 4 randoms
                 else{
-                    inputToArray.add( first );
-                    inputToArray.add( second );
-                    inputToArray.add( third );
-                    inputToArray.add( fourth );
-                    AIinput = myTrimString( inputToArray.toString() );
+                    AIinputToArray.add( first );
+                    AIinputToArray.add( second );
+                    AIinputToArray.add( third );
+                    AIinputToArray.add( fourth );
+                    AIinput = myTrimString( AIinputToArray.toString() );
                 }
                 try {
                     Thread.sleep(2000);
@@ -98,9 +101,15 @@ public class SearchGame_Defenseur {
                     e.printStackTrace();
                 }
             //vérification réponse/code
-            reponseToString = tryOutCheckSearchGame(inputToArray, secretCode, AIinput);
-        }while(!(reponseToString.equals( winwin )));
-        System.out.println( "\nL'ordinateur  trouvé votre combinaison!" );
+            verifReponseComp = tryOutCheckSearchGame(AIinputToArray, secretCode, AIinput);
+                counter++;
+        }while(!verifReponseComp.equals( winwin ) && counter < 6);
+        if(verifReponseComp.equals( winwin )) {
+            System.out.println( "\nL'ordinateur a trouvé votre combinaison!" );
+        }
+        else {
+            System.out.println( "\nL'ordinateur n'a pas trouvé votre combinaison!" );
+        }
     }
     }
 

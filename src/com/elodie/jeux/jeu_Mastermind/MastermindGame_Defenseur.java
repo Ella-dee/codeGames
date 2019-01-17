@@ -31,13 +31,14 @@ public class MastermindGame_Defenseur {
      * <li>tableau de chiffres de 0 à 9</li>
      * <li>une chaine de caractère vide pour les entrées AI à venir</li>
      * <li>une chaine de caractère vide représentant les indices "x bien placés, x présents" à venir</li>
-     * <li>une chaine de caractère "4 bien placés" représentant l'affichage sortie si la combinaison est trouvée</li>
+     * <li>un compteur d'essais</li>
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String AIinput = "";
-    static String reponseToString = "";
+    static String verifReponse = "";
     final String winwin = "4 bien placés";
+    static int counter = 0;
     /**
      * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
@@ -62,7 +63,7 @@ public class MastermindGame_Defenseur {
         do {
             System.out.println( "Proposition de l'ordinateur." );
             //Si des essais ont déjà été faits par l'AI:
-            if(!reponseToString.isEmpty()){
+            if(!verifReponse.isEmpty()){
                 // on vide la liste de l'essai AI
                 inputToArray.clear();
                 for (int i = 0; i < AIinput.length(); i++) {
@@ -99,8 +100,14 @@ public class MastermindGame_Defenseur {
                 e.printStackTrace();
             }
             //vérification réponse/code
-            reponseToString = tryOutCheckMastermindGame(inputToArray, secretCode, AIinput);
-        }while(!(reponseToString.equals(winwin)));
-        System.out.println( "\nL'ordinateur  trouvé votre combinaison!" );
+            verifReponse = tryOutCheckMastermindGame(inputToArray, secretCode, AIinput);
+            counter++;
+        }while(!verifReponse.equals(winwin) && counter < 6);
+        if(verifReponse.equals( winwin )) {
+            System.out.println( "\nL'ordinateur a trouvé votre combinaison!" );
+        }
+        else {
+            System.out.println( "\nL'ordinateur n'a pas trouvé votre combinaison!" );
+        }
     }
 }

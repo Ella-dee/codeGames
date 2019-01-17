@@ -32,25 +32,25 @@ public class SearchGame_Challenger {
      * <li>une chaine de caractère vide représentant les indices "+-=+" à venir</li>
      * <li>une chaine de caractère "====" représentant l'affichage sortie si la combinaison est trouvée</li>
      * <li>un booléen pour les exceptions</li>
+     * <li>un compteur d'essais</li>
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String userInput = "";
     static String verifReponse = "";
     static final String winwin = "====";
-    boolean catched = false;
+    static int counter = 0;
 
 
     /**
      * Méthode comprend la mécanique du jeu pour le Mode Challenger (utilisateur VS AI).
      * <p>On créée une combinaison secrète.</p>
      * @see Methodes_MecaniqueJeu#computedSecretCode()
-     * <p>On demande à l'utilisateur d'entrer une combinaison</p>
-     * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
-     * @see ExceptionNaN#ExceptionNaN()
-     * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
+     * <p>Tour de jeu de l'utilisateur.</p>
+     * @see Methodes_MecaniqueJeu#playerTurnSearchGame(String, ArrayList, int[])
      * <p>Si l'utilisateur trouve alors apparait "====", la partie s'arrête.</p>
+     * <p>Si l'utilisateur ne trouve pas en moins de 6 essais, la partie s'arrête et on affiche la solution.</p>
+     * @see Methodes_MecaniqueJeu#showSecretCode(int[])
      */
 
     public SearchGame_Challenger() {
@@ -61,7 +61,13 @@ public class SearchGame_Challenger {
             System.out.println(showSecretCode( secretCode ));
             do{
                 verifReponse = playerTurnSearchGame( userInput, inputToArray, secretCode );
-            }while(!(verifReponse.equals( winwin )));
+                counter++;
+            }while(!(verifReponse.equals( winwin )) && counter < 6);
+            if(verifReponse.equals( winwin )){
             System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
+            }
+            else{
+                System.out.println( "Vous n'avez pas trouvé la combinaison. La réponse était : " + showSecretCode( secretCode ));
+            }
         }
     }

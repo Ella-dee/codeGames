@@ -35,6 +35,8 @@ public class SearchGame_Duel {
      * <li>une chaine de caractère vide représentant les indices "+-=+" à venir pour l'AI</li>
      * <li>une chaine de caractère "====" représentant l'affichage sortie si la combinaison est trouvée</li>
      * <li>un booléen pour les exceptions</li>
+     * <li>un compteur d'essais pouyr l'utilisateur</li>
+     * <li>un compteur d'essais pour l'ordinateur</li>
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
@@ -43,22 +45,21 @@ public class SearchGame_Duel {
     static String verifReponseUser = "";
     static String verifReponseAI = "";
     static final String winwin = "====";
+    static int counterUser = 0;
+    static int counterAI = 0;
     boolean catched = false;
 
     /**
      * Méthode comprend la mécanique du jeu pour le Mode Duel (ustilisateur et AI à chaque tour).
      * <p>On créée une combinaison secrète.</p>
      * @see Methodes_MecaniqueJeu#computedSecretCode()
-     * <p>On demande à l'utilisateur d'entrer une combinaison</p>
-     * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
-     * @see ExceptionNaN#ExceptionNaN()
-     * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
-     * <p>Puis c'est au tour de l'ordinateur de jouer:
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
      * @see Methodes_MecaniqueJeu#inputSecretCode()
-     * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
-     * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
+     * <p>Tour de l'utilisateur:</p>
+     * @see Methodes_MecaniqueJeu#playerTurnSearchGame(String, ArrayList, int[])
+     * <p>Puis c'est au tour de l'ordinateur de jouer:
+     * <p>On demande à l'AI d'entrer une combinaison de chiffres, on compare à la combinaison
+     * secrète puis affiche les indices "+", "-", ou "="</p>
      * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
      * <p>Si l'utilisateur ou l'ordinateur trouve la bonne combinaison alors apparait "====", la partie s'arrête.
      * @see Methodes_MecaniqueJeu#stopOuEncore()
@@ -76,7 +77,8 @@ public class SearchGame_Duel {
         do{
             //Tour de l'utilisateur
             verifReponseUser = playerTurnSearchGame( userInput, userInputToArray, secretCodeForUser );
-            if(!verifReponseUser.equals( winwin )) {
+            counterUser++;
+            if(!verifReponseUser.equals( winwin ) && counterUser < 6) {
 
                 //Tour de l'ordinateur
                 ArrayList AIinputToArray = new ArrayList();
@@ -127,13 +129,18 @@ public class SearchGame_Duel {
                 }
                 //vérification réponse/code
                 verifReponseAI = tryOutCheckSearchGame( AIinputToArray, secretCodeForAI, AIinput );
+                counterAI++;
             }
-        }while(!(verifReponseUser.equals( winwin )) && !(verifReponseAI.equals( winwin )));
+        }while(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin ) && counterAI <6 && counterUser <6);
         if(verifReponseUser.equals( winwin )) {
             System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
         }
         else if(verifReponseAI.equals( winwin )) {
             System.out.println( "\nL'ordinateur a trouvé votre combinaison: !" );
+            System.out.println( "La combinaison de l'ordinateur était: "+ secretCodeForUser );
+        }
+        else if(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin )){
+            System.out.println( "Aucune combinaison trouvée. Le code de l'ordinateur était : " + showSecretCode( secretCodeForUser ));
         }
     }
 }

@@ -31,12 +31,14 @@ public class MastermindGame_Challenger {
      * <li>une chaine de caractère vide pour les entrées utilisateur à venir</li>
      * <li>une chaine de caractère vide représentant les indices "x bien placés, x présents" à venir</li>
      * <li>une chaine de caractère "4 bien placés" représentant l'affichage sortie si la combinaison est trouvée</li>
+     * <li>un compteur d'essais</li>
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String userInput = "";
-    static String reponseToString = "";
+    static String verifReponse = "";
     final String winwin = "4 bien placés";
+    static int counter = 0;
 
     public MastermindGame_Challenger(){
     /**
@@ -48,6 +50,8 @@ public class MastermindGame_Challenger {
      * <p>On compare à la combinaison secrète puis affiche si les chiffres sont bien placés ou au moins présents.</p>
      * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String)
      * <p>Si l'utilisateur trouve alors apparait "4 bien placés", la partie s'arrête.</p>
+     * <p>Si l'utilisateur ne trouve pas en moins de 6 essais, la partie s'arrête et on affiche la solution.</p>
+     * @see Methodes_MecaniqueJeu#showSecretCode(int[])
      */
         int[] secretCode = computedSecretCode();
         Scanner sc = new Scanner( System.in );
@@ -76,9 +80,15 @@ public class MastermindGame_Challenger {
                 }
             }while (catched);
             //vérification réponse/code
-            reponseToString = tryOutCheckMastermindGame(inputToArray, secretCode, userInput);
-        }while(!(reponseToString.equals( winwin )));
-        System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
+            verifReponse = tryOutCheckMastermindGame(inputToArray, secretCode, userInput);
+            counter++;
+        }while(!(verifReponse.equals( winwin )) && counter < 6);
+        if(verifReponse.equals( winwin )){
+            System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
+        }
+        else{
+            System.out.println( "Vous n'avez pas trouvé la combinaison. La réponse était : " + showSecretCode( secretCode ));
+        }
     }
 }
 
