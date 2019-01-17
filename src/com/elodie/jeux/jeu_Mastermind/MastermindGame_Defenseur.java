@@ -40,8 +40,8 @@ public class MastermindGame_Defenseur {
     static int counter = 0;
     /**
      * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
-     * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
-     * @see Methodes_MecaniqueJeu#inputSecretCode()
+     * <p>On demande à l'utilisateur de créer une combinaison secrète avec un nombre de cases entre 4 et 10.</p>
+     * @see Methodes_MecaniqueJeu#inputSecretCode(int)
      * <p>On lance le jeu</p>
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
      * <p>On compare à la combinaison secrète puis affiche les indices bien placés ou présents</p>
@@ -49,12 +49,9 @@ public class MastermindGame_Defenseur {
      * <p>Si l'ordinateur trouve alors apparait "4 bien placés", le jeu s'arrête</p>
      */
     public MastermindGame_Defenseur(){
-        int[] secretCode = inputSecretCode();
+        int cases = chooseCodeLenght();
+        int[] secretCode= computedSecretCode(cases);
         ArrayList inputToArray = new ArrayList();
-        int first = (int) (Math.random() * 10);
-        int second = (int) (Math.random() * 10);
-        int third = (int) (Math.random() * 10);
-        int fourth = (int) (Math.random() * 10);
 
         //affichage du code secret pour mode développeur
         showSecretCode( secretCode );
@@ -85,13 +82,12 @@ public class MastermindGame_Defenseur {
                 }
                 AIinput = myTrimString(inputToArray.toString());
             }
-            //Si c'est le premier essai, on lance 4 randoms
-            else{
-                inputToArray.add( first );
-                inputToArray.add( second );
-                inputToArray.add( third );
-                inputToArray.add( fourth );
-                AIinput = myTrimString( inputToArray.toString() );
+            //Si c'est le premier essai, on lance des randoms
+            else {
+                for (int i = 0; i < secretCode.length; i++) {
+                    inputToArray.add( (int) (Math.random() * 10) );
+                    AIinput = myTrimString( inputToArray.toString() );
+                }
             }
             try {
                 Thread.sleep(2000);

@@ -71,7 +71,7 @@ public class MastermindGame_Duel {
      * @see Methodes_MecaniqueJeu#stopOuEncore()
      */
         Scanner sc = new Scanner( System.in );
-        int cases = sc.nextInt();
+        int cases = chooseCodeLenght();
         int[] secretCodeForUser = computedSecretCode(cases);
         int[] secretCodeForAI = inputSecretCode(cases);
         boolean catched;

@@ -40,7 +40,7 @@ public class SearchGame_Defenseur {
     static int counter = 0;
     /**
      * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
-     * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
+     * <p>On demande à l'utilisateur de créer une combinaison secrète avec un nombre de cases entre 4 et 10.</p>
      * @see Methodes_MecaniqueJeu#inputSecretCode(int)
      * <p>On lance le jeu</p>
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
