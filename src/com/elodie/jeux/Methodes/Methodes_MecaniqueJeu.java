@@ -103,6 +103,43 @@ public class Methodes_MecaniqueJeu {
         return outputToString;
     }
 
+    /**
+     * Méthode représente le tour de jeu de l'utilisateur.
+     * Il fait une proposition, on vérifie qu'il s'agit bien de nombres, puis on compare avec le code secret.
+     * Ensuite on renvoie les indices "-,+,=".
+     * @param userInput chaine de caractères représentant les entrées utilisateur
+     * @param userInputListe liste contenant la chaine userInput
+     * @param secret tableau d'entiers représentant le code secret
+     * @return une chaine de caractère représetnant les indices "-,+,=" de la réponse utilisateur.
+     */
+    public static String playerTurnSearchGame(String userInput, ArrayList userInputListe, int[] secret){
+    Scanner sc = new Scanner( System.in );
+    boolean catched;
+    final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
+    String indicesReponse = "";
+    do{
+        try{
+            catched = false;
+            System.out.println( "\nQuelle est votre proposition?" );
+            userInput = sc.nextLine();
+            userInputListe = createArrayListeFromInput( userInput );
+            if(!checkOccurencesFromListInArray(userInputListe, nbr)){
+                throw new ExceptionNaN();
+            }
+        } catch (ExceptionNaN e) {
+            catched = true;
+        }
+        finally {
+            if ( userInputListe.size() > secret.length || userInputListe.size() < secret.length) {
+                System.out.print( "Vous devez saisir une combinaison à " + secret.length + " chiffres." );
+                catched = true;
+            }
+        }
+    }while (catched);
+    //vérification réponse/code
+    indicesReponse = tryOutCheckSearchGame(userInputListe, secret, userInput);
+    return indicesReponse;
+}
     //Méthode pour le jeu Mastermind
     /**
      * Méthode pour le jeu Mastermind:

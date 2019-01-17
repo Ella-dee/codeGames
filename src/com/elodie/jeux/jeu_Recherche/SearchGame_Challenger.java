@@ -36,7 +36,7 @@ public class SearchGame_Challenger {
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String userInput = "";
-    static String reponseToString = "";
+    static String verifReponse = "";
     static final String winwin = "====";
     boolean catched = false;
 
@@ -55,34 +55,13 @@ public class SearchGame_Challenger {
 
     public SearchGame_Challenger() {
             int[] secretCode = computedSecretCode();
-            Scanner sc = new Scanner( System.in );
-            boolean catched;
             ArrayList inputToArray = new ArrayList();
+
             //affichage du code secret pour mode développeur
             System.out.println(showSecretCode( secretCode ));
             do{
-                do{
-                    try{
-                        catched = false;
-                        System.out.println( "\nQuelle est votre proposition?" );
-                        userInput = sc.nextLine();
-                        inputToArray = createArrayListeFromInput( userInput );
-                        if(!checkOccurencesFromListInArray(inputToArray, nbr)){
-                            throw new ExceptionNaN();
-                        }
-                    } catch (ExceptionNaN e) {
-                        catched = true;
-                    }
-                    finally {
-                        if ( inputToArray.size() > secretCode.length || inputToArray.size() < secretCode.length) {
-                            System.out.print( "Vous devez saisir une combinaison à " + secretCode.length + " chiffres." );
-                            catched = true;
-                        }
-                    }
-                }while (catched);
-                //vérification réponse/code
-                reponseToString = tryOutCheckSearchGame(inputToArray, secretCode, userInput);
-            }while(!(reponseToString.equals( winwin )));
+                verifReponse = playerTurnSearchGame( userInput, inputToArray, secretCode );
+            }while(!(verifReponse.equals( winwin )));
             System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
         }
     }

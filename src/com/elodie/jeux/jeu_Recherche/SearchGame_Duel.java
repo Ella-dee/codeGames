@@ -40,8 +40,8 @@ public class SearchGame_Duel {
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String userInput = "";
     static String AIinput = "";
-    static String userReponseToString = "";
-    static String AIReponseToString = "";
+    static String verifReponseUser = "";
+    static String verifReponseAI = "";
     static final String winwin = "====";
     boolean catched = false;
 
@@ -75,28 +75,8 @@ public class SearchGame_Duel {
         System.out.println("code que l'ordinateur doit trouver: "+showSecretCode( secretCodeForAI ));
         do{
             //Tour de l'utilisateur
-            do{
-                try{
-                    catched = false;
-                    System.out.println( "\nQuelle est votre proposition?" );
-                    userInput = sc.nextLine();
-                    userInputToArray = createArrayListeFromInput( userInput );
-                    if(!checkOccurencesFromListInArray(userInputToArray, nbr)){
-                        throw new ExceptionNaN();
-                    }
-                } catch (ExceptionNaN e) {
-                    catched = true;
-                }
-                finally {
-                    if ( userInputToArray.size() > secretCodeForUser.length || userInputToArray.size() < secretCodeForUser.length) {
-                        System.out.print( "Vous devez saisir une combinaison à " + secretCodeForUser.length + " chiffres." );
-                        catched = true;
-                    }
-                }
-            }while (catched);
-            //vérification réponse/code
-            userReponseToString = tryOutCheckSearchGame(userInputToArray, secretCodeForUser, userInput);
-            if(!userReponseToString.equals( winwin )) {
+            verifReponseUser = playerTurnSearchGame( userInput, userInputToArray, secretCodeForUser );
+            if(!verifReponseUser.equals( winwin )) {
 
                 //Tour de l'ordinateur
                 ArrayList AIinputToArray = new ArrayList();
@@ -107,23 +87,23 @@ public class SearchGame_Duel {
 
                 System.out.println( "\nProposition de l'ordinateur:" );
                 //Si des essais ont déjà été faits par l'AI:
-                if (!AIReponseToString.isEmpty()) {
+                if (!verifReponseAI.isEmpty()) {
                     AIinputToArray.clear(); // on vide la liste de l'essai AI
-                    for (int i = 0; i < AIReponseToString.length(); i++) {
+                    for (int i = 0; i < verifReponseAI.length(); i++) {
                         //On garde le chiffre donné s'il est bon
-                        if (AIReponseToString.charAt( i ) == '=') {
+                        if (verifReponseAI.charAt( i ) == '=') {
                             String ok = "" + getNumericValue( AIinput.charAt( i ) );
                             AIinputToArray.add( ok );
                         }
                         //TODO écarter les propositions déjà faites
                         //S'il est supérieur à celui du code secret, on lance un random avec en entier max ce chiffre essai
-                        else if (AIReponseToString.charAt( i ) == '-') {
+                        else if (verifReponseAI.charAt( i ) == '-') {
                             int minus = getNumericValue( AIinput.charAt( i ) );
                             minus = randomInRange( -1, minus );
                             AIinputToArray.add( minus );
                         }
                         //S'il est inférieur à celui du code secret, on lance un random avec en entier min ce chiffre essai
-                        else if (AIReponseToString.charAt( i ) == '+') {
+                        else if (verifReponseAI.charAt( i ) == '+') {
                             int plus = getNumericValue( AIinput.charAt( i ) );
                             plus = randomInRange( plus - 1, nbr.length - 1 );
                             AIinputToArray.add( plus );
@@ -146,13 +126,13 @@ public class SearchGame_Duel {
                     e.printStackTrace();
                 }
                 //vérification réponse/code
-                AIReponseToString = tryOutCheckSearchGame( AIinputToArray, secretCodeForAI, AIinput );
+                verifReponseAI = tryOutCheckSearchGame( AIinputToArray, secretCodeForAI, AIinput );
             }
-        }while(!(userReponseToString.equals( winwin )) && !(AIReponseToString.equals( winwin )));
-        if(userReponseToString.equals( winwin )) {
+        }while(!(verifReponseUser.equals( winwin )) && !(verifReponseAI.equals( winwin )));
+        if(verifReponseUser.equals( winwin )) {
             System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
         }
-        else if(AIReponseToString.equals( winwin )) {
+        else if(verifReponseAI.equals( winwin )) {
             System.out.println( "\nL'ordinateur a trouvé votre combinaison: !" );
         }
     }
