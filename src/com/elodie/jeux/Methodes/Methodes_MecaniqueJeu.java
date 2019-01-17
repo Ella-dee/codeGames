@@ -4,41 +4,70 @@ import com.elodie.jeux.Exceptions.ExceptionNaL;
 import com.elodie.jeux.Exceptions.ExceptionNaN;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import static com.elodie.jeux.Methodes.Methodes_Generales.*;
-import static java.lang.Character.getNumericValue;
 
 public class Methodes_MecaniqueJeu {
 
     //Méthodes communes
+
     /**
-     * Méthode génère un code aléatoire de 4 chiffres compris entre 0 et 9
-     * @return un code secret sous forme de tableau d'entiers
+     * Méthode permet de choisir la longueur du code secret à deviner.
+     * @return le nombre de cases du code secret à générer sous forme d'entier.
      */
-    public static int[] computedSecretCode(){
-         int first = (int)(Math.random() * 10);
-         int second = (int)(Math.random() * 10);
-         int third = (int)(Math.random() * 10);
-         int fourth = (int)(Math.random() * 10);
-         int[] code = {first, second, third, fourth};
-         return code;
+    public static int chooseCodeLenght(){
+        boolean catched = false;
+        String cases = "";
+        ArrayList inputToArray = new ArrayList(  );
+        Scanner sc = new Scanner( System.in );
+        final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
+        do{
+            try {
+                catched = false;
+                System.out.println( "De combien de chiffres souhaitez vous composer le code secret: (4 - 10)" );
+                cases = sc.nextLine();
+                inputToArray = createArrayListeFromInput( cases );
+                if (!checkOccurencesFromListInArray( inputToArray, nbr )) {
+                    throw new ExceptionNaN();
+                }
+            } catch (ExceptionNaN e) {
+                catched = true;
+            } finally {
+                if (Integer.parseInt( cases ) > 10 || Integer.parseInt( cases)<4) {
+                    System.out.print( "Vous devez saisir une combinaison entre 4 et 10 chiffres." );
+                    catched = true;
+                }
+            }
+        }while(catched);
+        return Integer.parseInt( cases );
     }
 
     /**
-     * Méthode génère un code de 4 chiffres compris entre 0 et 9 donné par l'utilisateur
+     * Méthode génère un code aléatoire du nombre de chiffres définis par l'utilisateur et compris entre 0 et 9
      * @return un code secret sous forme de tableau d'entiers
      */
-    public static int[] inputSecretCode(){
+    public static int[] computedSecretCode(int cases){
+        int[] code = new int[cases];
+        for(int i = 0; i<cases;i++){
+            code[i] = (int)(Math.random() * 10);
+        }
+        return code;
+    }
+
+    /**
+     * Méthode génère un code de x chiffres compris entre 0 et 9 donné par l'utilisateur
+     * @return un code secret sous forme de tableau d'entiers
+     */
+    public static int[] inputSecretCode(int cases){
+        int[] code = new int[cases];
         Scanner sc = new Scanner( System.in );
         boolean catched;
         ArrayList inputToArray = new ArrayList();
         String input = "";
         final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
-        final int[] code = {0,0,0,0};
         do{
             try{
                 catched = false;
-                System.out.println( "Saisissez une combinaison secrète à quatre chiffres:" );
+                System.out.println( "Saisissez une combinaison secrète à "+cases+" chiffres:" );
                 input = sc.nextLine();
                 inputToArray = createArrayListeFromInput( input );
                 if(!checkOccurencesFromListInArray(inputToArray, nbr)){
@@ -48,8 +77,8 @@ public class Methodes_MecaniqueJeu {
                 catched = true;
             }
             finally {
-                if ( inputToArray.size() > 4) {
-                    System.out.print( "Vous devez saisir une combinaison à 4 chiffres." );
+                if ( inputToArray.size() > cases) {
+                    System.out.print( "Vous devez saisir une combinaison "+cases+" chiffres." );
                     catched = true;
                 }
             }
@@ -61,7 +90,6 @@ public class Methodes_MecaniqueJeu {
             code[i] = oInt;
             i++;
         }
-
         return code;
     }
 

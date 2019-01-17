@@ -70,9 +70,10 @@ public class MastermindGame_Duel {
      * <p>Si l'utilisateur ou l'ordinateur trouve la bonne combinaison alors apparait "4 bien placés", la partie s'arrête.
      * @see Methodes_MecaniqueJeu#stopOuEncore()
      */
-        int[] secretCodeForUser = computedSecretCode();
-        int[] secretCodeForAI = inputSecretCode();
         Scanner sc = new Scanner( System.in );
+        int cases = sc.nextInt();
+        int[] secretCodeForUser = computedSecretCode(cases);
+        int[] secretCodeForAI = inputSecretCode(cases);
         boolean catched;
         ArrayList userInputToArray = new ArrayList();
         //affichage du code secret pour mode développeur
@@ -106,10 +107,6 @@ public class MastermindGame_Duel {
             if(!verifReponseUser.equals( winwin ) && counterUser < 6) {
                 //Tour de l'ordinateur
                 ArrayList AIinputToArray = new ArrayList();
-                int first = (int) (Math.random() * 10);
-                int second = (int) (Math.random() * 10);
-                int third = (int) (Math.random() * 10);
-                int fourth = (int) (Math.random() * 10);
                 System.out.println( "\nProposition de l'ordinateur:" );
                 //Si des essais ont déjà été faits par l'AI:
                 if (!verifReponseAI.isEmpty()) {
@@ -135,12 +132,11 @@ public class MastermindGame_Duel {
                     }
                     AIinput = myTrimString( AIinputToArray.toString() );
                 }
-                //Si c'est le premier essai, on lance 4 randoms
+                //Si c'est le premier essai, on lance des randoms
                 else {
-                    AIinputToArray.add( first );
-                    AIinputToArray.add( second );
-                    AIinputToArray.add( third );
-                    AIinputToArray.add( fourth );
+                    for(int i = 0; i<secretCodeForAI.length;i++) {
+                        AIinputToArray.add( (int) (Math.random() * 10));
+                    }
                     AIinput = myTrimString( AIinputToArray.toString() );
                 }
                 try {
@@ -161,7 +157,7 @@ public class MastermindGame_Duel {
             System.out.println( "La combinaison de l'ordinateur était: "+ secretCodeForUser );
         }
         else if(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin )){
-            System.out.println( "Aucune combinaison trouvée. Le code de l'ordinateur était : " + showSecretCode( secretCodeForUser ));
+            System.out.println( "\nAucune combinaison trouvée. Le code de l'ordinateur était : " + showSecretCode( secretCodeForUser ));
         }
     }
 }

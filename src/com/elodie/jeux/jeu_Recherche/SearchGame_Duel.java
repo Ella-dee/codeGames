@@ -1,6 +1,5 @@
 package com.elodie.jeux.jeu_Recherche;
 
-import com.elodie.jeux.Exceptions.ExceptionNaN;
 import com.elodie.jeux.Methodes.Methodes_MecaniqueJeu;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -51,10 +50,12 @@ public class SearchGame_Duel {
 
     /**
      * Méthode comprend la mécanique du jeu pour le Mode Duel (ustilisateur et AI à chaque tour).
+     * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
+     * @see Methodes_MecaniqueJeu#chooseCodeLenght()
      * <p>On créée une combinaison secrète.</p>
-     * @see Methodes_MecaniqueJeu#computedSecretCode()
+     * @see Methodes_MecaniqueJeu#computedSecretCode(int)
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
-     * @see Methodes_MecaniqueJeu#inputSecretCode()
+     * @see Methodes_MecaniqueJeu#inputSecretCode(int)
      * <p>Tour de l'utilisateur:</p>
      * @see Methodes_MecaniqueJeu#playerTurnSearchGame(String, ArrayList, int[])
      * <p>Puis c'est au tour de l'ordinateur de jouer:
@@ -66,8 +67,9 @@ public class SearchGame_Duel {
      */
 
     public SearchGame_Duel() {
-        int[] secretCodeForUser = computedSecretCode();
-        int[] secretCodeForAI = inputSecretCode();
+        int cases = chooseCodeLenght();
+        int[] secretCodeForUser = computedSecretCode(cases);
+        int[] secretCodeForAI = inputSecretCode(cases);
         Scanner sc = new Scanner( System.in );
         boolean catched;
         ArrayList userInputToArray = new ArrayList();
@@ -82,11 +84,6 @@ public class SearchGame_Duel {
 
                 //Tour de l'ordinateur
                 ArrayList AIinputToArray = new ArrayList();
-                int first = (int) (Math.random() * 10);
-                int second = (int) (Math.random() * 10);
-                int third = (int) (Math.random() * 10);
-                int fourth = (int) (Math.random() * 10);
-
                 System.out.println( "\nProposition de l'ordinateur:" );
                 //Si des essais ont déjà été faits par l'AI:
                 if (!verifReponseAI.isEmpty()) {
@@ -114,12 +111,11 @@ public class SearchGame_Duel {
                     AIinput = myTrimString( AIinputToArray.toString() );
                 }
 
-                //Si c'est le premier essai, on lance 4 randoms
+                //Si c'est le premier essai, on lance des randoms
                 else {
-                    AIinputToArray.add( first );
-                    AIinputToArray.add( second );
-                    AIinputToArray.add( third );
-                    AIinputToArray.add( fourth );
+                    for(int i = 0; i<secretCodeForAI.length;i++) {
+                        AIinputToArray.add( (int) (Math.random() * 10));
+                    }
                     AIinput = myTrimString( AIinputToArray.toString() );
                 }
                 try {
@@ -140,7 +136,7 @@ public class SearchGame_Duel {
             System.out.println( "La combinaison de l'ordinateur était: "+ secretCodeForUser );
         }
         else if(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin )){
-            System.out.println( "Aucune combinaison trouvée. Le code de l'ordinateur était : " + showSecretCode( secretCodeForUser ));
+            System.out.println( "\nAucune combinaison trouvée. Le code de l'ordinateur était : " + showSecretCode( secretCodeForUser ));
         }
     }
 }

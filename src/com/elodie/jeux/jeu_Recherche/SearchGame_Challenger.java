@@ -1,10 +1,7 @@
 package com.elodie.jeux.jeu_Recherche;
 
-import com.elodie.jeux.Exceptions.ExceptionNaN;
 import com.elodie.jeux.Methodes.Methodes_MecaniqueJeu;
 import java.util.ArrayList;
-import java.util.Scanner;
-import static com.elodie.jeux.Methodes.Methodes_Generales.*;
 import static com.elodie.jeux.Methodes.Methodes_MecaniqueJeu.*;
 
 /**
@@ -44,8 +41,10 @@ public class SearchGame_Challenger {
 
     /**
      * Méthode comprend la mécanique du jeu pour le Mode Challenger (utilisateur VS AI).
+     * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
+     * @see Methodes_MecaniqueJeu#chooseCodeLenght()
      * <p>On créée une combinaison secrète.</p>
-     * @see Methodes_MecaniqueJeu#computedSecretCode()
+     * @see Methodes_MecaniqueJeu#computedSecretCode(int)
      * <p>Tour de jeu de l'utilisateur.</p>
      * @see Methodes_MecaniqueJeu#playerTurnSearchGame(String, ArrayList, int[])
      * <p>Si l'utilisateur trouve alors apparait "====", la partie s'arrête.</p>
@@ -54,7 +53,8 @@ public class SearchGame_Challenger {
      */
 
     public SearchGame_Challenger() {
-            int[] secretCode = computedSecretCode();
+        int cases = chooseCodeLenght();
+        int[] secretCode = computedSecretCode(cases);
             ArrayList inputToArray = new ArrayList();
 
             //affichage du code secret pour mode développeur
@@ -67,7 +67,7 @@ public class SearchGame_Challenger {
             System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
             }
             else{
-                System.out.println( "Vous n'avez pas trouvé la combinaison. La réponse était : " + showSecretCode( secretCode ));
+                System.out.println( "\nVous n'avez pas trouvé la combinaison. La réponse était : " + showSecretCode( secretCode ));
             }
         }
     }

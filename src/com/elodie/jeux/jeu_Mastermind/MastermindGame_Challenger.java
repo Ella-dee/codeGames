@@ -43,7 +43,10 @@ public class MastermindGame_Challenger {
     public MastermindGame_Challenger(){
     /**
      * Méthode comprend la mécanique du jeu.
+     * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
+     * @see Methodes_MecaniqueJeu#chooseCodeLenght()
      * <p>On créée une combinaison secrète.</p>
+     * @see Methodes_MecaniqueJeu#computedSecretCode(int)
      * <p>On demande à l'utilisateur d'entrer une combinaison</p>
      * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
      * @see ExceptionNaN#ExceptionNaN()
@@ -53,7 +56,8 @@ public class MastermindGame_Challenger {
      * <p>Si l'utilisateur ne trouve pas en moins de 6 essais, la partie s'arrête et on affiche la solution.</p>
      * @see Methodes_MecaniqueJeu#showSecretCode(int[])
      */
-        int[] secretCode = computedSecretCode();
+        int cases = chooseCodeLenght();
+        int[] secretCode = computedSecretCode(cases);
         Scanner sc = new Scanner( System.in );
         boolean catched;
         ArrayList inputToArray = new ArrayList();
@@ -87,7 +91,7 @@ public class MastermindGame_Challenger {
             System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
         }
         else{
-            System.out.println( "Vous n'avez pas trouvé la combinaison. La réponse était : " + showSecretCode( secretCode ));
+            System.out.println( "\nVous n'avez pas trouvé la combinaison. La réponse était : " + showSecretCode( secretCode ));
         }
     }
 }

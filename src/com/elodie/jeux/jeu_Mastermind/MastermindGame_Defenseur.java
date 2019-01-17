@@ -3,7 +3,6 @@ package com.elodie.jeux.jeu_Mastermind;
 import com.elodie.jeux.Methodes.Methodes_MecaniqueJeu;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import static com.elodie.jeux.Methodes.Methodes_Generales.*;
 import static com.elodie.jeux.Methodes.Methodes_MecaniqueJeu.*;
 import static java.lang.Character.getNumericValue;

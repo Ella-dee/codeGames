@@ -41,7 +41,7 @@ public class SearchGame_Defenseur {
     /**
      * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
-     * @see Methodes_MecaniqueJeu#inputSecretCode()
+     * @see Methodes_MecaniqueJeu#inputSecretCode(int)
      * <p>On lance le jeu</p>
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
      * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
@@ -51,12 +51,9 @@ public class SearchGame_Defenseur {
      * @see Methodes_MecaniqueJeu#showSecretCode(int[])
      */
     public SearchGame_Defenseur(){
-        int[] secretCode = inputSecretCode();
-       ArrayList AIinputToArray = new ArrayList();
-       int first = (int) (Math.random() * 10);
-        int second = (int) (Math.random() * 10);
-        int third = (int) (Math.random() * 10);
-        int fourth = (int) (Math.random() * 10);
+        int cases = chooseCodeLenght();
+        int[] secretCode = inputSecretCode(cases);
+         ArrayList AIinputToArray = new ArrayList();
         //affichage du code secret pour mode développeur
         showSecretCode( secretCode );
         //On lance le jeu
@@ -87,12 +84,11 @@ public class SearchGame_Defenseur {
                     AIinput = myTrimString(AIinputToArray.toString());
                 }
 
-                //Si c'est le premier essai, on lance 4 randoms
+                //Si c'est le premier essai, on lance des randoms
                 else{
-                    AIinputToArray.add( first );
-                    AIinputToArray.add( second );
-                    AIinputToArray.add( third );
-                    AIinputToArray.add( fourth );
+                    for(int i = 0; i<secretCode.length;i++) {
+                    AIinputToArray.add( (int) (Math.random() * 10));
+                }
                     AIinput = myTrimString( AIinputToArray.toString() );
                 }
                 try {
