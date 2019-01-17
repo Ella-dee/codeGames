@@ -50,12 +50,10 @@ public class MastermindGame_Duel {
     final String winwin = "4 bien placés";
     static int counterUser = 0;
     static int counterAI = 0;
-
-    public MastermindGame_Duel(){
     /**
      * Méthode comprend la mécanique du jeu.
      * <p>On créée une combinaison secrète.</p>
-     * @see Methodes_MecaniqueJeu#computedSecretCode()
+     * @see Methodes_MecaniqueJeu#computedSecretCode(int)
      * <p>On demande à l'utilisateur d'entrer une combinaison</p>
      * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
      * @see ExceptionNaN#ExceptionNaN()
@@ -63,13 +61,19 @@ public class MastermindGame_Duel {
      * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String)
      * <p>Puis c'est au tour de l'ordinateur de jouer:
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
-     * @see Methodes_MecaniqueJeu#inputSecretCode()
+     * @see Methodes_MecaniqueJeu#inputSecretCode(int)
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
      * <p>On compare à la combinaison secrète puis affiche les indices bien placés ou présents</p>
      * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String)
      * <p>Si l'utilisateur ou l'ordinateur trouve la bonne combinaison alors apparait "4 bien placés", la partie s'arrête.
      * @see Methodes_MecaniqueJeu#stopOuEncore()
-     */
+     **/
+    public MastermindGame_Duel(){
+
+        System.out.println( "-----------------------------------------" );
+        System.out.println( "Bienvenue dans Mastermind Mode DUEL." );
+        System.out.println( "-----------------------------------------" );
+
         Scanner sc = new Scanner( System.in );
         int cases = chooseCodeLenght();
         int[] secretCodeForUser = computedSecretCode(cases);
@@ -104,7 +108,7 @@ public class MastermindGame_Duel {
             //vérification réponse/code
             verifReponseUser = tryOutCheckMastermindGame(userInputToArray, secretCodeForUser, userInput);
             counterUser++;
-            if(!verifReponseUser.equals( winwin ) && counterUser < 6) {
+            if(!verifReponseUser.equals( winwin )) {
                 //Tour de l'ordinateur
                 ArrayList AIinputToArray = new ArrayList();
                 System.out.println( "\nProposition de l'ordinateur:" );

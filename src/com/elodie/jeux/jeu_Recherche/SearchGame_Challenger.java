@@ -53,6 +53,9 @@ public class SearchGame_Challenger {
      */
 
     public SearchGame_Challenger() {
+        System.out.println( "-----------------------------------------" );
+        System.out.println( "Bienvenue dans Recherche +/- Mode Challenger." );
+        System.out.println( "-----------------------------------------" );
         int cases = chooseCodeLenght();
         int[] secretCode = computedSecretCode(cases);
             ArrayList inputToArray = new ArrayList();

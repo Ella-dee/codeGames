@@ -67,6 +67,11 @@ public class SearchGame_Duel {
      */
 
     public SearchGame_Duel() {
+
+        System.out.println( "-----------------------------------------" );
+        System.out.println( "Bienvenue dans Recherche +/- Mode DUEL." );
+        System.out.println( "-----------------------------------------" );
+
         int cases = chooseCodeLenght();
         int[] secretCodeForUser = computedSecretCode(cases);
         int[] secretCodeForAI = inputSecretCode(cases);
@@ -80,7 +85,7 @@ public class SearchGame_Duel {
             //Tour de l'utilisateur
             verifReponseUser = playerTurnSearchGame( userInput, userInputToArray, secretCodeForUser );
             counterUser++;
-            if(!verifReponseUser.equals( winwin ) && counterUser < 6) {
+            if(!(verifReponseUser.equals( winwin ))) {
 
                 //Tour de l'ordinateur
                 ArrayList AIinputToArray = new ArrayList();
@@ -127,7 +132,7 @@ public class SearchGame_Duel {
                 verifReponseAI = tryOutCheckSearchGame( AIinputToArray, secretCodeForAI, AIinput );
                 counterAI++;
             }
-        }while(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin ) && counterAI <6 && counterUser <6);
+        }while(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin )&& counterAI <6 && counterUser <6);
         if(verifReponseUser.equals( winwin )) {
             System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
         }

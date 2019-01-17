@@ -39,8 +39,6 @@ public class MastermindGame_Challenger {
     static String verifReponse = "";
     final String winwin = "4 bien placés";
     static int counter = 0;
-
-    public MastermindGame_Challenger(){
     /**
      * Méthode comprend la mécanique du jeu.
      * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
@@ -55,7 +53,13 @@ public class MastermindGame_Challenger {
      * <p>Si l'utilisateur trouve alors apparait "4 bien placés", la partie s'arrête.</p>
      * <p>Si l'utilisateur ne trouve pas en moins de 6 essais, la partie s'arrête et on affiche la solution.</p>
      * @see Methodes_MecaniqueJeu#showSecretCode(int[])
-     */
+     **/
+    public MastermindGame_Challenger(){
+
+        System.out.println( "-----------------------------------------" );
+        System.out.println( "Bienvenue dans Mastermind Mode Challenger." );
+        System.out.println( "-----------------------------------------" );
+
         int cases = chooseCodeLenght();
         int[] secretCode = computedSecretCode(cases);
         Scanner sc = new Scanner( System.in );

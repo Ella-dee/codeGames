@@ -49,6 +49,10 @@ public class MastermindGame_Defenseur {
      * <p>Si l'ordinateur trouve alors apparait "4 bien placés", le jeu s'arrête</p>
      */
     public MastermindGame_Defenseur(){
+        System.out.println( "-----------------------------------------" );
+        System.out.println( "Bienvenue dans Mastermind Mode Défenseur." );
+        System.out.println( "-----------------------------------------" );
+
         int cases = chooseCodeLenght();
         int[] secretCode= computedSecretCode(cases);
         ArrayList inputToArray = new ArrayList();

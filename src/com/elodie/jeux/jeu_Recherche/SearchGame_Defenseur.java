@@ -51,6 +51,10 @@ public class SearchGame_Defenseur {
      * @see Methodes_MecaniqueJeu#showSecretCode(int[])
      */
     public SearchGame_Defenseur(){
+        System.out.println( "-----------------------------------------" );
+        System.out.println( "Bienvenue dans Recherche +/- Mode Défenseur." );
+        System.out.println( "-----------------------------------------" );
+
         int cases = chooseCodeLenght();
         int[] secretCode = inputSecretCode(cases);
          ArrayList AIinputToArray = new ArrayList();
