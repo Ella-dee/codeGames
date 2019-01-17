@@ -26,25 +26,28 @@ import static java.lang.Character.getNumericValue;
 
 public class MastermindGame_Defenseur {
     /**
-     * <b>Pose les bases et paramètres de base du jeu</b>
-     * <ul>Possède les attributs de bases:
+     * <b>Variables globales:</b>
+     * <ul>
      * <li>tableau de chiffres de 0 à 9</li>
-     * @see Methodes_MecaniqueJeu#computedSecretCode()
      * <li>une chaine de caractère vide pour les entrées AI à venir</li>
-     * <li>une chaine de caractère vide représentant les indices "x bien placés ou présents" à venir</li>
+     * <li>une chaine de caractère vide représentant les indices "x bien placés, x présents" à venir</li>
      * <li>une chaine de caractère "4 bien placés" représentant l'affichage sortie si la combinaison est trouvée</li>
      * </ul>
-     * <p>On lance le jeu</p>
-     * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
-     * <p>On compare à la combinaison secrète puis affiche les indices bien placés ou présents</p>
-     * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String)
-     * <p>Si l'utilisateur trouve alors apparait "4 bien placés", le jeu s'arrête</p>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String AIinput = "";
     static String reponseToString = "";
     final String winwin = "4 bien placés";
-
+    /**
+     * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
+     * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
+     * @see Methodes_MecaniqueJeu#inputSecretCode()
+     * <p>On lance le jeu</p>
+     * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
+     * <p>On compare à la combinaison secrète puis affiche les indices bien placés ou présents</p>
+     * @see Methodes_MecaniqueJeu#tryOutCheckMastermindGame(ArrayList, int[], String)
+     * <p>Si l'ordinateur trouve alors apparait "4 bien placés", le jeu s'arrête</p>
+     */
     public MastermindGame_Defenseur(){
         int[] secretCode = inputSecretCode();
         ArrayList inputToArray = new ArrayList();

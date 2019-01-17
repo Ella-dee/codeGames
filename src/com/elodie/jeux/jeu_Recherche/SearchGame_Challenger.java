@@ -29,7 +29,7 @@ public class SearchGame_Challenger {
      * <ul>
      * <li>tableau de chiffres de 0 à 9</li>
      * <li>une chaine de caractère vide pour les entrées utilisateur à venir</li>
-     * <li>une chaine de caractère vide représentant la liste ci dessus</li>
+     * <li>une chaine de caractère vide représentant les indices "+-=+" à venir</li>
      * <li>une chaine de caractère "====" représentant l'affichage sortie si la combinaison est trouvée</li>
      * <li>un booléen pour les exceptions</li>
      * </ul>
@@ -50,9 +50,7 @@ public class SearchGame_Challenger {
      * @see ExceptionNaN#ExceptionNaN()
      * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
      * @see Methodes_MecaniqueJeu#tryOutCheckSearchGame(ArrayList, int[], String)
-     * <p>Si l'utilisateur trouve alors apparait "====", la partie s'arrête,
-     * on demande à l'utilisateur s'il veut rejouer.
-     * @see Methodes_MecaniqueJeu#stopOuEncore()
+     * <p>Si l'utilisateur trouve alors apparait "====", la partie s'arrête.</p>
      */
 
     public SearchGame_Challenger() {

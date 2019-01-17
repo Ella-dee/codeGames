@@ -11,23 +11,6 @@ public class Methodes_MecaniqueJeu {
 
     //Méthodes communes
     /**
-     * Méthode affiche le code secret à trouver.
-     * @param code le tableau d'entiers représentant le code secret
-     * @return une chaine de caractères donnant le code secret
-     */
-    public static String showSecretCode(int[] code){
-        //affichage du code secret pour mode développeur
-        StringBuilder sb = new StringBuilder();
-        sb.append("(Code Secret: " );
-        for(int i =0;i<code.length;i++){
-            sb.append( code[i] );
-        }
-        sb.append( ")" );
-        String secretCode = sb.toString();
-        return secretCode;
-    }
-
-    /**
      * Méthode génère un code aléatoire de 4 chiffres compris entre 0 et 9
      * @return un code secret sous forme de tableau d'entiers
      */
@@ -100,7 +83,7 @@ public class Methodes_MecaniqueJeu {
         String equal = "=";
         String minus = "-";
         String plus = "+";
-        System.out.println( "Proposition: " + input + " -> Réponse: " );
+        System.out.print( "\nProposition: " + input + " -> Réponse: " );
         int i=0;
         for (Object o:liste) {
             if (Integer.parseInt( o.toString())== secret[i]) {
@@ -230,7 +213,7 @@ public class Methodes_MecaniqueJeu {
         do{
             try {
                 catched = false;
-                System.out.println( "Veuillez choisir votre mode de jeu: 1 - Challenger, 2 - Défenseur" );
+                System.out.println( "Veuillez choisir votre mode de jeu: 1 - Challenger, 2 - Défenseur, 3 - Duel" );
                 chosenMode = sc.nextLine();
                 inputToArray = createArrayListeFromInput( chosenMode );
                 if(!checkOccurencesFromListInArray(inputToArray, nbr)){
@@ -243,7 +226,7 @@ public class Methodes_MecaniqueJeu {
                 catched = true;
             }
             finally {
-                if(chosenModeParsed < 1|| chosenModeParsed > 2) {
+                if(chosenModeParsed < 1|| chosenModeParsed > 3) {
                     System.out.println( "Vous devez saisir un choix parmis ceux disponibles." );
                     catched = true;
                 }
@@ -309,5 +292,22 @@ public class Methodes_MecaniqueJeu {
         } while (catched);
         chosenGameParsed = Integer.parseInt( chosenGame );
         return chosenGameParsed;
+    }
+    //Pour le mode Développeur
+    /**
+     * Méthode affiche le code secret à trouver.
+     * @param code le tableau d'entiers représentant le code secret
+     * @return une chaine de caractères donnant le code secret
+     */
+    public static String showSecretCode(int[] code){
+        //affichage du code secret pour mode développeur
+        StringBuilder sb = new StringBuilder();
+        sb.append("(Code Secret: " );
+        for(int i =0;i<code.length;i++){
+            sb.append( code[i] );
+        }
+        sb.append( ")" );
+        String secretCode = sb.toString();
+        return secretCode;
     }
 }
