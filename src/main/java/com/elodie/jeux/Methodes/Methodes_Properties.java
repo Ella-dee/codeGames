@@ -63,7 +63,7 @@ public class Methodes_Properties {
         // On instancie un nouvel objet
         Properties myProps = new Properties();
         // On y insère des paires [clé,valeur]
-        myProps.setProperty("mode.dev","0");
+        myProps.setProperty("mode.dev","on");
         try {
             // On stocke le fichier sur le disque
             demo.saveProperties(myProps, propertiesFileLocation, "This is a demo on Methodes_Properties");
