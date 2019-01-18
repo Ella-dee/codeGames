@@ -1,4 +1,4 @@
-package com.elodie.jeux;
+package com.elodie.jeux.Methodes;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,16 +8,16 @@ import java.io.OutputStream;
 import java.util.Iterator;
 import java.util.Properties;
 
-public class PropertiesDemo {
-    public PropertiesDemo() {
+public class Methodes_Properties {
+    public Methodes_Properties() {
         super();
     }
     /**
-     * Cette méthode stocke le fichier Properties à l'emplacement spécifié
+     * Cette méthode stocke le fichier Methodes_Properties à l'emplacement spécifié
      * @param props Le fichier à stocker
      * @param fileLocation L'emplacement où le fichier doit être stocké
      * @param comments Commentaires à insérer en tête du fichier
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException si le fichier n'est pas trouvé
      * @throws IOException si une erreur est survenue lors de l'écriture du fichier
      * */
     public void saveProperties(Properties props, String fileLocation, String comments) throws FileNotFoundException, IOException {
@@ -27,22 +27,22 @@ public class PropertiesDemo {
         out.close();
     }
     /**
-     * Cette méthode lit un fichier Properties à l'emplacement spécifié *
+     * Cette méthode lit un fichier Methodes_Properties à l'emplacement spécifié *
      * @param propertiesFileLocation L'emplacemnt du fichier
-     * @return Le fichier Properties chargé *
+     * @return Le fichier Methodes_Properties chargé *
      * @throws FileNotFoundException si le fichier n'a pas été trouvé
      * @throws IOException si une erreur est survenue durant la lecture
      * */
-    public Properties loadProperties(String propertiesFileLocation) throws FileNotFoundException, IOException {
+    public java.util.Properties loadProperties(String propertiesFileLocation) throws FileNotFoundException, IOException {
         Properties props = new Properties();
         props.load(new FileInputStream(propertiesFileLocation));
         return props;
     }
     /**
-     *Cette méthode affiche cahque paire [clé,valuer] d'un fichier Properties
+     *Cette méthode affiche cahque paire [clé,valuer] d'un fichier Methodes_Properties
      *  @param props Le fichier à afficher
      */
-    public void displayProperties(Properties props) {
+    public static void displayProperties(Properties props) {
         Iterator it = props.keySet().iterator();
         while (it.hasNext()) {
             String propertyName = (String) it.next();
@@ -50,14 +50,14 @@ public class PropertiesDemo {
             System.out.println(propertyName + "=" + propertyValue); }
     }
     /**
-     *  Cette méthode permet de démarrer la démo.
+     *  Cette méthode représente la démo d'utilisation de Propreties.
      *  On y crée un fichier Properties que l'on remplitavec des paires [clé,valeur]
-     *  puis on le stocke sur le disque. Ensuite on le re depuis le disaue et, enfin,
+     *  puis on le stocke sur le disque. Ensuite on le load depuis le disque et, enfin,
      *  son contenu est affiché.
      *  @param args non utilsé
-     *  */
+     */
     public static void main(String[] args) {
-        PropertiesDemo demo = new PropertiesDemo();
+        Methodes_Properties demo = new Methodes_Properties();
         //Emplacement où sera stocké le fichier
         String propertiesFileLocation = "C:\\Users\\elodie\\IdeaProjects\\jeux\\src\\main\\resources\\config.propreties";
         // On instancie un nouvel objet
@@ -66,8 +66,8 @@ public class PropertiesDemo {
         myProps.setProperty("mode.dev","0");
         try {
             // On stocke le fichier sur le disque
-            demo.saveProperties(myProps, propertiesFileLocation, "This is a demo on Properties");
-            // On crée un nouvel objet Properties en lisant le fichier sur le disque
+            demo.saveProperties(myProps, propertiesFileLocation, "This is a demo on Methodes_Properties");
+            // On crée un nouvel objet Methodes_Properties en lisant le fichier sur le disque
             Properties loadedProps = demo.loadProperties(propertiesFileLocation);
             //On affiche le contenu du fichier
             demo.displayProperties(loadedProps);

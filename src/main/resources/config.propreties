@@ -1,3 +1,5 @@
 #Sauvegarde config.propreties
-#Fri Jan 18 15:18:08 CET 2019
-mode.dev=1
+#Fri Jan 18 17:02:42 CET 2019
+mode.dev=on
+max.tries=4
+max.cases=4
