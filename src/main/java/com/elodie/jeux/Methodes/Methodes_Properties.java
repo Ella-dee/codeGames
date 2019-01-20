@@ -49,14 +49,14 @@ public class Methodes_Properties {
             String propertyValue = props.getProperty(propertyName);
             System.out.println(propertyName + "=" + propertyValue); }
     }
-    /**
+   /* /**
      *  Cette méthode représente la démo d'utilisation de Propreties.
      *  On y crée un fichier Properties que l'on remplitavec des paires [clé,valeur]
      *  puis on le stocke sur le disque. Ensuite on le load depuis le disque et, enfin,
      *  son contenu est affiché.
      *  @param args non utilsé
      */
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         Methodes_Properties demo = new Methodes_Properties();
         //Emplacement où sera stocké le fichier
         String propertiesFileLocation = "C:\\Users\\elodie\\IdeaProjects\\jeux\\src\\main\\resources\\config.propreties";
@@ -74,5 +74,5 @@ public class Methodes_Properties {
         } catch (FileNotFoundException e) { e.printStackTrace();
         } catch (IOException e) { e.printStackTrace();
         }
-    }
+    }*/
 }
