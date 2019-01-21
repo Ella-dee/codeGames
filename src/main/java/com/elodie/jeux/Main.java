@@ -19,7 +19,8 @@ import static com.elodie.jeux.Methodes.Methodes_MecaniqueJeu.*;
  * <p> Au démarrage, l'utilisateur doit choisir le jeu auquel il veut jouer parmi les choix proposés.
  *L'utilisateur sélectionne le jeu et le mode de son choix. L'application lance le jeu sélectionné.
  *L'utilisateur joue. S'il perd, l'application affiche la solution.
- * <ul>À la fin de la partie, l'utilisateur peut choisir :
+ * À la fin de la partie, l'utilisateur peut choisir :
+ * <ul>
  *<li>de rejouer au même jeu</li>
  * @see Methodes_MecaniqueJeu#stopOuEncore()
  * <li>de lancer un autre jeu (retour à l'écran de choix des jeux du début)</li>
@@ -29,12 +30,14 @@ import static com.elodie.jeux.Methodes.Methodes_MecaniqueJeu.*;
  * <p>Il doit être possible de lancer l'application dans un mode "développeur".
  * Dans ce mode la solution est affichée dès le début. Cela permet de tester le bon comportement
  * de l'application en cas de bonne ou de mauvaise réponse de l'utilisateur.
- * <ul>Ceci est à réaliser avec les mécanismes suivants :
+ * Ceci est à réaliser avec les mécanismes suivants :
+ * <ul>
  * <li>Passage d'un paramètre au lancement de l'application</li>
  * <li>Propriété spécifique dans le fichier de configuration</li>
  *</ul>
  *<p>Un fichier de configuration (config.properties) permettra de paramétrer l'application, notamment :
- *<ul>Pour chaque jeu :
+ * Pour chaque jeu :
+ *<ul>
  *<li>le nombre de cases de la combinaison secrète</li>
  *<li>le nombre d'essais possibles</li>
  *</ul>

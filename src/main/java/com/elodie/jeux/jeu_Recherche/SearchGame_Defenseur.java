@@ -13,11 +13,9 @@ import static java.lang.Character.getNumericValue;
  * chiffre de la combinaison proposée si le chiffre de sa combinaison est plus grand (+),
  * plus petit (-) ou si c'est le bon chiffre (=).
  *<p>L'attaquant doit deviner la combinaison secrète en un nombre limité d'essais.
- *<section>
  *<p><i>(Combinaison secrète : 1234)</i></p>
- *<p><i>(Proposition : 4278 -> Réponse : -=--</i></p>
- *<p><i>(Proposition : 2214 -> Réponse : -=+=</i></p>
- *</section>
+ *<p><i>(Proposition : 4278 -&#155; Réponse : -=--</i></p>
+ *<p><i>(Proposition : 2214 -&#155; Réponse : -=+=</i></p>
  * @author elojito
  * @version 1.0
  */

@@ -19,11 +19,9 @@ import static java.lang.Character.getNumericValue;
  * à la bonne place et à la mauvaise place dans la combinaison secrète.
  *<p>L'attaquant doit deviner la combinaison secrète en un nombre limité d'essais. Puis les rôles s'inversent.
  *<p>Le joueur et l'ordinateur doivent deviner la combinaison secrète en un nombre limité d'essais.
- *<section>
  *<p><i>(Combinaison secrète : 1234)</i></p>
- *<p><i>(Proposition : 4278 -> Réponse : 1 présent, 1 bien placé</i></p>
- *<p><i>(Proposition : 2214 -> Réponse : 2 bien placés</i></p>
- *</section>
+ *<p><i>(Proposition : 4278 -&#155; Réponse : 1 présent, 1 bien placé</i></p>
+ *<p><i>(Proposition : 2214 -&#155; Réponse : 2 bien placés</i></p>
  * @author elojito
  * @version 1.0
  */

@@ -5,7 +5,8 @@ import java.util.ArrayList;
 /**
  * <b>Contient les méthodes généralistes nécessaires au divers jeux</b>
  * <p>Ne contient aucun mécanisme de jeu.</p>
- * <ul> Les méthodes:
+ * Les méthodes:
+ * <ul>
  *     <li>formatage de texte</li>
  *     <li>comparaison des entrées d'une liste avec les entrées d'un tableau</li>
  *     <li>transformation d'une chaine de caractères en tableau rempli par chaque caractère de cette chaine</li>
@@ -43,7 +44,7 @@ public class Methodes_Generales {
      * si une entrée de la liste est comprise dans le tableau on ajoute 1 à un compteur.
      * Si le total du compteur n'est pas égal à la longueur du tableau,
      * alors une ou plusieurs entrées de la liste ne sont pas comprises dans le tableau.
-     * @param arrLi une liste remplie de données
+     * @param liste une liste remplie de données
      * @param str un tableau de chaine de caractère données
      * @return un booléen "appears" qui renvoie "false" si une ou plusieurs entrées de la liste ne sont pas dans le tableau
      */
