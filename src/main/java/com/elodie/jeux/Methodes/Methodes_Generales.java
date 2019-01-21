@@ -47,16 +47,16 @@ public class Methodes_Generales {
      * @param str un tableau de chaine de caractère données
      * @return un booléen "appears" qui renvoie "false" si une ou plusieurs entrées de la liste ne sont pas dans le tableau
      */
-    public static boolean checkOccurencesFromListInArray(ArrayList arrLi, String[] str){
+    public static boolean checkOccurencesFromListInArray(ArrayList liste, String[] str){
         boolean appears = true;
         int count = 0;
-        for(Object o:arrLi){
+        for(Object o:liste){
             for(int j=0;j<str.length;j++){
                 if(o.toString().equals(str[j])){
                     count += 1;
                 }
             }
-            if(count == arrLi.size()){
+            if(count == liste.size()){
                 appears = true;
             }
             else appears = false;
