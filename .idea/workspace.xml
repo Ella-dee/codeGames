@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="jeux:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6781709c-d3eb-49a0-9e27-7ad06333bef0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.propreties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.propreties" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="autoscrollToSource" value="true" />
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/logs.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Mastermind/MastermindGame_Duel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="20" column="99" selection-start-line="20" selection-start-column="99" selection-end-line="20" selection-end-column="99" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Methodes/Methodes_Generales.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="72" column="67" lean-forward="true" selection-start-line="72" selection-start-column="67" selection-end-line="72" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Mastermind/MastermindGame_Defenseur.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>reponse</find>
+      <find>countSomewhere</find>
+      <find>chosenGameParsed</find>
+      <find>chosenModeParsed</find>
+      <find>reponseToString</find>
+      <find>secretCode</find>
+      <find>userReponseToString</find>
+      <find>AIReponseToString</find>
+      <find>maj</find>
+      <find>U+0030</find>
+      <find>&gt;</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>liste</replace>
+      <replace>somewhere</replace>
+      <replace>game</replace>
+      <replace>mode</replace>
+      <replace>secretCodeForUser</replace>
+      <replace>verifReponseUser</replace>
+      <replace>verifReponseAI</replace>
+      <replace>&amp;#155;</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="elojito" />
+      </list>
+    </option>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/Exceptions/ExceptionNaN.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/GeneralMethodes/methodes.java" />
+        <option value="$PROJECT_DIR$/Tests/com/elodie/jeux/SearchGameTest.java" />
+        <option value="$PROJECT_DIR$/Tests/com/elodie/jeux/Test_methodes.java" />
+        <option value="$PROJECT_DIR$/Tests/com/elodie/jeux/Test_Methodes.java" />
+        <option value="$PROJECT_DIR$/Tests/com/elodie/jeux/jeu_Recherche/Test_SearchGame.java" />
+        <option value="$PROJECT_DIR$/Tests/com/elodie/jeux/Test_SearchGame.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/GeneralMethodes/Methodes.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/jeu_Mastermind/MastermindGame.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/Modes/Duel.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/Modes/Mode.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/jeu_Recherche/SearchGame.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/Modes/Challenger.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/Modes/Defenseur.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/jeu_Mastermind/Mastermind_Defenseur.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/GeneralMethodes/Methodes_Generales.java" />
+        <option value="$PROJECT_DIR$/Tests/com/elodie/jeux/Test_SearchGameChallenger.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/Exceptions/ExceptionNaL.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/GeneralMethodes/Methodes_MecaniqueJeu.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/Methodes/Methodes_MecaniqueJeu.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/jeu_Recherche/SearchGame_Duel.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/jeu_Mastermind/MastermindGame_Duel.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/jeu_Mastermind/MastermindGame_Challenger.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/jeu_Mastermind/MastermindGame_Defenseur.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/jeu_Recherche/SearchGame_Defenseur.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/jeu_Recherche/SearchGame_Challenger.java" />
+        <option value="$PROJECT_DIR$/src/com/elodie/jeux/Main.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/Bar.java" />
+        <option value="$PROJECT_DIR$/resources.config.propreties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/PropertiesDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/LogInfos.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/Methodes/Methodes_Log.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j2.propreties" />
+        <option value="$PROJECT_DIR$/src/main/resources/config.propreties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/Methodes/Methodes_Properties.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/Methodes/Methodes_MecaniqueJeu.java" />
+        <option value="$PROJECT_DIR$/Tests/com/elodie/jeux/Test_SearchGameDefenseur.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/logs.log" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Recherche/SearchGame_Challenger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Recherche/SearchGame_Defenseur.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Recherche/SearchGame_Duel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Mastermind/MastermindGame_Challenger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Mastermind/MastermindGame_Defenseur.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Mastermind/MastermindGame_Duel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/Methodes/Methodes_Generales.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="670" />
+    <option name="width" value="703" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="jeux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jeux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jeux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jeux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jeux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jeux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu_Mastermind" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jeux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu_Recherche" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jeux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+              <item name="Methodes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jeux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jeux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeux" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="323" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="323" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="324" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="323" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="323" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="323" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="324" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="323" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548083574618" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.elodie.jeux" />
+      <recent name="com.elodie.jeux.jeu_Recherche" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.elodie.jeux.Methodes" />
+      <recent name="com.elodie.jeux" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\elodie\IdeaProjects\jeux\src\main\java\com\elodie\jeux\com\elodie\jeux\propreties" />
+      <recent name="C:\Users\elodie\IdeaProjects\jeux\src\main\java\com\elodie\jeux\prop" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.elodie.jeux.jeu_Mastermind" />
+      <recent name="com.elodie.jeux.jeu_Recherche" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\elodie\IdeaProjects\jeux\src\main\java\META-INF" />
+      <recent name="C:\Users\elodie\IdeaProjects\jeux" />
+      <recent name="C:\Users\elodie\IdeaProjects\jeux\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.elodie.jeux.Main" />
+      <module name="jeux" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.elodie.jeux.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6781709c-d3eb-49a0-9e27-7ad06333bef0" name="Default Changelist" comment="" />
+      <created>1546876736402</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1546876736402</updated>
+    </task>
+    <task id="LOCAL-00001" summary="initial commit&#10;Création du jeu de base &quot;recherche +/-&quot;">
+      <created>1547026365163</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1547026365163</updated>
+    </task>
+    <task id="LOCAL-00002" summary="&quot;recherche +/-&quot; : ajout try/catch. Ajout TODO pour changer userinput en string au lieu de int car zéro en première position non pris en compte en int">
+      <created>1547029829549</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1547029829549</updated>
+    </task>
+    <task id="LOCAL-00003" summary="&quot;recherche +/-&quot; : résolution du TODO pour changer les entrées utilisateurs en string pour prendre en compte le zéro en début de saisie.&#10;&#10;Ajout d'une exception ExeceptionNan qui vérifie si les entrées utilisateurs sont des chiffres ou non.">
+      <created>1547041840994</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547041840994</updated>
+    </task>
+    <task id="LOCAL-00004" summary="&quot;recherche +/-&quot; : ajout de Tests sur les méthodes principales">
+      <created>1547045127021</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1547045127021</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Séparation des méthodes généralistes (sans mécanisme de jeu) dans un différent package.">
+      <created>1547046423496</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1547046423496</updated>
+    </task>
+    <task id="LOCAL-00006" summary="SearchGame: séparation des mécanismes de jeu internes dans une méthode &quot;start()&quot;, ajout de la javadoc">
+      <created>1547049126564</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1547049126564</updated>
+    </task>
+    <task id="LOCAL-00007" summary="SearchGame: ajout de tests pour la méthode tryoutcheck()">
+      <created>1547049782977</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1547049782977</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Mastermind: ajout du jeu de base">
+      <created>1547108262509</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1547108262509</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Recherche+/-: ajout des mondes challenger et Defenseur. Le mode Defenseur ne prend pas en compte pour l'instant le retour des indices opérateurs + et -.">
+      <created>1547112185635</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1547112185635</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Recherche+/-: Le mode Defenseur prend en compte le retour des indices opérateurs + et -.&#10;                                               &#10;                                               Méthodes_MecaniqueJeu: ajout de la méthode inputCodeSecret qui permet à l'utilisateur d'entrer un code lui-même pour le mode défenseur.&#10;                                               &#10;                                               Mastermind: ajout de la base du mode défenseur. Mode challenger fonctionne.">
+      <created>1547470032096</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1547470032096</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Mastermind: bascule de la méthode tryoutcheck dans la classe méthodes mecanique de jeu, car commune aux différents modes.">
+      <created>1547471484413</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1547471484413</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Mastermind: mode défenseur fonctionne, reste à implémenter l'intelligence des réponses de l'ordinateur">
+      <created>1547475306831</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1547475306831</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Ajout de méthodes de choix dans le main afin de choisir un jeu et un mode.">
+      <created>1547478262212</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1547478262212</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Mécanique de jeu: ajout de la méthode showSecretCode pour le mode développeur">
+      <created>1547484067354</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1547484067354</updated>
+    </task>
+    <task id="LOCAL-00015" summary="stopouencore implémentée pour les modes challenger">
+      <created>1547499417821</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1547499417821</updated>
+    </task>
+    <task id="LOCAL-00016" summary="création et implémentation de la méthode backtomenu qui permet de demander à l'utilisateur s'il souhaite jouer à un autre jeu lorsqu'il ne souhaite pas refaire une partie du même jeu.">
+      <created>1547500053085</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1547500053085</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Tous les jeux: déglobalisation de la variable secretcode pour pouvoir changer de code à chaque partie.">
+      <created>1547502352670</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1547502352670</updated>
+    </task>
+    <task id="LOCAL-00018" summary="ajout du mode Duel pour le jeu Recherche +/-">
+      <created>1547717605878</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1547717605878</updated>
+    </task>
+    <task id="LOCAL-00019" summary="ajout du mode Duel pour le jeu Mastermind">
+      <created>1547719029706</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1547719029706</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Methodes_MecaniqueJeu: ajout de la fonction &quot;playerTurnSearchGame&quot; qui représente le tour de jeu de l'utilisateur pour le jeu Recherche. Permet de ne pas répéter le code dans le mode challenger et le mode duel pour le tour de l'utilisateur">
+      <created>1547720222678</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1547720222678</updated>
+    </task>
+    <task id="LOCAL-00021" summary="ajout des compteurs d'essais pour limiter le temps de jeu (6 essais max)">
+      <created>1547732624494</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1547732624494</updated>
+    </task>
+    <task id="LOCAL-00022" summary="ajout de la fonction choosecodelenght pour choisir le nombre de cases du code secret entre 4 et 10 chiffres.">
+      <created>1547735385886</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1547735385886</updated>
+    </task>
+    <task id="LOCAL-00023" summary="choosecodelenght: correction d'erreur dans searchgame defenseur">
+      <created>1547735579913</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1547735579913</updated>
+    </task>
+    <task id="LOCAL-00024" summary="ajout des introductions de jeu et mode au début de partie.">
+      <created>1547736701717</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1547736701717</updated>
+    </task>
+    <task id="LOCAL-00025" summary="passage au framework Maven">
+      <created>1547739248029</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1547739248029</updated>
+    </task>
+    <task id="LOCAL-00026" summary="ajout et implémentation de modeDevOrNotWithStreams (à défaut d'une gestion des propreties avec un bundle) pour mettre en option le mode développeur et avoir le code secret à trouver si ce mode est choisi.">
+      <created>1547817969213</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1547817969213</updated>
+    </task>
+    <task id="LOCAL-00027" summary="modification de modeDevOrNotWithStreams pour modeDevOrNot(int[]code): implémentation de la classe PropretiesDemo afin d'écrire, lire et sauvegarder le fichier config.propreties">
+      <created>1547821373115</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1547821373115</updated>
+    </task>
+    <task id="LOCAL-00028" summary="modificiation des méthodes chooseCodeLenght(), et ajout de chooseMaxTries(), afin de modifier les paramètres du fichier config et les prendre en compte">
+      <created>1547827885393</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1547827885393</updated>
+    </task>
+    <task id="LOCAL-00029" summary="mise à jour de la javadoc avec les dernières méthodes.">
+      <created>1547828631914</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1547828631914</updated>
+    </task>
+    <task id="LOCAL-00030" summary="choix pour le mode développeur effacé, paramètre à changer dans le fichier propreties directement">
+      <created>1548004151453</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1548004151453</updated>
+    </task>
+    <task id="LOCAL-00031" summary="ajout du fichiers logs.log et config log4j2.xml">
+      <created>1548066123504</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1548066123504</updated>
+    </task>
+    <task id="LOCAL-00032" summary="bug fixed sur les variables &quot;counter&quot;">
+      <created>1548069084109</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1548069084109</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fix sur deprecated methode .isEmpty()">
+      <created>1548071040433</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1548071040433</updated>
+    </task>
+    <task id="LOCAL-00034" summary="ajout filtres pour log4j2.xml">
+      <created>1548074652883</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1548074652883</updated>
+    </task>
+    <task id="LOCAL-00035" summary="dossier javadoc généré">
+      <created>1548079904169</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1548079904169</updated>
+    </task>
+    <task id="LOCAL-00036" summary="dossier javadoc généré">
+      <created>1548080682978</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1548080682978</updated>
+    </task>
+    <task id="LOCAL-00037" summary="dossier javadoc généré">
+      <created>1548083586404</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1548083586404</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="com_elodie_jeux_jeu_Recherche_in_jeux - 2019.01.09 at 15h 00m 52s.xml">
+      <configuration name="com.elodie.jeux.jeu_Recherche in jeux" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchGameTest_WhenGiven_String_PutsEachElementOfItIn_ArrayList - 2019.01.09 at 15h 33m 14s.xml">
+      <configuration name="SearchGameTest.WhenGiven_String_PutsEachElementOfItIn_ArrayList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchGameTest_WhenGiven_String_TrimsGivenCharacters - 2019.01.09 at 15h 41m 43s.xml">
+      <configuration name="SearchGameTest.WhenGiven_String_TrimsGivenCharacters" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchGameTest_WhenGiven_ArrayListAndArrayOfString_ReturnsFalseIfEachEntryOfListNOTInArray - 2019.01.09 at 15h 43m 33s.xml">
+      <configuration name="SearchGameTest.WhenGiven_ArrayListAndArrayOfString_ReturnsFalseIfEachEntryOfListNOTInArray" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_Methodes_WhenGiven_String_PutsEachElementOfItIn_ArrayList - 2019.01.09 at 16h 00m 43s.xml">
+      <configuration name="Test_Methodes.WhenGiven_String_PutsEachElementOfItIn_ArrayList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_SearchGame_Given_Input_DisplayComparisonOperators - 2019.01.09 at 16h 59m 17s.xml">
+      <configuration name="Test_SearchGame.Given_Input_DisplayComparisonOperators" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_SearchGame_Given_SecretCodeIsNotFound_DisplayHelpComparisonOperators - 2019.01.09 at 17h 01m 18s.xml">
+      <configuration name="Test_SearchGame.Given_SecretCodeIsNotFound_DisplayHelpComparisonOperators" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_SearchGame_Given_SecretCodeIsNotFound_DisplayHelpComparisonOperators - 2019.01.09 at 17h 01m 59s.xml">
+      <configuration name="Test_SearchGame.Given_SecretCodeIsNotFound_DisplayHelpComparisonOperators" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_SearchGame_Given_SecretCodeIsNotFound_DisplayHelpComparisonOperators - 2019.01.09 at 17h 26m 24s.xml">
+      <configuration name="Test_SearchGame.Given_SecretCodeIsNotFound_DisplayHelpComparisonOperators" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_SearchGameChallenger - 2019.01.14 at 11h 28m 25s.xml">
+      <configuration name="Test_SearchGameChallenger" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30257186" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
+      <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="UML design tool window" order="8" side_tool="true" weight="0.32980332" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2980333" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
+      <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="UML design tool window" order="8" side_tool="true" weight="0.32980332" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Mastermind: mode défenseur fonctionne, reste à implémenter l'intelligence des réponses de l'ordinateur" />
+    <MESSAGE value="Ajout de méthodes de choix dans le main afin de choisir un jeu et un mode." />
+    <MESSAGE value="Mécanique de jeu: ajout de la méthode showSecretCode pour le mode développeur" />
+    <MESSAGE value="stopouencore implémentée pour les modes challenger" />
+    <MESSAGE value="création et implémentation de la méthode backtomenu qui permet de demander à l'utilisateur s'il souhaite jouer à un autre jeu lorsqu'il ne souhaite pas refaire une partie du même jeu." />
+    <MESSAGE value="Tous les jeux: déglobalisation de la variable secretcode pour pouvoir changer de code à chaque partie." />
+    <MESSAGE value="ajout du mode Duel pour le jeu Recherche +/-" />
+    <MESSAGE value="ajout du mode Duel pour le jeu Mastermind" />
+    <MESSAGE value="Methodes_MecaniqueJeu: ajout de la fonction &quot;playerTurnSearchGame&quot; qui représente le tour de jeu de l'utilisateur pour le jeu Recherche. Permet de ne pas répéter le code dans le mode challenger et le mode duel pour le tour de l'utilisateur" />
+    <MESSAGE value="ajout des compteurs d'essais pour limiter le temps de jeu (5 essais max)" />
+    <MESSAGE value="ajout des compteurs d'essais pour limiter le temps de jeu (6 essais max)" />
+    <MESSAGE value="ajout de la fonction choosecodelenght pour choisir le nombre de cases du code secret entre 4 et 10 chiffres." />
+    <MESSAGE value="choosecodelenght: correction d'erreur dans searchgame defenseur" />
+    <MESSAGE value="ajout des introductions de jeu et mode au début de partie." />
+    <MESSAGE value="passage au framework Maven" />
+    <MESSAGE value="ajout et implémentation de modeDevOrNotWithStreams (à défaut d'une gestion des propreties avec un bundle) pour mettre en option le mode développeur et avoir le code secret à trouver si ce mode est choisi." />
+    <MESSAGE value="modification de modeDevOrNotWithStreams pour modeDevOrNot(int[]code): implémentation de la classe PropretiesDemo afin d'écrire, lire et sauvegarder le fichier config.propreties" />
+    <MESSAGE value="modificiation des méthodes chooseCodeLenght(), et ajout de chooseMaxTries(), afin de modifier les paramètres du fichier config et les prendre en compte" />
+    <MESSAGE value="mise à jour de la javadoc avec les dernières méthodes." />
+    <MESSAGE value="choix pour le mode développeur effacé, paramètre à changer dans le fichier propreties directement" />
+    <MESSAGE value="ajout du fichiers logs.log et config log4j2.xml" />
+    <MESSAGE value="bug fixed sur les variables &quot;counter&quot;" />
+    <MESSAGE value="fix sur deprecated methode .isEmpty()" />
+    <MESSAGE value="ajout filtres pour log4j2.xml" />
+    <MESSAGE value="dossier javadoc généré" />
+    <option name="LAST_COMMIT_MESSAGE" value="dossier javadoc généré" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Tests/Test_SearchGame/Test_SearchGame.java" />
+    <entry file="file://$PROJECT_DIR$/Tests/Test_SearchGame.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Modes/Duel.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Modes/Defenseur.java" />
+    <entry file="file://$PROJECT_DIR$/Tests/com/elodie/jeux/Test_MethodesGenerales.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Modes/Challenger.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Modes/Mode.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Exceptions/ExceptionNaL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="5" column="78" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-core/2.11.1/log4j-core-2.11.1.jar!/META-INF/maven/org.apache.logging.log4j/log4j-core/pom.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.11.1/log4j-api-2.11.1.jar!/Log4j-charsets.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-145">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.11.1/log4j-api-2.11.1.jar!/META-INF/maven/org.apache.logging.log4j/log4j-api/pom.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/.editorconfig" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties" />
+    <entry file="file://$PROJECT_DIR$/config.propreties" />
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/ResourceBundle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="1688" selection-start-line="1688" selection-end-line="1688" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/prop/config.propreties" />
+    <entry file="file://$PROJECT_DIR$/src/main/resourcesmyProperties.properties" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/myprop.properties" />
+    <entry file="file://$PROJECT_DIR$/resources.config.propreties" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Exceptions/ExceptionNaN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.propreties" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Methodes/Methodes_Properties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs.log" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Methodes/Methodes_Log.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/com/elodie/jeux/Test_SearchGameChallenger.java" />
+    <entry file="file://$PROJECT_DIR$/Tests/com/elodie/jeux/Test_SearchGameDefenseur.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Methodes/Methodes_MecaniqueJeu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4641">
+          <caret line="277" column="5" selection-start-line="277" selection-start-column="5" selection-end-line="277" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/com/elodie/jeux/propreties/config.propreties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Recherche/SearchGame_Challenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Recherche/SearchGame_Defenseur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Recherche/SearchGame_Duel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="99" selection-start-line="15" selection-start-column="99" selection-end-line="15" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Mastermind/MastermindGame_Challenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Mastermind/MastermindGame_Defenseur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/jeu_Mastermind/MastermindGame_Duel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="20" column="99" selection-start-line="20" selection-start-column="99" selection-end-line="20" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.propreties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/Methodes/Methodes_Generales.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="72" column="67" lean-forward="true" selection-start-line="72" selection-start-column="67" selection-end-line="72" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/logs.log">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>unnamed</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11.0.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>jeux</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: org.apache.logging.log4j:log4j-api:2.11.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

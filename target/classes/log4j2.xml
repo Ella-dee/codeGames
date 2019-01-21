@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" >
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+            <Filters>
+            <ThresholdFilter level="trace" />
+            <!-- Now deny warn, error and fatal messages -->
+            <ThresholdFilter level="info"  onMatch="DENY"   onMismatch="NEUTRAL"/>
+            </Filters>
+        </Console>
+        <File name="MyFile" fileName="C:\Users\elodie\IdeaProjects\jeux\src\main\resources\logs.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.elodie.jeux" level="info">
+            <AppenderRef ref="MyFile"/>
+        </Logger>
+        <Logger name="com.elodie.jeux" level="debug">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="debug">
+            <AppenderRef ref="MyFile" level="info" />
+            <AppenderRef ref="Console" level="debug"/>
+        </Root>
+    </Loggers>
+</Configuration>
