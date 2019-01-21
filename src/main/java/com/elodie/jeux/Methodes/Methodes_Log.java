@@ -1,18 +1,16 @@
-package com.elodie.jeux;
+package com.elodie.jeux.Methodes;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-public class LogInfos {
-    static final Logger logger = LogManager.getLogger( LogInfos.class.getName());
+public class Methodes_Log {
+    static final Logger logger = LogManager.getLogger();
 
-    public boolean doIt() {
-        logger.entry();
+    public void logIt() {
         logger.debug("msg de debogage");
         logger.info("msg d'information");
         logger.warn("msg d'avertissement");
         logger.error("msg d'erreur");
         logger.fatal("msg d'erreur fatale");
-        return logger.exit(false);
     }
 }

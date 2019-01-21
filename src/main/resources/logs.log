@@ -1,0 +1,9 @@
+2019-01-21 11:20:34.732 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-01-21 11:20:36.936 [main] INFO  com.elodie.jeux.Main - jeu n° 1 jeu recherche+/-
+2019-01-21 11:20:38.733 [main] INFO  com.elodie.jeux.Main - mode n° 2 mode defenseur
+2019-01-21 11:20:40.327 [main] INFO  com.elodie.jeux.Main - nombre de cases choisi: 4 \ maj propriété max.cases: 4
+2019-01-21 11:20:42.610 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4444)
+2019-01-21 11:20:44.048 [main] INFO  com.elodie.jeux.Main - nombre d'essais choisi: 4 \ maj propriété propriété max.tries: 4
+2019-01-21 11:20:54.336 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
+2019-01-21 11:20:55.305 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
+2019-01-21 11:20:55.305 [main] INFO  com.elodie.jeux.Main - Exiting application.
