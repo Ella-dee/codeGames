@@ -1,7 +1,11 @@
 package com.elodie.jeux.mastermind;
 
+import com.elodie.jeux.Main;
 import com.elodie.jeux.exceptions.exceptionNaN;
 import com.elodie.jeux.utilities.utilsGameMecanics;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import static com.elodie.jeux.utilities.utils.*;
@@ -36,7 +40,7 @@ public class mastermindChallenger {
     static String userInput = "";
     static String verifReponse = "";
     final String winwin = "4 bien placés";
-
+    private static final Logger logger = LogManager.getLogger( Main.class);
     /**
      * Méthode comprend la mécanique du jeu.
      * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
@@ -87,11 +91,13 @@ public class mastermindChallenger {
                     }
                 } catch (exceptionNaN e) {
                     catched = true;
+                    logger.error( "NotANumber catched = "+ userInput);
                 }
                 finally {
                     if ( inputToArray.size() > secretCode.length || inputToArray.size() < secretCode.length) {
                         System.out.print( "Vous devez saisir une combinaison à " + secretCode.length + " chiffres." );
                         catched = true;
+                        logger.error("Bad size catched = "+userInput.length()+", expected: "+secretCode.length  );
                     }
                 }
             }while (catched);
