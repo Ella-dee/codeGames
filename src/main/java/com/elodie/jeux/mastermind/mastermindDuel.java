@@ -45,7 +45,7 @@ public class mastermindDuel {
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String userInput = "";
-    static String AIinput = "";
+    static String compInput = "";
     static String verifReponseUser = "";
     static String verifReponseAI = "";
     final String winwin = "4 bien placés";
@@ -122,38 +122,38 @@ public class mastermindDuel {
             counterUser++;
             if(!verifReponseUser.equals( winwin )) {
                 //Tour de l'ordinateur
-                ArrayList AIinputToArray = new ArrayList();
+                ArrayList compInputToArray = new ArrayList();
                 System.out.println( "\nProposition de l'ordinateur:" );
                 //Si des essais ont déjà été faits par l'AI:
                 if (counterAI!=0) {
                     // on vide la liste de l'essai AI
-                    AIinputToArray.clear();
-                    for (int i = 0; i < AIinput.length(); i++) {
+                    compInputToArray.clear();
+                    for (int i = 0; i < compInput.length(); i++) {
                         //On garde le chiffre donné s'il est bon et à la bonne place
-                        if (AIinput.charAt( i ) == secretCodeForAI[i]) {
-                            String ok = "" + getNumericValue( AIinput.charAt( i ) );
-                            AIinputToArray.add( ok );
-                            System.out.println( ok );
+                        if (compInput.charAt( i ) == secretCodeForAI[i]) {
+                            String goodAnswer = "" + getNumericValue( compInput.charAt( i ) );
+                            compInputToArray.add( goodAnswer );
+                            System.out.println( goodAnswer );
                         }
                         //TODO écarter les propositions déjà faites
                         //S'il est bon mais pas à la bonne place
-                        else if ((AIinput.charAt( i ) != secretCodeForAI[i]) && (Arrays.asList( secretCodeForAI ).contains( AIinput.charAt( i ) ))) {
+                        else if ((compInput.charAt( i ) != secretCodeForAI[i]) && (Arrays.asList( secretCodeForAI ).contains( compInput.charAt( i ) ))) {
                             //TODO à implémenter (random en attendant)
-                            AIinputToArray.add( (int) (Math.random() * 10) );
+                            compInputToArray.add( (int) (Math.random() * 10) );
                         }
                         //Si non trouvé
                         else {
-                            AIinputToArray.add( (int) (Math.random() * 10) );
+                            compInputToArray.add( (int) (Math.random() * 10) );
                         }
                     }
-                    AIinput = myTrimString( AIinputToArray.toString() );
+                    compInput = myTrimString( compInputToArray.toString() );
                 }
                 //Si c'est le premier essai, on lance des randoms
                 else {
                     for(int i = 0; i<secretCodeForAI.length;i++) {
-                        AIinputToArray.add( (int) (Math.random() * 10));
+                        compInputToArray.add( (int) (Math.random() * 10));
                     }
-                    AIinput = myTrimString( AIinputToArray.toString() );
+                    compInput = myTrimString( compInputToArray.toString() );
                 }
                 try {
                     Thread.sleep( 2000 );
@@ -161,7 +161,7 @@ public class mastermindDuel {
                     e.printStackTrace();
                 }
                 //vérification réponse/code
-                verifReponseAI = tryOutCheckMastermindGame( AIinputToArray, secretCodeForAI, AIinput );
+                verifReponseAI = tryOutCheckMastermindGame( compInputToArray, secretCodeForAI, compInput );
                 counterAI++;
             }
         }while(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin ) && counterAI <max && counterUser <max);

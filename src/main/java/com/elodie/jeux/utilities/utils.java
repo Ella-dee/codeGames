@@ -33,7 +33,7 @@ public class utils {
      * @param str chaîne de caractères donnée
      * @return la chaine de caractères donnée reformatée
      */
-    public static String trimStringKeepSpacesAndComas(String str){
+    public static String trimStringKeepFormat(String str){
         StringBuilder sb = new StringBuilder();
         sb.append(str.replaceAll("[\\[\\]]", ""));
         str.trim();

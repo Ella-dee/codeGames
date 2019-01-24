@@ -299,7 +299,7 @@ public class utilsGameMecanics {
         else if(somewhere >1){
             output.add( somewhere+" présents" );
         }
-        String outputToString = trimStringKeepSpacesAndComas(output.toString());
+        String outputToString = trimStringKeepFormat(output.toString());
         output.clear();
         System.out.println( outputToString );
         return outputToString;

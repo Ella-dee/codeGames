@@ -32,7 +32,7 @@ public class mastermindDefenseur {
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
-    static String AIinput = "";
+    static String compInput = "";
     static String verifReponse = "";
     final String winwin = "4 bien placés";
 
@@ -71,16 +71,16 @@ public class mastermindDefenseur {
             if(counter!=0){
                 // on vide la liste de l'essai AI
                 inputToArray.clear();
-                for (int i = 0; i < AIinput.length(); i++) {
+                for (int i = 0; i < compInput.length(); i++) {
                     //On garde le chiffre donné s'il est bon et à la bonne place
-                    if (AIinput.charAt(i) == secretCode[i]) {
-                        String ok = ""+ getNumericValue(AIinput.charAt(i));
-                        inputToArray.add( ok );
-                        System.out.println( ok );
+                    if (compInput.charAt(i) == secretCode[i]) {
+                        String goodAnswer = ""+ getNumericValue( compInput.charAt(i));
+                        inputToArray.add( goodAnswer );
+                        System.out.println( goodAnswer );
                     }
                     //TODO écarter les propositions déjà faites
                     //S'il est bon mais pas à la bonne place
-                    else if((AIinput.charAt(i) != secretCode[i]) && (Arrays.asList( secretCode ).contains( AIinput.charAt(i)))){
+                    else if((compInput.charAt(i) != secretCode[i]) && (Arrays.asList( secretCode ).contains( compInput.charAt(i)))){
                         //TODO à implémenter (random en attendant)
                         inputToArray.add((int) (Math.random() * 10));
                     }
@@ -89,13 +89,13 @@ public class mastermindDefenseur {
                         inputToArray.add((int) (Math.random() * 10));
                     }
                 }
-                AIinput = myTrimString(inputToArray.toString());
+                compInput = myTrimString(inputToArray.toString());
             }
             //Si c'est le premier essai, on lance des randoms
             else {
                 for (int i = 0; i < secretCode.length; i++) {
                     inputToArray.add( (int) (Math.random() * 10) );
-                    AIinput = myTrimString( inputToArray.toString() );
+                    compInput = myTrimString( inputToArray.toString() );
                 }
             }
             try {
@@ -104,7 +104,7 @@ public class mastermindDefenseur {
                 e.printStackTrace();
             }
             //vérification réponse/code
-            verifReponse = tryOutCheckMastermindGame(inputToArray, secretCode, AIinput);
+            verifReponse = tryOutCheckMastermindGame(inputToArray, secretCode, compInput );
             counter++;
         }while(!verifReponse.equals(winwin) && counter < max);
         if(verifReponse.equals( winwin )) {
