@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: log4j-api-2.11.1.jar log4j-core-2.11.1.jar junit-jupiter-a
- pi-5.4.0-M1.jar apiguardian-api-1.0.0.jar opentest4j-1.1.1.jar junit-
- platform-commons-1.4.0-M1.jar
-Main-Class: com.elodie.jeux.Main
-
