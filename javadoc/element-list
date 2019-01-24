@@ -1,5 +1,5 @@
 com.elodie.jeux
-com.elodie.jeux.Exceptions
-com.elodie.jeux.jeu_Mastermind
-com.elodie.jeux.jeu_Recherche
-com.elodie.jeux.Methodes
+com.elodie.jeux.exceptions
+com.elodie.jeux.mastermind
+com.elodie.jeux.search
+com.elodie.jeux.utilities

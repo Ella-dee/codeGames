@@ -1,11 +1,12 @@
 package com.elodie.jeux;
 
-import com.elodie.jeux.Methodes.Methodes_MecaniqueJeu;
-import com.elodie.jeux.jeu_Mastermind.*;
-import com.elodie.jeux.jeu_Recherche.*;
+import com.elodie.jeux.utilities.*;
+import com.elodie.jeux.mastermind.*;
+import com.elodie.jeux.search.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import static com.elodie.jeux.Methodes.Methodes_MecaniqueJeu.*;
+import static com.elodie.jeux.utilities.utilsGameMecanics.*;
+import static com.elodie.jeux.utilities.utilsPropreties.getConfigProprety;
 
 /**
  * <b>Développement en mode console d'une application proposant des jeux de logique. </b>
@@ -22,9 +23,9 @@ import static com.elodie.jeux.Methodes.Methodes_MecaniqueJeu.*;
  * À la fin de la partie, l'utilisateur peut choisir :
  * <ul>
  *<li>de rejouer au même jeu</li>
- * @see Methodes_MecaniqueJeu#stopOuEncore()
+ * @see utilsGameMecanics#stopOuEncore()
  * <li>de lancer un autre jeu (retour à l'écran de choix des jeux du début)</li>
- * @see Methodes_MecaniqueJeu#backToMenu()
+ * @see utilsGameMecanics#backToMenu()
  * <li>de quitter l'application</li>
  *</ul>
  * <p>Il doit être possible de lancer l'application dans un mode "développeur".
@@ -60,57 +61,58 @@ public class Main {
 
         do {
             game = menuJeu();
-            logger.info( "jeu n° "+game+" "+getProprety( "game."+game ) );
+                logger.info(getConfigProprety( "game."+game ));
+
             String playAgain = "";
             switch (game) {
                 //Case 1 = Jeu Recherche
-                //Case 2 = Jeu Mastermind
+                //Case 2 = Jeu mastermind
                 case 1:
                     mode = chooseModeForGame();
-                    logger.info( "mode n° "+mode+" "+getProprety( "mode."+mode ) );
+                       logger.info( getConfigProprety( "mode."+mode ));
                     //Mode 1 = Challenger
                     //Mode 2 = Defenseur
                     //Mode 3 = Duel
                     if (mode == 1) {
                         do {
-                            SearchGame_Challenger searchgame = new SearchGame_Challenger();
+                            searchChallenger searchgame = new searchChallenger();
                             playAgain = stopOuEncore();
                             logger.info( "réponse à stopouencore(): "+playAgain );
                         } while (playAgain.equals( "O" ));
                     } else if (mode == 2) {
                         do {
-                            SearchGame_Defenseur searchgame = new SearchGame_Defenseur();
+                            searchDefenseur searchgame = new searchDefenseur();
                             playAgain = stopOuEncore();
                             logger.info( "réponse à stopouencore(): "+playAgain );
                         } while (playAgain.equals( "O" ));
                     }else if (mode == 3) {
                         do {
-                            SearchGame_Duel searchgame = new SearchGame_Duel();
+                            searchDuel searchgame = new searchDuel();
                             playAgain = stopOuEncore();
                             logger.info( "réponse à stopouencore(): "+playAgain );
                         } while (playAgain.equals( "O" ));
                     }
                     break;
-                //Jeu Mastermind
+                //Jeu mastermind
                 case 2:
                     mode = chooseModeForGame();
-                    logger.info( "mode n° "+mode+" "+getProprety( "mode."+mode ) );
+                    logger.info(getConfigProprety( "mode."+mode ) );
                     if (mode == 1) {
                         do {
-                            MastermindGame_Challenger mastermind = new MastermindGame_Challenger();
+                            mastermindChallenger mastermind = new mastermindChallenger();
                             playAgain = stopOuEncore();
                             logger.info( "réponse à stopouencore(): "+playAgain );
                         } while (playAgain.equals( "O" ));
                     } else if (mode == 2) {
                         do {
-                            MastermindGame_Defenseur mastermindGame = new MastermindGame_Defenseur();
+                            mastermindDefenseur mastermindGame = new mastermindDefenseur();
                             playAgain = stopOuEncore();
                             logger.info( "réponse à stopouencore(): "+playAgain );
                         } while (playAgain.equals( "O" ));
                     }
                     else if (mode == 3) {
                         do {
-                            MastermindGame_Duel mastermindGame = new MastermindGame_Duel();
+                            mastermindDuel mastermindGame = new mastermindDuel();
                             playAgain = stopOuEncore();
                             logger.info( "réponse à stopouencore(): "+playAgain );
                         } while (playAgain.equals( "O" ));

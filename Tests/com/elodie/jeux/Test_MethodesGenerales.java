@@ -2,7 +2,7 @@ package com.elodie.jeux;
 
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
-import static com.elodie.jeux.Methodes.Methodes_Generales.*;
+import static com.elodie.jeux.utilities.utils.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Test_MethodesGenerales {

@@ -9,7 +9,7 @@
             <ThresholdFilter level="info"  onMatch="DENY"   onMismatch="NEUTRAL"/>
             </Filters>
         </Console>
-        <File name="MyFile" fileName="C:\Users\elodie\IdeaProjects\jeux\src\main\resources\logs.log" immediateFlush="false" append="true">
+        <File name="MyFile" fileName="logs.log" immediateFlush="false" append="true">
             <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
     </Appenders>

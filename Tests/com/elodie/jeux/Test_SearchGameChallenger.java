@@ -1,6 +1,6 @@
 package com.elodie.jeux;
 
-import com.elodie.jeux.Methodes.Methodes_MecaniqueJeu;
+import com.elodie.jeux.utilities.utilsGameMecanics;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ class Test_SearchGameChallenger {
         liste.add(4);
 
         String expected = "====";
-        String result = Methodes_MecaniqueJeu.tryOutCheckSearchGame(liste, secret, input);
+        String result = utilsGameMecanics.tryOutCheckSearchGame(liste, secret, input);
         assertEquals( expected, result );
     }
     @Test
@@ -45,7 +45,7 @@ class Test_SearchGameChallenger {
         liste.add(2);
 
         String expected = "=-=+";
-        String result = Methodes_MecaniqueJeu.tryOutCheckSearchGame(liste, secret, input);
+        String result = utilsGameMecanics.tryOutCheckSearchGame(liste, secret, input);
         assertEquals( expected, result );
     }
 
