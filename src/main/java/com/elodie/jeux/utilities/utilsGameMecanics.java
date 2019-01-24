@@ -5,7 +5,6 @@ import com.elodie.jeux.exceptions.exceptionNaN;
 import com.elodie.jeux.Main;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import java.io.*;
 import java.util.*;
 import static com.elodie.jeux.utilities.utils.*;
 import static com.elodie.jeux.utilities.utilsPropreties.getConfigProprety;
@@ -47,7 +46,7 @@ public class utilsGameMecanics {
                 if (Integer.parseInt( cases ) > 10 || Integer.parseInt( cases)<4) {
                     System.out.print( "Vous devez saisir une combinaison entre 4 et 10 chiffres." );
                     catched = true;
-                    logger.error( "Bad size catched = "+cases+", expected >=4&&<=10" );
+                    logger.error( "Bad size catched = "+cases+", expected 4>=?<=10" );
 
                 }
             }

@@ -3,19 +3,18 @@ package com.elodie.jeux.utilities;
 import com.elodie.jeux.Main;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.Iterator;
 import java.util.Properties;
 
 public class utilsPropreties {
+
+    final static  String configPath = "./src/main/resources/config.propreties";
+
     public utilsPropreties() {
         super();
     }
+
     /**
      * Méthode récupère la valeur d'une propriété
      * @param str chaine de caractère représentant le nom de la propriété
@@ -26,7 +25,8 @@ public class utilsPropreties {
         utilsPropreties demo = new utilsPropreties();
         String prop = "";
         try {
-            Properties loadedProps = demo.loadProperties( "C:\\Users\\elodie\\IdeaProjects\\jeux\\src\\main\\java\\com\\elodie\\jeux\\config.propreties" );
+            String propertiesFileLocation = configPath;
+            Properties loadedProps = demo.loadProperties( propertiesFileLocation );
             prop = loadedProps.getProperty(str);
         }catch (FileNotFoundException e){
             System.out.println( "le fichier spécifié est introuvable" );
@@ -46,13 +46,13 @@ public class utilsPropreties {
         Logger logger = LogManager.getLogger( Main.class);
         utilsPropreties demo = new utilsPropreties();
         try {
-            String propertiesFileLocation = "C:\\Users\\elodie\\IdeaProjects\\jeux\\src\\main\\java\\com\\elodie\\jeux\\config.propreties";
+            String propertiesFileLocation = configPath;
             Properties loadedProps = demo.loadProperties( propertiesFileLocation );
             String oldKey = getConfigProprety( key );
             loadedProps.replace( key, newKeyValue );
             // On stocke le fichier sur le disque
             demo.saveProperties( loadedProps, propertiesFileLocation, "Sauvegarde config.propreties" );
-            logger.info( key+" "+oldKey+" majed in config "+getConfigProprety(key));
+            logger.info( key+" "+oldKey+", in config "+getConfigProprety(key));
         }catch (FileNotFoundException e){
             System.out.println( "le fichier spécifié est introuvable" );
             logger.error( "le fichier spécifié est introuvable" );
