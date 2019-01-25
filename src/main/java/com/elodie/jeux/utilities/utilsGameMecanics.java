@@ -314,6 +314,9 @@ public class utilsGameMecanics {
         else if(somewhere >1){
             output.add( somewhere+" présents" );
         }
+        else if(somewhere==0){
+            output.add( "aucun chiffre trouvé" );
+        }
         String outputToString = trimStringKeepFormat(output.toString());
         output.clear();
         System.out.println( outputToString );
