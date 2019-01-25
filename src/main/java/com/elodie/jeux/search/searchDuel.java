@@ -1,6 +1,10 @@
 package com.elodie.jeux.search;
 
+import com.elodie.jeux.Main;
 import com.elodie.jeux.utilities.utilsGameMecanics;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import static com.elodie.jeux.utilities.utils.*;
@@ -34,6 +38,7 @@ public class searchDuel {
      * <li>un booléen pour les exceptions</li>
      * <li>un compteur d'essais pouyr l'utilisateur</li>
      * <li>un compteur d'essais pour l'ordinateur</li>
+     * <li>un appel pour le logger/li>
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
@@ -43,6 +48,8 @@ public class searchDuel {
     static String verifReponseAI = "";
     static final String winwin = "====";
     boolean catched = false;
+
+    private static final Logger logger = LogManager.getLogger( Main.class);
 
     /**
      * Méthode comprend la mécanique du jeu pour le Mode Duel (ustilisateur et AI à chaque tour).
@@ -144,13 +151,16 @@ public class searchDuel {
         }while(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin )&& counterAI <max && counterUser <max);
         if(verifReponseUser.equals( winwin )) {
             System.out.println( "\nBravo vous avez trouvé la combinaison !" );
+            logger.info( "combinaison trouvée." );
         }
         else if(verifReponseAI.equals( winwin )) {
             System.out.println( "\nL'ordinateur a trouvé votre combinaison !" );
+            logger.info( "combinaison trouvée." );
             System.out.println( "La combinaison de l'ordinateur était: "+ secretCodeForUser );
         }
         else if(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin )){
             System.out.println( "\nAucune combinaison trouvée. Le code de l'ordinateur était : " + showSecretCode( secretCodeForUser ));
+            logger.info( "combinaison non trouvée." );
         }
     }
 }

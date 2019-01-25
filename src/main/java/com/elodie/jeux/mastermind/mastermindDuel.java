@@ -172,13 +172,16 @@ public class mastermindDuel {
         }while(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin ) && counterAI <max && counterUser <max);
         if(verifReponseUser.equals( winwin )) {
             System.out.println( "\nBravo vous avez trouvé la combinaison !" );
+            logger.info( "combinaison trouvée." );
         }
         else if(verifReponseAI.equals( winwin )) {
             System.out.println( "\nL'ordinateur a trouvé votre combinaison !" );
+            logger.info( "combinaison trouvée." );
             System.out.println( "La combinaison de l'ordinateur était: "+ secretCodeForUser );
         }
         else if(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin )){
             System.out.println( "\nAucune combinaison trouvée. Le code de l'ordinateur était : " + showSecretCode( secretCodeForUser ));
+            logger.info( "combinaison non trouvée." );
         }
     }
 }

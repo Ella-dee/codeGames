@@ -5,6 +5,8 @@ import com.elodie.jeux.exceptions.exceptionNaN;
 import com.elodie.jeux.utilities.utilsGameMecanics;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.graalvm.compiler.lir.StandardOp;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import static com.elodie.jeux.utilities.utils.*;
@@ -111,9 +113,11 @@ public class mastermindChallenger {
         }while(!(verifReponse.equals( winwin )) && counter < 6);
         if(verifReponse.equals( winwin )){
             System.out.println( "\nBravo vous avez trouvé la combinaison !" );
+            logger.info( "combinaison trouvée." );
         }
         else{
             System.out.println( "\nVous n'avez pas trouvé la combinaison. La réponse était : " + showSecretCode( secretCode ));
+            logger.info( "combinaison non trouvée." );
         }
     }
 }

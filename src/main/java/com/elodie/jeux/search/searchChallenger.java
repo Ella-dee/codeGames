@@ -1,6 +1,10 @@
 package com.elodie.jeux.search;
 
+import com.elodie.jeux.Main;
 import com.elodie.jeux.utilities.utilsGameMecanics;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.*;
 import static com.elodie.jeux.utilities.utilsGameMecanics.*;
 
@@ -28,12 +32,14 @@ public class searchChallenger {
      * <li>une chaine de caractère "====" représentant l'affichage sortie si la combinaison est trouvée</li>
      * <li>un booléen pour les exceptions</li>
      * <li>un compteur d'essais</li>
+     * <li>un appel pour le logger/li>
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String userInput = "";
     static String verifReponse = "";
     static final String winwin = "====";
+    private static final Logger logger = LogManager.getLogger( Main.class);
 
     /**
      * Méthode comprend la mécanique du jeu pour le Mode Challenger (utilisateur VS AI).
@@ -80,9 +86,11 @@ public class searchChallenger {
         }while(!(verifReponse.equals( winwin )) && counter < max);
         if(verifReponse.equals( winwin )){
             System.out.println( "\nBravo vous avez trouvé la combinaison !" );
+            logger.info( "combinaison trouvée." );
         }
         else{
             System.out.println( "\nVous n'avez pas trouvé la combinaison. La réponse était : " + showSecretCode( secretCode ));
+            logger.info( "combinaison non trouvée." );
         }
     }
 }

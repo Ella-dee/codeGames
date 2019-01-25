@@ -1,6 +1,10 @@
 package com.elodie.jeux.mastermind;
 
+import com.elodie.jeux.Main;
 import com.elodie.jeux.utilities.utilsGameMecanics;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import static com.elodie.jeux.utilities.utils.*;
@@ -30,12 +34,14 @@ public class mastermindDefenseur {
      * <li>une chaine de caractère vide pour les entrées AI à venir</li>
      * <li>une chaine de caractère vide représentant les indices "x bien placés, x présents" à venir</li>
      * <li>un compteur d'essais</li>
+     * <li>un appel pour le logger/li>
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String compInput = "";
     static String verifReponse = "";
     final String winwin = "4 bien placés";
+    private static final Logger logger = LogManager.getLogger( Main.class);
 
     /**
      * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
@@ -112,9 +118,11 @@ public class mastermindDefenseur {
         }while(!verifReponse.equals(winwin) && counter < max);
         if(verifReponse.equals( winwin )) {
             System.out.println( "\nL'ordinateur a trouvé votre combinaison!" );
+            logger.info( "combinaison trouvée." );
         }
         else {
             System.out.println( "\nL'ordinateur n'a pas trouvé votre combinaison!" );
+            logger.info( "combinaison non trouvée." );
         }
     }
 }

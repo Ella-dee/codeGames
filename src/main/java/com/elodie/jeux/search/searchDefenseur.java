@@ -1,6 +1,10 @@
 package com.elodie.jeux.search;
 
+import com.elodie.jeux.Main;
 import com.elodie.jeux.utilities.utilsGameMecanics;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import static com.elodie.jeux.utilities.utils.*;
 import static com.elodie.jeux.utilities.utilsGameMecanics.*;
@@ -30,12 +34,14 @@ public class searchDefenseur {
      * <li>une chaine de caractère vide représentant les indices "+-=+" à venir</li>
      * <li>une chaine de caractère représentant "====" soit l'affichage de sortie pour une combinaison gagnante. </li>
      * <li>un compteur d'essais</li>
+     *  <li>un appel pour le logger/li>
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
     static String compInput = "";
     static String verifReponseComp = "";
     final String winwin = "====";
+    private static final Logger logger = LogManager.getLogger( Main.class);
 
     /**
      * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
@@ -115,9 +121,11 @@ public class searchDefenseur {
         }while(!verifReponseComp.equals( winwin ) && counter < max);
         if(verifReponseComp.equals( winwin )) {
             System.out.println( "\nL'ordinateur a trouvé votre combinaison!" );
+            logger.info( "combinaison trouvée." );
         }
         else {
             System.out.println( "\nL'ordinateur n'a pas trouvé votre combinaison!" );
+            logger.info( "combinaison non trouvée." );
         }
     }
 }
