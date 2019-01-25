@@ -8,15 +8,16 @@ import static com.elodie.jeux.utilities.utilsGameMecanics.*;
 import static java.lang.Character.getNumericValue;
 
 /**
- *  <b>mastermind // Mode défenseur où c'est à l'ordinateur de trouver votre combinaison secrète</b>
- * <p>Le but : découvrir la combinaison à x chiffres de l'adversaire (le défenseur).
+ *  <b>mastermind - Mode défenseur</b>
+ * <p>Le but : l'ordinateur doit découvrir la combinaison à x chiffres de l'adversaire
+ * (le défenseur, soit ici l'utilisateur).
  * <p>Pour ce faire, l'attaquant fait une proposition. Le défenseur indique pour
  * chaque proposition le nombre de chiffres de la proposition qui apparaissent
  * à la bonne place et à la mauvaise place dans la combinaison secrète.
  *<p>L'attaquant doit deviner la combinaison secrète en un nombre limité d'essais.
- *<p><i>(Combinaison secrète : 1234)</i></p>
- *<p><i>(Proposition : 4278 -&#155; Réponse : 1 présent, 1 bien placé</i></p>
- *<p><i>(Proposition : 2214 -&#155; Réponse : 2 bien placés</i></p>
+ *<p>(Combinaison secrète : 1234)</p>
+ *<p>(Proposition : 4278 -&#155; Réponse : 1 présent, 1 bien placé)</p>
+ *<p>(Proposition : 2214 -&#155; Réponse : 2 bien placés)</p>
  * @author elojito
  * @version 1.0
  */
@@ -54,6 +55,8 @@ public class mastermindDefenseur {
         System.out.println( "-----------------------------------------" );
         System.out.println( "Bienvenue dans mastermind Mode Défenseur." );
         System.out.println( "-----------------------------------------" );
+        //Si le mode développeur est activé, on l'affiche
+        showModeDevOn();
         int counter = 0;
         //choix du nombre de cases à deviner
         chooseCodeLenght();
@@ -81,7 +84,7 @@ public class mastermindDefenseur {
                     //TODO écarter les propositions déjà faites
                     //S'il est bon mais pas à la bonne place
                     else if((compInput.charAt(i) != secretCode[i]) && (Arrays.asList( secretCode ).contains( compInput.charAt(i)))){
-                        //TODO à implémenter (random en attendant)
+                        //TODO si chiffre présent mais mal placé: à implémenter (random en attendant)
                         inputToArray.add((int) (Math.random() * 10));
                     }
                     //Si non trouvé

@@ -16,7 +16,10 @@ public class utilsGameMecanics {
     //Méthodes communes
     /**
      * Méthode permet de choisir la longueur du code secret à deviner (entre 4 et 10).
-     * Met à jour le fichier config.
+     * On demande à l'utilisateur de choisir la longueur du code.
+     * On vérifie qu'il s'agit bien d'un chifrre et qu'il est bien compris entre 4 et 10.
+     * @see exceptionNaN
+     * On remplace la propriété max.cases dans config.propreties par le choix de l'utilisateur.
      */
     public static void chooseCodeLenght(){
         boolean catched = false;
@@ -27,7 +30,7 @@ public class utilsGameMecanics {
         do{
             try {
                 catched = false;
-                System.out.println( "De combien de chiffres souhaitez vous composer le code secret: (4 - 10)" );
+                System.out.println( "De combien de chiffres souhaitez-vous composer le code secret: (4 - 10)" );
                 cases = sc.nextLine();
                 inputToArray = createArrayListeFromInput( cases );
 
@@ -54,7 +57,10 @@ public class utilsGameMecanics {
     }
     /**
      * Méthode permet de choisir le nombre d'essais maximum.
-     * Mets à jour le fichier config.
+     * On demande à l'utilisateur de choisir le nombre d'essais possibles.
+     * On vérifie qu'il s'agit bien d'un chifrre et qu'il est bien compris entre 4 et 10.
+     * @see exceptionNaN
+     * On remplace la propriété max.tries dans config.propreties par le choix de l'utilisateur.
      */
     public static void chooseMaxTries(){
         boolean catched = false;
@@ -65,7 +71,7 @@ public class utilsGameMecanics {
         do{
             try {
                 catched = false;
-                System.out.println( "A combien d'essais souhaitez vous stopper la partie: (4 - 10)" );
+                System.out.println( "A combien d'essais souhaitez-vous stopper la partie: (4 - 10)" );
                 tries = sc.nextLine();
                 inputToArray = createArrayListeFromInput( tries );
                 if (!checkOccurencesFromListInArray( inputToArray, nbr )) {
@@ -81,7 +87,7 @@ public class utilsGameMecanics {
                 if (Integer.parseInt( tries ) > 10 || Integer.parseInt( tries)<4) {
                     System.out.print( "Vous devez saisir une combinaison entre 4 et 10 chiffres." );
                     catched = true;
-                    logger.error( "Bad size catched = "+tries+", expected >=4&&<=10" );
+                    logger.error( "Bad size catched = "+tries+", expected 4>=?<=10" );
                 }
             }
         }while(catched);
@@ -104,6 +110,8 @@ public class utilsGameMecanics {
     }
     /**
      * Méthode renvoie un nombre limite d'essais.
+     * Récupère le paramètre dans config.propreties
+     * @see utilsPropreties#getConfigProprety(String)
      * @return un entier représentant le nombre max d'essais.
      */
     public static int maxTries(){
@@ -114,7 +122,11 @@ public class utilsGameMecanics {
     }
 
     /**
-     * Méthode génère un code de x chiffres compris entre 0 et 9 donné par l'utilisateur
+     * Méthode génère un code de x chiffres compris entre 0 et 9 donné par l'utilisateur.
+     * On demande à l'utilisateur de saisir un code secret.
+     * On vérifie qu'il s'agit d'un nombre et qu'il est composé du nombre de chiffres attendus.
+     * @see exceptionNaN
+     * @see utilsPropreties#getConfigProprety(String)
      * @return un code secret sous forme de tableau d'entiers
      */
     public static int[] inputSecretCode(){
@@ -171,8 +183,7 @@ public class utilsGameMecanics {
      * @param liste une liste composée de chaque chiffre de la chaine de caractères input
      * @param secret un tableau composé de chiffres définis
      * @param input entrée utilisateur composée de chiffres
-    // * @param output liste composée des opérateurs de comparaison entre "liste" et "secret"
-     * @return une chaine de caractères composées des entrées de la liste "output"
+     * @return une chaine de caractères composées des indices "+=-".
      */
     public static String tryOutCheckSearchGame(ArrayList liste, int[] secret, String input){
         ArrayList output = new ArrayList();
@@ -243,6 +254,8 @@ public class utilsGameMecanics {
     }
 
 //TODO SearchGame: mutualiser le tour de jeu de l'ordinateur pour ne pas répéter deux fois dans duel et défenseur
+//TODO Mastermind: mutualiser les tours de jeu pour ne pas répéter deux fois dans duel et défenseur pour l'ordinateur,
+// et duel et challenger pour l'utilisateur
 
     //Méthode pour le jeu mastermind
     /**
@@ -264,7 +277,7 @@ public class utilsGameMecanics {
         ArrayList output = new ArrayList();
         int found = 0;
         int somewhere = 0;
-        System.out.print( "Proposition: " + input + " -> Réponse: " );
+        System.out.print( "\nProposition: " + input + " -> Réponse: " );
         int i=0;
         //On parcoure la liste des entrées utilisateurs en parsant chaque entrée en chiffre entier
         for (Object o:liste) {
@@ -307,7 +320,10 @@ public class utilsGameMecanics {
 
     //Méthodes pour le menu principal
     /**
-     * Méthode qui demande à l'utilisateur s'il souhaite refaire une partie.
+     * Méthode qui demande à l'utilisateur s'il souhaite refaire une partie d'un autre jeu.
+     * On demande à l'utilisateur s'il souhaite jouer à un autre jeu.
+     * On vérifie que sa réponse est bien une lettre et qu'elle correspond à 'N' ou 'O'.
+     * @see exceptionNaL
      * @return chaine de caractère représentant O ou N
      */
     public static String backToMenu(){
@@ -328,8 +344,7 @@ public class utilsGameMecanics {
             } finally {
                 if (!startAgain.equals("O") && !startAgain.equals("N")) {
                     catched = true;
-                    System.out.println( "Vous n'avez pas saisi O ou N." );
-                    System.out.println( "Vous avez saisi: "+startAgain );
+                    System.out.println( "Vous n'avez pas saisi O ou N mais: "+startAgain+"." );
                     logger.error( "Not O or N catched = "+startAgain );
                 }
             }
@@ -340,6 +355,7 @@ public class utilsGameMecanics {
     /**
      * Méthode demande à l'utilisateur de choisir un jeu.
      * On vérifie que son choix est viable, puis on enregistre son choix.
+     * @see exceptionNaN
      * @return un entier représentant le jeu choisi
      */
     public static int chooseModeForGame(){
@@ -379,6 +395,9 @@ public class utilsGameMecanics {
     }
     /**
      * Méthode qui demande à l'utilisateur s'il souhaite refaire une partie du même jeu.
+     * On demande à l'utilisateur s'il souhaite refaire une partie du même jeu.
+     * On vérifie que sa réponse est bien une lettre et qu'elle correspond à 'N' ou 'O'.
+     * @see exceptionNaL
      * @return chaine de caractère représentant O ou N
      */
     public static String stopOuEncore(){
@@ -388,7 +407,7 @@ public class utilsGameMecanics {
         do{
             try {
                 catched = false;
-                System.out.println( "Souhaitez-vous rejouez? O/N" );
+                System.out.println( "Souhaitez-vous refaire une partie? O/N" );
                 playAgain = myTrimString(sc.nextLine()).toUpperCase();
                 if(!playAgain.matches( "[a-zA-Z]" )){
                     throw new exceptionNaL();
@@ -399,14 +418,21 @@ public class utilsGameMecanics {
             } finally {
                 if (!playAgain.equals("O") && !playAgain.equals("N")) {
                     catched = true;
-                    System.out.println( "Vous n'avez pas saisi O ou N." );
-                    System.out.println( "Vous avez saisi: "+playAgain );
+                    System.out.println( "Vous n'avez pas saisi O ou N mais: "+playAgain+"." );
                     logger.error( "not O or N catched = "+playAgain );
                 }
             }
         }while (catched);
         return playAgain;
     }
+
+    /**
+     * Méthode permet de sélectionner un jeu.
+     * On demande à l'utilisateur à quel jeu il souhaite jouer.
+     * On vérifie que sa réponse est viable et on enregistre son choix.
+     * @see exceptionNaN
+     * @return un entier représentant le jeu choisi
+     */
     public static int menuJeu() {
         boolean catched = false;
         String chosenGame = "";
@@ -441,15 +467,16 @@ public class utilsGameMecanics {
     }
     //Pour le mode Développeur
     /**
-     * Méthode affiche le code secret à trouver.
+     * Méthode affiche le code secret à trouver, si le mode développeur est enclenché.
+     * @see utilsGameMecanics#modeDevOrNot()
      * @param code le tableau d'entiers représentant le code secret
-     * @return une chaine de caractères donnant le code secret
+     * @return une chaine de caractères représentant le code secret
      */
     public static String showSecretCode(int[] code){
         //affichage du code secret pour mode développeur
         StringBuilder sb = new StringBuilder();
-        sb.append("(Code Secret: " );
-        for(int i =0;i<code.length;i++){
+        sb.append( "(Code Secret: " );
+        for (int i = 0; i < code.length; i++) {
             sb.append( code[i] );
         }
         sb.append( ")" );
@@ -458,14 +485,26 @@ public class utilsGameMecanics {
     }
 
     /**
-     * Méthode vérifie si le jeu est lancé en mode développeur afin d'afficher
-     * le code secret en début de partie si c'est le cas.
-     * @param code tableau d'entier représentant le code secret
+     * Méthode vérifie si le jeu est lancé en mode développeur afin d'afficher.
+     * @return un booléen true si le mode développeur est "on"
      */
-    public static void modeDevOrNot(int[] code){
-            String mode_dev_value = utilsPropreties.getConfigProprety( "mode.dev");
-            if (mode_dev_value.equals("on")) {
-                System.out.println( showSecretCode( code ) );
-            }
+    public static boolean modeDevOrNot(){
+        boolean devMode = false;
+        String mode_dev_value = utilsPropreties.getConfigProprety( "mode.dev");
+        if (mode_dev_value.equals("on")) {
+            devMode = true;
+        }
+        return devMode;
+    }
+
+    /**
+     * Méthode sert à afficher que le jeu est lancé en mode développeur si c'est le cas.
+     */
+    public static void showModeDevOn(){
+        if(modeDevOrNot()==true) {
+            System.out.println("-------------------");
+            System.out.println("Mode développeur ON");
+            System.out.println("-------------------");
+        }
     }
 }

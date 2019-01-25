@@ -7,15 +7,16 @@ import static com.elodie.jeux.utilities.utilsGameMecanics.*;
 import static java.lang.Character.getNumericValue;
 
 /**
- * <b>Recherche +/- // Mode Défenseur: l'ordinateur de trouver votre combinaison secrète</b>
- * <p>Le but : découvrir la combinaison à x chiffres de l'adversaire (le défenseur).
+ * <b>Recherche +/- - Mode Défenseur</b>
+ * <p>Le but : l'ordinateur doit découvrir la combinaison à x chiffres de l'adversaire
+ * (le défenseur, soit ici l'utilisateur).
  * <p>Pour ce faire, l'attaquant fait une proposition. Le défenseur indique pour chaque
  * chiffre de la combinaison proposée si le chiffre de sa combinaison est plus grand (+),
  * plus petit (-) ou si c'est le bon chiffre (=).
  *<p>L'attaquant doit deviner la combinaison secrète en un nombre limité d'essais.
- *<p><i>(Combinaison secrète : 1234)</i></p>
- *<p><i>(Proposition : 4278 -&#155; Réponse : -=--</i></p>
- *<p><i>(Proposition : 2214 -&#155; Réponse : -=+=</i></p>
+ *<p>(Combinaison secrète : 1234))</p>
+ *<p>(Proposition : 4278 -&#155; Réponse : -=--)</p>
+ *<p>(Proposition : 2214 -&#155; Réponse : -=+=)</p>
  * @author elojito
  * @version 1.0
  */
@@ -57,6 +58,8 @@ public class searchDefenseur {
         System.out.println( "-----------------------------------------" );
         System.out.println( "Bienvenue dans Recherche +/- Mode Défenseur." );
         System.out.println( "-----------------------------------------" );
+        //Si le mode développeur est activé, on l'affiche
+        showModeDevOn();
         //choix du nombre de cases à deviner
         chooseCodeLenght();
         //génération du code secret

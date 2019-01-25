@@ -15,16 +15,16 @@ import static com.elodie.jeux.utilities.utilsGameMecanics.*;
 import static java.lang.Character.getNumericValue;
 
 /**
- * <b>mastermind //Mode duel où l'ordinateur et vous jouez tour à tour, le premier à trouver la combinaison gagne.</b>
- * <p>Le but : découvrir la combinaison à x chiffres de l'adversaire (le défenseur).
+ * <b>mastermind - Mode duel</b>
+ * <p>Le but : l'ordinateur et l'utilisateur jouent tour à tour, le premier à trouver la combinaison gagne.
  * <p>Pour ce faire, l'attaquant fait une proposition. Le défenseur indique pour
  * chaque proposition le nombre de chiffres de la proposition qui apparaissent
  * à la bonne place et à la mauvaise place dans la combinaison secrète.
  *<p>L'attaquant doit deviner la combinaison secrète en un nombre limité d'essais. Puis les rôles s'inversent.
  *<p>Le joueur et l'ordinateur doivent deviner la combinaison secrète en un nombre limité d'essais.
- *<p><i>(Combinaison secrète : 1234)</i></p>
- *<p><i>(Proposition : 4278 -&#155; Réponse : 1 présent, 1 bien placé</i></p>
- *<p><i>(Proposition : 2214 -&#155; Réponse : 2 bien placés</i></p>
+ *<p>(Combinaison secrète : 1234))</p>
+ *<p>(Proposition : 4278 -&#155; Réponse : 1 présent, 1 bien placé)</p>
+ *<p>(Proposition : 2214 -&#155; Réponse : 2 bien placés)</p>
  * @author elojito
  * @version 1.0
  */
@@ -41,6 +41,7 @@ public class mastermindDuel {
      * <li>une chaine de caractère "4 bien placés" représentant l'affichage sortie si la combinaison est trouvée</li>
      * <li>un compteur d'essais pouyr l'utilisateur</li>
      * <li>un compteur d'essais pour l'ordinateur</li>
+     * <li>un appel pour le logger</li>
      * </ul>
      */
     static final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
@@ -59,7 +60,7 @@ public class mastermindDuel {
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
      * @see utilsGameMecanics#inputSecretCode()
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
-     * @see utilsGameMecanics#modeDevOrNot(int[])
+     * @see utilsGameMecanics#modeDevOrNot()
      * <p>Tour de l'utilisateur.</p>
      * <p>On demande à l'utilisateur d'entrer une combinaison</p>
      * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
@@ -79,13 +80,17 @@ public class mastermindDuel {
         System.out.println( "-----------------------------------------" );
         System.out.println( "Bienvenue dans mastermind Mode DUEL." );
         System.out.println( "-----------------------------------------" );
+        //Si le mode développeur est activé, on l'affiche
+        showModeDevOn();
         //choix du nombre de cases à deviner
         chooseCodeLenght();
         //génération du code secret
         int[] secretCodeForUser = computedSecretCode();
         int[] secretCodeForAI = inputSecretCode();
         //affichage du code secret pour mode développeur
-        modeDevOrNot( secretCodeForUser );
+        if(modeDevOrNot()==true) {
+            System.out.println( secretCodeForUser );
+        }
         //choix du nombre d'essais max
         chooseMaxTries();
         int max = maxTries();
@@ -166,10 +171,10 @@ public class mastermindDuel {
             }
         }while(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin ) && counterAI <max && counterUser <max);
         if(verifReponseUser.equals( winwin )) {
-            System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
+            System.out.println( "\nBravo vous avez trouvé la combinaison !" );
         }
         else if(verifReponseAI.equals( winwin )) {
-            System.out.println( "\nL'ordinateur a trouvé votre combinaison: !" );
+            System.out.println( "\nL'ordinateur a trouvé votre combinaison !" );
             System.out.println( "La combinaison de l'ordinateur était: "+ secretCodeForUser );
         }
         else if(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin )){

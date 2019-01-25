@@ -8,7 +8,6 @@ import java.util.Iterator;
 import java.util.Properties;
 
 public class utilsPropreties {
-
     final static  String configPath = "./src/main/resources/config.propreties";
 
     public utilsPropreties() {
@@ -52,7 +51,7 @@ public class utilsPropreties {
             loadedProps.replace( key, newKeyValue );
             // On stocke le fichier sur le disque
             demo.saveProperties( loadedProps, propertiesFileLocation, "Sauvegarde config.propreties" );
-            logger.info( key+" "+oldKey+", in config "+getConfigProprety(key));
+            logger.info( key+" "+oldKey+"changed to "+getConfigProprety(key));
         }catch (FileNotFoundException e){
             System.out.println( "le fichier spécifié est introuvable" );
             logger.error( "le fichier spécifié est introuvable" );

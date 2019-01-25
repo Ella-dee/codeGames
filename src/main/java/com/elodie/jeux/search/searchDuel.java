@@ -14,9 +14,9 @@ import static java.lang.Character.getNumericValue;
  * chiffre de la combinaison proposée si le chiffre de sa combinaison est plus grand (+),
  * plus petit (-) ou si c'est le bon chiffre (=). Puis les rôles s'inversent.
  *<p>Le joueur et l'ordinateur doivent deviner la combinaison secrète en un nombre limité d'essais.
- *<p><i>(Combinaison secrète : 1234)</i></p>
- *<p><i>(Proposition : 4278 -&#155; Réponse : -=--</i></p>
- *<p><i>(Proposition : 2214 -&#155; Réponse : -=+=</i></p>
+ *<p>(Combinaison secrète : 1234)</p>
+ *<p>(Proposition : 4278 -&#155; Réponse : -=--)</p>
+ *<p>(Proposition : 2214 -&#155; Réponse : -=+=)</p>
  * @author elojito
  * @version 1.0
  */
@@ -53,7 +53,7 @@ public class searchDuel {
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
      * @see utilsGameMecanics#inputSecretCode()
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
-     * @see utilsGameMecanics#modeDevOrNot(int[])
+     * @see utilsGameMecanics#modeDevOrNot()
      * <p>Tour de l'utilisateur:</p>
      * @see utilsGameMecanics#playerTurnSearchGame(String, ArrayList, int[])
      * <p>Puis c'est au tour de l'ordinateur de jouer:
@@ -71,13 +71,17 @@ public class searchDuel {
         System.out.println( "-----------------------------------------" );
         System.out.println( "Bienvenue dans Recherche +/- Mode DUEL." );
         System.out.println( "-----------------------------------------" );
+        //Si le mode développeur est activé, on l'affiche
+        showModeDevOn();
         //choix du nombre de cases à deviner
         chooseCodeLenght();
         //génération du code secret
         int[] secretCodeForUser = computedSecretCode();
         int[] secretCodeForAI = inputSecretCode();
         //affichage du code secret pour mode développeur
-        modeDevOrNot( secretCodeForUser );
+        if(modeDevOrNot()==true) {
+            System.out.println( secretCodeForUser );
+        }
         //choix du nombre d'essais max
         chooseMaxTries();
         int max = maxTries();
@@ -139,10 +143,10 @@ public class searchDuel {
             }
         }while(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin )&& counterAI <max && counterUser <max);
         if(verifReponseUser.equals( winwin )) {
-            System.out.println( "\nBravo vous avez trouvé la combinaison: !" );
+            System.out.println( "\nBravo vous avez trouvé la combinaison !" );
         }
         else if(verifReponseAI.equals( winwin )) {
-            System.out.println( "\nL'ordinateur a trouvé votre combinaison: !" );
+            System.out.println( "\nL'ordinateur a trouvé votre combinaison !" );
             System.out.println( "La combinaison de l'ordinateur était: "+ secretCodeForUser );
         }
         else if(!verifReponseUser.equals( winwin ) && !verifReponseAI.equals( winwin )){
