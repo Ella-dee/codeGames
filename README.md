@@ -1,5 +1,6 @@
 # CodeGames
-<b>Développement en mode console d'une application proposant des jeux de logique. </b>
+### Développement en mode console d'une application proposant des jeux de logique.
+
 <p>Chaque jeu possède 3 modes :
 <ul>
 <li>Mode challenger: le joueur doit trouver la combinaison secrète de l'ordinateur</li>
@@ -7,7 +8,7 @@
 <li>Mode duel où l'ordinateur et le joueur jouent tour à tour, le premier à trouver la combinaison secrète de l'autre a gagné</li>
 </ul>
 
-<b>Jeux disponibles:Recherche +/-, Mastermind (code à chiffres)</b>
+### Jeux disponibles:Recherche +/-, Mastermind (code à chiffres)
 
 <p> Au démarrage, l'utilisateur choisi le jeu auquel il veut jouer parmi les choix proposés.
 Il sélectionne le mode de son choix. L'application lance le jeu sélectionné.
@@ -24,4 +25,4 @@ ou faire deviner, ainsi que le nombre d'essais maximal.
 Pour cela dans le fichier config.propreties, passer le paramètre "mode.dev" en "on".
 
 <p>Un fichier de logs.log à la racine du projet permet de suivre les logs de l'application.
-La gestion des logs se fait avec Apache Log4j2</p>.
+La gestion des logs se fait avec Apache Log4j2</p>
