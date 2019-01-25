@@ -40,6 +40,7 @@ public class utilsPropreties {
     /**
      * Méthode récupère la valeur d'une propriété
      * @param key chaine de caractère représentant le nom de la propriété
+     * @param newKeyValue chaine de caractère représentant la nouvelle valeur à prendre en compte
      */
     public static void replaceProprety(String key, String newKeyValue){
         Logger logger = LogManager.getLogger( Main.class);
