@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.elodie.jeux"},{"l":"com.elodie.jeux.exceptions"},{"l":"com.elodie.jeux.mastermind"},{"l":"com.elodie.jeux.search"},{"l":"com.elodie.jeux.utilities"}]
