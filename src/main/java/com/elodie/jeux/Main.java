@@ -47,7 +47,7 @@ import static com.elodie.jeux.utilities.utilsPropreties.getConfigProprety;
  *<li>le nombre d'essais possibles</li>
  *</ul>
  *<p>Un fichier de configuration (log4j2.xml) permettra de paramétrer les logs de l'application.
- * La gestion des logs se fera avec Apache Log4j.
+ * La gestion des logs se fera avec Apache Log4j</p>.
  */
 public class Main {
 
@@ -59,8 +59,8 @@ public class Main {
                 StringWriter sw = new StringWriter();
                 e.printStackTrace(new PrintWriter(sw));
                 String stacktrace = sw.toString();
-                logger.fatal( stacktrace );
-                System.out.println( stacktrace );
+                logger.fatal("uncaught exception: "+ stacktrace );
+                System.out.println("une erreur inattendue a fermé le programme" );
             }
         });
         logger.info("Entering application.");
