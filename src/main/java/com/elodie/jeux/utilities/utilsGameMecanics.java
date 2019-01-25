@@ -24,6 +24,7 @@ public class utilsGameMecanics {
     public static void chooseCodeLenght(){
         boolean catched = false;
         String cases = "";
+        int casesParsed = 0;
         ArrayList inputToArray = new ArrayList(  );
         Scanner sc = new Scanner( System.in );
         final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
@@ -39,14 +40,13 @@ public class utilsGameMecanics {
                 }
                 else {
                     replaceProprety("max.cases", cases);
+                    casesParsed = Integer.parseInt( cases );
                 }
             } catch (exceptionNaN e) {
                 catched = true;
                 logger.error( "NotANumber catched = "+cases );
-            }catch (NumberFormatException e){
-                logger.error( "Number Format Exception catched: "+cases );
             }finally {
-                if (Integer.parseInt( cases ) > 10 || Integer.parseInt( cases)<4) {
+                if (casesParsed > 10 || casesParsed<4) {
                     System.out.print( "Vous devez saisir une combinaison entre 4 et 10 chiffres." );
                     catched = true;
                     logger.error( "Bad size catched = "+cases+", expected 4>=?<=10" );
@@ -65,6 +65,7 @@ public class utilsGameMecanics {
     public static void chooseMaxTries(){
         boolean catched = false;
         String tries = "";
+        int triesParsed = 0;
         ArrayList inputToArray = new ArrayList(  );
         Scanner sc = new Scanner( System.in );
         final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
@@ -79,12 +80,13 @@ public class utilsGameMecanics {
                 }
                 else{
                     replaceProprety( "max.tries", tries );
+                    triesParsed = Integer.parseInt( tries );
                 }
             } catch (exceptionNaN e) {
                 catched = true;
                 logger.error( "NotANumber catched = "+tries );
             } finally {
-                if (Integer.parseInt( tries ) > 10 || Integer.parseInt( tries)<4) {
+                if (triesParsed > 10 || triesParsed<4) {
                     System.out.print( "Vous devez saisir une combinaison entre 4 et 10 chiffres." );
                     catched = true;
                     logger.error( "Bad size catched = "+tries+", expected 4>=?<=10" );
@@ -386,11 +388,10 @@ public class utilsGameMecanics {
                 if(chosenModeParsed < 1|| chosenModeParsed > 3) {
                     System.out.println( "Vous devez saisir un choix parmis ceux disponibles." );
                     catched = true;
-                    logger.error( "Not 1 or 2 catched = "+chosenMode );
+                    logger.error( "Not 1 or 2 catched = "+chosenModeParsed );
                 }
             }
         }while(catched);
-        chosenModeParsed = Integer.parseInt( chosenMode);
         return chosenModeParsed;
     }
     /**
@@ -458,7 +459,7 @@ public class utilsGameMecanics {
                 if (chosenGameParsed < 1 || chosenGameParsed > 2) {
                     System.out.println( "Vous devez saisir un choix parmis ceux disponibles." );
                     catched = true;
-                    logger.error( "Not 1 or 2 catched = "+chosenGame );
+                    logger.error( "Not 1 or 2 catched = "+chosenGameParsed );
                 }
             }
         } while (catched);

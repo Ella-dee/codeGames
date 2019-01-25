@@ -5,6 +5,10 @@ import com.elodie.jeux.mastermind.*;
 import com.elodie.jeux.search.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 import static com.elodie.jeux.utilities.utilsGameMecanics.*;
 import static com.elodie.jeux.utilities.utilsPropreties.getConfigProprety;
 
@@ -49,7 +53,16 @@ public class Main {
 
     private static final Logger logger = LogManager.getLogger(Main.class);
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws Exception {
+        Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+            public void uncaughtException(Thread t, Throwable e) {
+                StringWriter sw = new StringWriter();
+                e.printStackTrace(new PrintWriter(sw));
+                String stacktrace = sw.toString();
+                logger.fatal( stacktrace );
+                System.out.println( stacktrace );
+            }
+        });
         logger.info("Entering application.");
 
         System.out.println( "\nBienvenu-e-s!" );

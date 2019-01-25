@@ -48,11 +48,9 @@ public class utilsPropreties {
         try {
             String propertiesFileLocation = configPath;
             Properties loadedProps = demo.loadProperties( propertiesFileLocation );
-            String oldKey = getConfigProprety( key );
             loadedProps.replace( key, newKeyValue );
             // On stocke le fichier sur le disque
             demo.saveProperties( loadedProps, propertiesFileLocation, "Sauvegarde config.propreties" );
-            logger.info( key+" "+oldKey+"changed to "+getConfigProprety(key));
         }catch (FileNotFoundException e){
             System.out.println( "le fichier spécifié est introuvable" );
             logger.error( "le fichier spécifié est introuvable" );
@@ -61,6 +59,7 @@ public class utilsPropreties {
             logger.error( "erreur lors de la lecture du fichier" );
             e.printStackTrace();
         }
+        logger.info( key+" changed to "+getConfigProprety(key));
     }
 
     /**
@@ -79,7 +78,7 @@ public class utilsPropreties {
     }
     /**
      * Cette méthode lit un fichier utilsPropreties à l'emplacement spécifié *
-     * @param propertiesFileLocation L'emplacemnt du fichier
+     * @param propertiesFileLocation L'emplacement du fichier
      * @return Le fichier utilsPropreties chargé *
      * @throws FileNotFoundException si le fichier n'a pas été trouvé
      * @throws IOException si une erreur est survenue durant la lecture
