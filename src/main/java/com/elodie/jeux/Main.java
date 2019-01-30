@@ -11,6 +11,7 @@ import java.io.StringWriter;
 
 import static com.elodie.jeux.utilities.utilsGameMecanics.*;
 import static com.elodie.jeux.utilities.utilsPropreties.getConfigProprety;
+import static com.elodie.jeux.utilities.utilsPropreties.replaceProprety;
 
 /**
  * <b>Développement en mode console d'une application proposant des jeux de logique. </b>
@@ -54,7 +55,16 @@ public class Main {
     private static final Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args)throws Exception {
-        Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+        if(args.length>0) {
+            String mainParam = args[0];
+            String mode_dev_value = utilsPropreties.getConfigProprety("mode.dev");
+            if (mainParam.equals("on")) {
+                replaceProprety("mode.dev", mainParam);
+                showModeDevOn();
+            }
+        }
+
+                Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             public void uncaughtException(Thread t, Throwable e) {
                 StringWriter sw = new StringWriter();
                 e.printStackTrace(new PrintWriter(sw));

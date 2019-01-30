@@ -1,10 +1,10 @@
 #Sauvegarde config.propreties
-#Fri Jan 25 11:42:36 CET 2019
-mode.3=mode duel
-mode.dev=off
-max.tries=4
+#Wed Jan 30 09:44:56 CET 2019
+game.2=jeu mastermind
 game.1=jeu recherche+/-
 max.cases=4
-game.2=jeu mastermind
+max.tries=4
+mode.3=mode duel
 mode.2=mode defenseur
+mode.dev=off
 mode.1=mode challenger
