@@ -12,12 +12,13 @@
 
 <p>Installer le JDK Oracle version minimum 8. https://www.oracle.com/technetwork/java/javase/downloads/index.html
  
-<p>il est possible de passer en mode développeur en passant un argument dans lal igne de commande, qui sera récupéré dans la méthode Main à l'aide de String argd[]: java -jar nom-du-jeu.jar on
  
 
 ### Utilisation
 #### Jeux disponibles:Recherche +/-, Mastermind (code à chiffres)
 
+<p>il est possible de passer en mode développeur en passant un argument dans lal igne de commande, qui sera récupéré dans la méthode Main à l'aide de String argd[]:
+<p>java -jar nom-du-jeu.jar on
 <p> Au démarrage, l'utilisateur choisi le jeu auquel il veut jouer parmi les choix proposés.
 Il sélectionne le mode de son choix. L'application lance le jeu sélectionné.
 <p>On demande au joueur le nombre de cases de la combinaison secrète qu'il souhaite deviner
