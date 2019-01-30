@@ -10,14 +10,23 @@
 
 ### Compilation
 
-<p>Installer le JDK Oracle version minimum 8. https://www.oracle.com/technetwork/java/javase/downloads/index.html
- 
- 
+<p>Installer le JDK d'Oracle version minimum 8. https://www.oracle.com/technetwork/java/javase/downloads/index.html
+<p>Compiler avec Maven version minimum 2.
+ <ul>
+  <li>mvn clean</li>
+  <li>mvn compile</li>
+  <li>mvn install</li>
+  </ul>
 
 ### Utilisation
 #### Jeux disponibles:Recherche +/-, Mastermind (code à chiffres)
 
-<p>il est possible de passer en mode développeur en passant un argument dans lal igne de commande, qui sera récupéré dans la méthode Main à l'aide de String argd[]: <i><b>java -jar nom-du-jeu.jar on</b></i>
+<p>Il est possible de lancer l'application dans un mode "développeur" pour afficher la solution dès le début. 
+<ul>
+<li>dans le fichier config.propreties, passer le paramètre "mode.dev" en "on".</li>
+<li>en passant un argument en la ligne de commande, récupéré à l'aide de String args[]: </br>
+<i><b>java -jar nom-du-jeu.jar on</b></i></li>
+</ul>
 <p> Au démarrage, l'utilisateur choisi le jeu auquel il veut jouer parmi les choix proposés.
 Il sélectionne le mode de son choix. L'application lance le jeu sélectionné.
 <p>On demande au joueur le nombre de cases de la combinaison secrète qu'il souhaite deviner
@@ -29,8 +38,6 @@ ou faire deviner, ainsi que le nombre d'essais maximal.
 <li>de lancer un autre jeu (retour à l'écran de choix des jeux du début)</li>
 <li>de quitter l'application</li>
 </ul>
-<p>Il est possible de lancer l'application dans un mode "développeur" pour afficher la solution dès le début. 
-Pour cela dans le fichier config.propreties, passer le paramètre "mode.dev" en "on".
 
 <p>Un fichier de logs.log à la racine du projet permet de suivre les logs de l'application.
 La gestion des logs se fait avec Apache Log4j2</p>
