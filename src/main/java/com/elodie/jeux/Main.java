@@ -57,7 +57,6 @@ public class Main {
     public static void main(String[] args)throws Exception {
         if(args.length>0) {
             String mainParam = args[0];
-            String mode_dev_value = utilsPropreties.getConfigProprety("mode.dev");
             if (mainParam.equals("on")) {
                 replaceProprety("mode.dev", mainParam);
                 showModeDevOn();
