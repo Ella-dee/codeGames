@@ -1,0 +1,93 @@
+2019-01-25 11:18:32.788 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-01-25 11:18:35.034 [main] INFO  com.elodie.jeux.Main - jeu recherche+/-
+2019-01-25 11:18:36.051 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-01-25 11:18:38.175 [main] ERROR com.elodie.jeux.Main - NotANumber catched = F
+2019-01-25 11:18:38.175 [main] ERROR com.elodie.jeux.Main - java.lang.NumberFormatException: For input string: "F"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at com.elodie.jeux.utilities.utilsGameMecanics.chooseCodeLenght(utilsGameMecanics.java:49)
+	at com.elodie.jeux.search.searchDefenseur.<init>(searchDefenseur.java:64)
+	at com.elodie.jeux.Main.main(Main.java:96)
+
+2019-01-25 11:29:08.195 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-01-25 11:29:12.071 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-01-25 11:29:13.712 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-01-25 11:29:15.322 [main] ERROR com.elodie.jeux.Main - NotANumber catched = F
+2019-01-25 11:29:15.322 [main] ERROR com.elodie.jeux.Main - Bad size catched = F, expected 4>=?<=10
+2019-01-25 11:29:18.025 [main] INFO  com.elodie.jeux.Main - max.cases changed to 44
+2019-01-25 11:29:18.025 [main] ERROR com.elodie.jeux.Main - Bad size catched = 44, expected 4>=?<=10
+2019-01-25 11:29:20.573 [main] INFO  com.elodie.jeux.Main - max.cases changed to 4
+2019-01-25 11:29:22.511 [main] ERROR com.elodie.jeux.Main - NotANumber catched = 4
+2019-01-25 11:29:22.511 [main] ERROR com.elodie.jeux.Main - Bad size catched = 1, expected size = 4
+2019-01-25 11:29:23.684 [main] ERROR com.elodie.jeux.Main - Bad size catched = 1, expected size = 4
+2019-01-25 11:29:26.794 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 3333)
+2019-01-25 11:29:28.857 [main] ERROR com.elodie.jeux.Main - NotANumber catched = F
+2019-01-25 11:29:28.857 [main] ERROR com.elodie.jeux.Main - Bad size catched = F, expected 4>=?<=10
+2019-01-25 11:29:30.617 [main] INFO  com.elodie.jeux.Main - max.tries changed to 1
+2019-01-25 11:29:30.617 [main] ERROR com.elodie.jeux.Main - Bad size catched = 1, expected 4>=?<=10
+2019-01-25 11:29:32.946 [main] ERROR com.elodie.jeux.Main - NotANumber catched = RR5
+2019-01-25 11:29:32.946 [main] ERROR com.elodie.jeux.Main - Bad size catched = RR5, expected 4>=?<=10
+2019-01-25 11:29:35.290 [main] INFO  com.elodie.jeux.Main - max.tries changed to 4
+2019-01-25 11:29:54.093 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
+2019-01-25 11:29:54.859 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
+2019-01-25 11:29:54.859 [main] INFO  com.elodie.jeux.Main - Exiting application.
+2019-01-25 11:33:06.475 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-01-25 11:33:08.913 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-01-25 11:33:10.382 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-01-25 11:33:13.008 [main] INFO  com.elodie.jeux.Main - max.cases changed to 4
+2019-01-25 11:33:15.431 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4444)
+2019-01-25 11:33:17.213 [main] INFO  com.elodie.jeux.Main - max.tries changed to 4
+2019-01-25 11:33:27.480 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
+2019-01-25 11:33:28.026 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
+2019-01-25 11:33:28.026 [main] INFO  com.elodie.jeux.Main - Exiting application.
+2019-01-25 11:34:52.951 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-01-25 11:34:54.530 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-01-25 11:34:55.234 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-01-25 11:34:56.651 [main] INFO  com.elodie.jeux.Main - max.cases changed to 4
+2019-01-25 11:34:58.871 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4444)
+2019-01-25 11:34:59.592 [main] INFO  com.elodie.jeux.Main - max.tries changed to 4
+2019-01-25 11:35:09.814 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
+2019-01-25 11:35:10.576 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
+2019-01-25 11:35:10.576 [main] INFO  com.elodie.jeux.Main - Exiting application.
+2019-01-25 11:42:19.620 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-01-25 11:42:23.397 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-01-25 11:42:24.414 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-01-25 11:42:26.868 [main] ERROR com.elodie.jeux.Main - NotANumber catched = F
+2019-01-25 11:42:26.868 [main] ERROR com.elodie.jeux.Main - Bad size catched = F, expected 4>=?<=10
+2019-01-25 11:42:27.492 [main] INFO  com.elodie.jeux.Main - max.cases changed to 4
+2019-01-25 11:42:30.478 [main] ERROR com.elodie.jeux.Main - NotANumber catched = 4
+2019-01-25 11:42:30.478 [main] ERROR com.elodie.jeux.Main - Bad size catched = 3, expected size = 4
+2019-01-25 11:42:32.182 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 1111)
+2019-01-25 11:42:34.416 [main] ERROR com.elodie.jeux.Main - NotANumber catched = DZED
+2019-01-25 11:42:34.416 [main] ERROR com.elodie.jeux.Main - Bad size catched = DZED, expected 4>=?<=10
+2019-01-25 11:42:36.979 [main] INFO  com.elodie.jeux.Main - max.tries changed to 4
+2019-01-25 11:42:44.996 [main] INFO  com.elodie.jeux.Main - combinaison non trouvée.
+2019-01-25 11:42:54.281 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
+2019-01-25 11:42:55.515 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
+2019-01-25 11:42:55.515 [main] INFO  com.elodie.jeux.Main - Exiting application.
+2019-01-30 09:44:16.599 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-01-30 09:44:29.444 [main] INFO  com.elodie.jeux.Main - jeu recherche+/-
+2019-01-30 09:44:32.495 [main] ERROR com.elodie.jeux.Main - NotANumber catched = p
+2019-01-30 09:44:32.495 [main] ERROR com.elodie.jeux.Main - Not 1 or 2 catched = 0
+2019-01-30 09:44:37.449 [main] ERROR com.elodie.jeux.Main - Not 1 or 2 catched = 5
+2019-01-30 09:44:39.575 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-01-30 09:44:41.514 [main] ERROR com.elodie.jeux.Main - NotANumber catched = m
+2019-01-30 09:44:41.514 [main] ERROR com.elodie.jeux.Main - Bad size catched = m, expected 4>=?<=10
+2019-01-30 09:44:44.060 [main] INFO  com.elodie.jeux.Main - max.cases changed to 55
+2019-01-30 09:44:44.060 [main] ERROR com.elodie.jeux.Main - Bad size catched = 55, expected 4>=?<=10
+2019-01-30 09:44:44.951 [main] INFO  com.elodie.jeux.Main - max.cases changed to 4
+2019-01-30 09:44:47.186 [main] ERROR com.elodie.jeux.Main - NotANumber catched = 4
+2019-01-30 09:44:47.186 [main] ERROR com.elodie.jeux.Main - Bad size catched = 1, expected size = 4
+2019-01-30 09:44:49.734 [main] ERROR com.elodie.jeux.Main - Bad size catched = 1, expected size = 4
+2019-01-30 09:44:52.094 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 1111)
+2019-01-30 09:44:54.251 [main] ERROR com.elodie.jeux.Main - NotANumber catched = m
+2019-01-30 09:44:54.251 [main] ERROR com.elodie.jeux.Main - Bad size catched = m, expected 4>=?<=10
+2019-01-30 09:44:56.064 [main] INFO  com.elodie.jeux.Main - max.tries changed to 4
+2019-01-30 09:45:04.098 [main] INFO  com.elodie.jeux.Main - combinaison non trouvée.
+2019-01-30 09:45:06.895 [main] ERROR com.elodie.jeux.Main - NotALetter catched = 1
+2019-01-30 09:45:06.895 [main] ERROR com.elodie.jeux.Main - not O or N catched = 1
+2019-01-30 09:45:09.598 [main] ERROR com.elodie.jeux.Main - not O or N catched = M
+2019-01-30 09:45:11.817 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
+2019-01-30 09:45:13.301 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
+2019-01-30 09:45:13.301 [main] INFO  com.elodie.jeux.Main - Exiting application.
