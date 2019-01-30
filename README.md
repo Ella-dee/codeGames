@@ -11,7 +11,9 @@
 ### Compilation
 
 <p>Installer le JDK Oracle version minimum 8. https://www.oracle.com/technetwork/java/javase/downloads/index.html
-  
+ 
+<p>il est possible de passer en mode développeur en passant un argument dans lal igne de commande, qui sera récupéré dans la méthode Main à l'aide de String argd[]: java -jar nom-du-jeu.jar on
+ 
 
 ### Utilisation
 #### Jeux disponibles:Recherche +/-, Mastermind (code à chiffres)
