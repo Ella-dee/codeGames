@@ -3,7 +3,7 @@ package com.elodie.jeux.utilities;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-public class utilsLogs {
+public class UtilsLogs {
     static final Logger logger = LogManager.getLogger();
 
     public void logIt() {

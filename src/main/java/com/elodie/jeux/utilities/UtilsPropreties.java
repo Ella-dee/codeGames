@@ -7,10 +7,11 @@ import java.io.*;
 import java.util.Iterator;
 import java.util.Properties;
 
-public class utilsPropreties {
-    final static  String configPath = "./src/main/resources/config.propreties";
+import static org.apache.logging.log4j.core.util.Loader.getClassLoader;
 
-    public utilsPropreties() {
+public class UtilsPropreties {
+
+    public UtilsPropreties() {
         super();
     }
 
@@ -21,11 +22,10 @@ public class utilsPropreties {
      */
     public static String getConfigProprety(String str){
         Logger logger = LogManager.getLogger( Main.class);
-        utilsPropreties demo = new utilsPropreties();
+        UtilsPropreties demo = new UtilsPropreties();
         String prop = "";
         try {
-            String propertiesFileLocation = configPath;
-            Properties loadedProps = demo.loadProperties( propertiesFileLocation );
+            Properties loadedProps = demo.loadProperties("config.propreties");
             prop = loadedProps.getProperty(str);
         }catch (FileNotFoundException e){
             System.out.println( "le fichier spécifié est introuvable" );
@@ -44,9 +44,9 @@ public class utilsPropreties {
      */
     public static void replaceProprety(String key, String newKeyValue){
         Logger logger = LogManager.getLogger( Main.class);
-        utilsPropreties demo = new utilsPropreties();
+        UtilsPropreties demo = new UtilsPropreties();
         try {
-            String propertiesFileLocation = configPath;
+            String propertiesFileLocation = "config.propreties";
             Properties loadedProps = demo.loadProperties( propertiesFileLocation );
             loadedProps.replace( key, newKeyValue );
             // On stocke le fichier sur le disque
@@ -63,7 +63,7 @@ public class utilsPropreties {
     }
 
     /**
-     * Cette méthode stocke le fichier utilsPropreties à l'emplacement spécifié
+     * Cette méthode stocke le fichier UtilsPropreties à l'emplacement spécifié
      * @param props Le fichier à stocker
      * @param fileLocation L'emplacement où le fichier doit être stocké
      * @param comments Commentaires à insérer en tête du fichier
@@ -77,19 +77,20 @@ public class utilsPropreties {
         out.close();
     }
     /**
-     * Cette méthode lit un fichier utilsPropreties à l'emplacement spécifié *
+     * Cette méthode lit et charge un fichier UtilsPropreties à l'emplacement spécifié
      * @param propertiesFileLocation L'emplacement du fichier
-     * @return Le fichier utilsPropreties chargé *
+     * @return Le fichier UtilsPropreties chargé
      * @throws FileNotFoundException si le fichier n'a pas été trouvé
      * @throws IOException si une erreur est survenue durant la lecture
      * */
     public java.util.Properties loadProperties(String propertiesFileLocation) throws FileNotFoundException, IOException {
         Properties props = new Properties();
-        props.load(new FileInputStream(propertiesFileLocation));
+        InputStream i = getClassLoader().getResourceAsStream(propertiesFileLocation);
+        props.load(i);
         return props;
     }
     /**
-     *Cette méthode affiche cahque paire [clé,valuer] d'un fichier utilsPropreties
+     *Cette méthode affiche cahque paire [clé,valuer] d'un fichier UtilsPropreties
      *  @param props Le fichier à afficher
      */
     public static void displayProperties(Properties props) {

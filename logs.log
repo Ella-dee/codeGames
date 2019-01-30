@@ -6,8 +6,8 @@
 	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
 	at java.base/java.lang.Integer.parseInt(Integer.java:652)
 	at java.base/java.lang.Integer.parseInt(Integer.java:770)
-	at com.elodie.jeux.utilities.utilsGameMecanics.chooseCodeLenght(utilsGameMecanics.java:49)
-	at com.elodie.jeux.search.searchDefenseur.<init>(searchDefenseur.java:64)
+	at com.elodie.jeux.utilities.UtilsGameMecanics.chooseCodeLenght(utilsGameMecanics.java:49)
+	at com.elodie.jeux.search.SearchDefenseur.<init>(searchDefenseur.java:64)
 	at com.elodie.jeux.Main.main(Main.java:96)
 
 2019-01-25 11:29:08.195 [main] INFO  com.elodie.jeux.Main - Entering application.

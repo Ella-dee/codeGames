@@ -1,14 +1,14 @@
 package com.elodie.jeux.mastermind;
 
 import com.elodie.jeux.Main;
-import com.elodie.jeux.utilities.utilsGameMecanics;
+import com.elodie.jeux.utilities.UtilsGameMecanics;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import static com.elodie.jeux.utilities.utils.*;
-import static com.elodie.jeux.utilities.utilsGameMecanics.*;
+import static com.elodie.jeux.utilities.Utils.*;
+import static com.elodie.jeux.utilities.UtilsGameMecanics.*;
 import static java.lang.Character.getNumericValue;
 
 /**
@@ -26,7 +26,7 @@ import static java.lang.Character.getNumericValue;
  * @version 1.0
  */
 
-public class mastermindDefenseur {
+public class MastermindDefenseur {
     /**
      * <b>Variables globales:</b>
      * <ul>
@@ -46,18 +46,18 @@ public class mastermindDefenseur {
     /**
      * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
      * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
-     * @see utilsGameMecanics#chooseCodeLenght()
+     * @see UtilsGameMecanics#chooseCodeLenght()
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
-     * @see utilsGameMecanics#inputSecretCode()
+     * @see UtilsGameMecanics#inputSecretCode()
      * <p>On demande à l'utilisateur le nombre d'essais maximal à ne pas dépasser.</p>
-     * @see utilsGameMecanics#maxTries()
+     * @see UtilsGameMecanics#maxTries()
      * <p>On lance le jeu</p>
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
      * <p>On compare à la combinaison secrète puis affiche les indices bien placés ou présents</p>
-     * @see utilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
+     * @see UtilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
      * <p>Si l'ordinateur trouve alors apparait "4 bien placés", le jeu s'arrête</p>
      */
-    public mastermindDefenseur(){
+    public MastermindDefenseur(){
         System.out.println( "-----------------------------------------" );
         System.out.println( "Bienvenue dans mastermind Mode Défenseur." );
         System.out.println( "-----------------------------------------" );

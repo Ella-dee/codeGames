@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *     <li>transformation d'une chaine de caractères en tableau rempli par chaque caractère de cette chaine</li>
  * </ul>
  */
-public class utils {
+public class Utils {
     /**
      * <b>Méthode de formatage du texte</b>
      * <p>Permet de transformer un ArrayList en chaîne de caractères,

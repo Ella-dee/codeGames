@@ -1,14 +1,14 @@
 package com.elodie.jeux.mastermind;
 
 import com.elodie.jeux.Main;
-import com.elodie.jeux.exceptions.exceptionNaN;
-import com.elodie.jeux.utilities.utilsGameMecanics;
+import com.elodie.jeux.exceptions.ExceptionNaN;
+import com.elodie.jeux.utilities.UtilsGameMecanics;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Scanner;
-import static com.elodie.jeux.utilities.utils.*;
-import static com.elodie.jeux.utilities.utilsGameMecanics.*;
+import static com.elodie.jeux.utilities.Utils.*;
+import static com.elodie.jeux.utilities.UtilsGameMecanics.*;
 
 /**
  * <b>Mastermind - Mode challenger</b>
@@ -24,7 +24,7 @@ import static com.elodie.jeux.utilities.utilsGameMecanics.*;
  * @version 1.0
  */
 
-public class mastermindChallenger {
+public class MastermindChallenger {
     /**
      * <b>Variables globales:</b>
      * <ul>
@@ -44,24 +44,24 @@ public class mastermindChallenger {
     /**
      * Méthode comprend la mécanique du jeu.
      * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
-     * @see utilsGameMecanics#chooseCodeLenght()
+     * @see UtilsGameMecanics#chooseCodeLenght()
      * <p>On créée une combinaison secrète.</p>
-     * @see utilsGameMecanics#computedSecretCode()
+     * @see UtilsGameMecanics#computedSecretCode()
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
-     * @see utilsGameMecanics#modeDevOrNot()
+     * @see UtilsGameMecanics#modeDevOrNot()
      * <p>On demande à l'utilisateur le nombre d'essais maximal à ne pas dépasser.</p>
-     * @see utilsGameMecanics#maxTries()
+     * @see UtilsGameMecanics#maxTries()
      * <p>Tour de jeu de l'utilisateur.</p>
      * <p>On demande à l'utilisateur d'entrer une combinaison</p>
      * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
-     * @see exceptionNaN#exceptionNaN()
+     * @see ExceptionNaN#ExceptionNaN()
      * <p>On compare à la combinaison secrète puis affiche si les chiffres sont bien placés ou au moins présents.</p>
-     * @see utilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
+     * @see UtilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
      * <p>Si l'utilisateur trouve alors apparait "4 bien placés", la partie s'arrête.</p>
      * <p>Si l'utilisateur ne trouve pas en moins de 6 essais, la partie s'arrête et on affiche la solution.</p>
-     * @see utilsGameMecanics#showSecretCode(int[])
+     * @see UtilsGameMecanics#showSecretCode(int[])
      **/
-    public mastermindChallenger(){
+    public MastermindChallenger(){
         int counter = 0;
         System.out.println( "-----------------------------------------" );
         System.out.println( "Bienvenue dans mastermind Mode Challenger." );
@@ -91,9 +91,9 @@ public class mastermindChallenger {
                     userInput = sc.nextLine();
                     inputToArray = createArrayListeFromInput( userInput );
                     if(!checkOccurencesFromListInArray(inputToArray, nbr)){
-                        throw new exceptionNaN();
+                        throw new ExceptionNaN();
                     }
-                } catch (exceptionNaN e) {
+                } catch (ExceptionNaN e) {
                     catched = true;
                     logger.error( "NotANumber catched = "+ userInput);
                 }

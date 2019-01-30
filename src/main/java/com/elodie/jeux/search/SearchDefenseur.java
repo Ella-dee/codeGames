@@ -1,13 +1,13 @@
 package com.elodie.jeux.search;
 
 import com.elodie.jeux.Main;
-import com.elodie.jeux.utilities.utilsGameMecanics;
+import com.elodie.jeux.utilities.UtilsGameMecanics;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
-import static com.elodie.jeux.utilities.utils.*;
-import static com.elodie.jeux.utilities.utilsGameMecanics.*;
+import static com.elodie.jeux.utilities.Utils.*;
+import static com.elodie.jeux.utilities.UtilsGameMecanics.*;
 import static java.lang.Character.getNumericValue;
 
 /**
@@ -25,7 +25,7 @@ import static java.lang.Character.getNumericValue;
  * @version 1.0
  */
 
-public class searchDefenseur {
+public class SearchDefenseur {
     /**
      * <b>Variables globales:</b>
      * <ul>
@@ -46,20 +46,20 @@ public class searchDefenseur {
     /**
      * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
      * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
-     * @see utilsGameMecanics#chooseCodeLenght()
+     * @see UtilsGameMecanics#chooseCodeLenght()
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
-     * @see utilsGameMecanics#inputSecretCode()
+     * @see UtilsGameMecanics#inputSecretCode()
      * <p>On demande à l'utilisateur le nombre d'essais maximal à ne pas dépasser.</p>
-     * @see utilsGameMecanics#maxTries()
+     * @see UtilsGameMecanics#maxTries()
      * <p>On lance le jeu</p>
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
      * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see utilsGameMecanics#tryOutCheckSearchGame(ArrayList, int[], String)
+     * @see UtilsGameMecanics#tryOutCheckSearchGame(ArrayList, int[], String)
      * <p>Si l'ordinateur trouve alors apparait "====", la partie s'arrête.
      * <p>Si l'ordinateur ne trouve pas en moins de 6 essais, la partie s'arrête.</p>
-     * @see utilsGameMecanics#showSecretCode(int[])
+     * @see UtilsGameMecanics#showSecretCode(int[])
      */
-    public searchDefenseur(){
+    public SearchDefenseur(){
         int counter = 0;
         System.out.println( "-----------------------------------------" );
         System.out.println( "Bienvenue dans Recherche +/- Mode Défenseur." );

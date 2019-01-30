@@ -9,9 +9,9 @@ import org.apache.logging.log4j.Logger;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-import static com.elodie.jeux.utilities.utilsGameMecanics.*;
-import static com.elodie.jeux.utilities.utilsPropreties.getConfigProprety;
-import static com.elodie.jeux.utilities.utilsPropreties.replaceProprety;
+import static com.elodie.jeux.utilities.UtilsGameMecanics.*;
+import static com.elodie.jeux.utilities.UtilsPropreties.getConfigProprety;
+import static com.elodie.jeux.utilities.UtilsPropreties.replaceProprety;
 
 /**
  * <b>Développement en mode console d'une application proposant des jeux de logique. </b>
@@ -28,9 +28,9 @@ import static com.elodie.jeux.utilities.utilsPropreties.replaceProprety;
  * À la fin de la partie, l'utilisateur peut choisir :
  * <ul>
  *<li>de rejouer au même jeu</li>
- * @see utilsGameMecanics#stopOuEncore()
+ * @see UtilsGameMecanics#stopOuEncore()
  * <li>de lancer un autre jeu (retour à l'écran de choix des jeux du début)</li>
- * @see utilsGameMecanics#backToMenu()
+ * @see UtilsGameMecanics#backToMenu()
  * <li>de quitter l'application</li>
  *</ul>
  * <p>Il doit être possible de lancer l'application dans un mode "développeur".
@@ -97,19 +97,19 @@ public class Main {
                     //Mode 3 = Duel
                     if (mode == 1) {
                         do {
-                            searchChallenger searchgame = new searchChallenger();
+                            SearchChallenger searchgame = new SearchChallenger();
                             playAgain = stopOuEncore();
                             logger.info( "réponse à stopouencore(): "+playAgain );
                         } while (playAgain.equals( "O" ));
                     } else if (mode == 2) {
                         do {
-                            searchDefenseur searchgame = new searchDefenseur();
+                            SearchDefenseur searchgame = new SearchDefenseur();
                             playAgain = stopOuEncore();
                             logger.info( "réponse à stopouencore(): "+playAgain );
                         } while (playAgain.equals( "O" ));
                     }else if (mode == 3) {
                         do {
-                            searchDuel searchgame = new searchDuel();
+                            SearchDuel searchgame = new SearchDuel();
                             playAgain = stopOuEncore();
                             logger.info( "réponse à stopouencore(): "+playAgain );
                         } while (playAgain.equals( "O" ));
@@ -121,20 +121,20 @@ public class Main {
                     logger.info(getConfigProprety( "mode."+mode ) );
                     if (mode == 1) {
                         do {
-                            mastermindChallenger mastermind = new mastermindChallenger();
+                            MastermindChallenger mastermind = new MastermindChallenger();
                             playAgain = stopOuEncore();
                             logger.info( "réponse à stopouencore(): "+playAgain );
                         } while (playAgain.equals( "O" ));
                     } else if (mode == 2) {
                         do {
-                            mastermindDefenseur mastermindGame = new mastermindDefenseur();
+                            MastermindDefenseur mastermindGame = new MastermindDefenseur();
                             playAgain = stopOuEncore();
                             logger.info( "réponse à stopouencore(): "+playAgain );
                         } while (playAgain.equals( "O" ));
                     }
                     else if (mode == 3) {
                         do {
-                            mastermindDuel mastermindGame = new mastermindDuel();
+                            MastermindDuel mastermindGame = new MastermindDuel();
                             playAgain = stopOuEncore();
                             logger.info( "réponse à stopouencore(): "+playAgain );
                         } while (playAgain.equals( "O" ));

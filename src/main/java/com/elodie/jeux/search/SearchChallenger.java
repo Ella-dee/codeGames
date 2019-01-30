@@ -1,12 +1,12 @@
 package com.elodie.jeux.search;
 
 import com.elodie.jeux.Main;
-import com.elodie.jeux.utilities.utilsGameMecanics;
+import com.elodie.jeux.utilities.UtilsGameMecanics;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.*;
-import static com.elodie.jeux.utilities.utilsGameMecanics.*;
+import static com.elodie.jeux.utilities.UtilsGameMecanics.*;
 
 /**
  * <b>Recherche +/- - Mode challenger</b>
@@ -22,7 +22,7 @@ import static com.elodie.jeux.utilities.utilsGameMecanics.*;
  * @version 1.0
  */
 
-public class searchChallenger {
+public class SearchChallenger {
     /**
      * <b>Variables globales:</b>
      * <ul>
@@ -44,21 +44,21 @@ public class searchChallenger {
     /**
      * Méthode comprend la mécanique du jeu pour le Mode Challenger (utilisateur VS AI).
      * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
-     * @see utilsGameMecanics#chooseCodeLenght()
+     * @see UtilsGameMecanics#chooseCodeLenght()
      * <p>On créée une combinaison secrète.</p>
-     * @see utilsGameMecanics#computedSecretCode()
+     * @see UtilsGameMecanics#computedSecretCode()
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
-     * @see utilsGameMecanics#modeDevOrNot()
+     * @see UtilsGameMecanics#modeDevOrNot()
      * <p>On demande à l'utilisateur le nombre d'essais maximal à ne pas dépasser.</p>
-     * @see utilsGameMecanics#maxTries()
+     * @see UtilsGameMecanics#maxTries()
      * <p>Tour de jeu de l'utilisateur.</p>
-     * @see utilsGameMecanics#playerTurnSearchGame(String, ArrayList, int[])
+     * @see UtilsGameMecanics#playerTurnSearchGame(String, ArrayList, int[])
      * <p>Si l'utilisateur trouve alors apparait "====", la partie s'arrête.</p>
      * <p>Si l'utilisateur ne trouve pas en moins de 6 essais, la partie s'arrête et on affiche la solution.</p>
-     * @see utilsGameMecanics#showSecretCode(int[])
+     * @see UtilsGameMecanics#showSecretCode(int[])
      */
 
-    public searchChallenger() {
+    public SearchChallenger() {
         int counter = 0;
         System.out.println( "-----------------------------------------" );
         System.out.println( "Bienvenue dans Recherche +/- Mode Challenger." );

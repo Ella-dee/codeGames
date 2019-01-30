@@ -1,14 +1,14 @@
 package com.elodie.jeux.search;
 
 import com.elodie.jeux.Main;
-import com.elodie.jeux.utilities.utilsGameMecanics;
+import com.elodie.jeux.utilities.UtilsGameMecanics;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import static com.elodie.jeux.utilities.utils.*;
-import static com.elodie.jeux.utilities.utilsGameMecanics.*;
+import static com.elodie.jeux.utilities.Utils.*;
+import static com.elodie.jeux.utilities.UtilsGameMecanics.*;
 import static java.lang.Character.getNumericValue;
 
 /**
@@ -25,7 +25,7 @@ import static java.lang.Character.getNumericValue;
  * @version 1.0
  */
 
-public class searchDuel {
+public class SearchDuel {
     /**
      * <b>Variables globales:</b>
      * <ul>
@@ -54,24 +54,24 @@ public class searchDuel {
     /**
      * Méthode comprend la mécanique du jeu pour le Mode Duel (ustilisateur et AI à chaque tour).
      * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
-     * @see utilsGameMecanics#chooseCodeLenght()
+     * @see UtilsGameMecanics#chooseCodeLenght()
      * <p>On créée une combinaison secrète.</p>
-     * @see utilsGameMecanics#computedSecretCode()
+     * @see UtilsGameMecanics#computedSecretCode()
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
-     * @see utilsGameMecanics#inputSecretCode()
+     * @see UtilsGameMecanics#inputSecretCode()
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
-     * @see utilsGameMecanics#modeDevOrNot()
+     * @see UtilsGameMecanics#modeDevOrNot()
      * <p>Tour de l'utilisateur:</p>
-     * @see utilsGameMecanics#playerTurnSearchGame(String, ArrayList, int[])
+     * @see UtilsGameMecanics#playerTurnSearchGame(String, ArrayList, int[])
      * <p>Puis c'est au tour de l'ordinateur de jouer:
      * <p>On demande à l'AI d'entrer une combinaison de chiffres, on compare à la combinaison
      * secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see utilsGameMecanics#tryOutCheckSearchGame(ArrayList, int[], String)
+     * @see UtilsGameMecanics#tryOutCheckSearchGame(ArrayList, int[], String)
      * <p>Si l'utilisateur ou l'ordinateur trouve la bonne combinaison alors apparait "====", la partie s'arrête.
-     * @see utilsGameMecanics#stopOuEncore()
+     * @see UtilsGameMecanics#stopOuEncore()
      */
 
-    public searchDuel() {
+    public SearchDuel() {
 
         int counterUser = 0;
         int counterAI = 0;
