@@ -11,12 +11,20 @@
 ### Compilation
 
 <p>Installer le JDK d'Oracle version minimum 8. https://www.oracle.com/technetwork/java/javase/downloads/index.html
-<p>Compiler avec Maven version minimum 2.
+<ol>
+ <li>Récupérer le code source dans src/main
  <ul>
-  <li>mvn clean</li>
-  <li>mvn compile</li>
-  <li>mvn install</li>
-  </ul>
+  <li>lancer le build Main dans l'IDE</li>
+   <li>Installer Maven version minimum 2.</li>
+   <li>Lancer le run.
+ </ul></li>
+  <li>Récupérer le dossier target pour lancement en ligne de commande
+  <ul>
+   <li>Installer Maven version minimum 2.</li>
+   <li>Se positionner dans le dossier du jar en ligne de commande</li>
+   <li>lancer java -jar jeux-1.0-SNAPSHOT.jar</li>
+  </ul></li>
+ </ol>
 
 ### Utilisation
 #### Jeux disponibles:Recherche +/-, Mastermind (code à chiffres)
@@ -25,12 +33,10 @@
 <ul>
 <li>dans le fichier config.propreties, passer le paramètre "mode.dev" en "on".</li>
 <li>en passant un argument en la ligne de commande, récupéré à l'aide de String args[]: </br>
-<i><b>java -jar nom-du-jeu.jar on</b></i></li>
+<i><b>java -jar nom-du-jeu.jar 1</b></i></li>
 </ul>
 <p> Au démarrage, l'utilisateur choisi le jeu auquel il veut jouer parmi les choix proposés.
 Il sélectionne le mode de son choix. L'application lance le jeu sélectionné.
-<p>On demande au joueur le nombre de cases de la combinaison secrète qu'il souhaite deviner
-ou faire deviner, ainsi que le nombre d'essais maximal.
 <p>L'utilisateur joue. S'il perd, l'application affiche la solution.
 À la fin de la partie, l'utilisateur peut choisir :
 <ul>
@@ -39,5 +45,7 @@ ou faire deviner, ainsi que le nombre d'essais maximal.
 <li>de quitter l'application</li>
 </ul>
 
-<p>Un fichier de logs.log à la racine du projet permet de suivre les logs de l'application.
+<p>Il est possible de changer le nombre d'essais maximal pour deniver un code en changeant la valeur de la propriété "max.tries" dans le fichiers config.propreties.
+<p>Il est possible de changer le nombre de chiffres maximal qui compose un code en changeant la valeur de la propriété "max.cases" dans le fichiers config.propreties.
+<p>Un fichier de logs.log à la racine du projet, ou à la racine du dossier où se trouve le jar, permet de suivre les logs de l'application.
 La gestion des logs se fait avec Apache Log4j2</p>
