@@ -69,7 +69,7 @@ public class MastermindChallenger {
         //génération du code secret
         int[] secretCode = computedSecretCode();
         //affichage du code secret pour mode développeur
-        if(modeDevOrNot()==true || Main.mainParam == 1) {
+        if(modeDevOrNot()==true || Main.mainParam.equals("dev")) {
             System.out.println( showSecretCode( secretCode ) );
         }
         int max = maxTries();

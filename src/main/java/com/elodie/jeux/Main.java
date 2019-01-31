@@ -5,11 +5,8 @@ import com.elodie.jeux.mastermind.*;
 import com.elodie.jeux.search.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.Properties;
-
 import static com.elodie.jeux.utilities.UtilsGameMecanics.*;
 import static com.elodie.jeux.utilities.UtilsPropreties.*;
 
@@ -33,35 +30,35 @@ import static com.elodie.jeux.utilities.UtilsPropreties.*;
  * @see UtilsGameMecanics#backToMenu()
  * <li>de quitter l'application</li>
  *</ul>
- * <p>Il doit être possible de lancer l'application dans un mode "développeur".
+ * <p>Il est possible de lancer l'application dans un mode "développeur".
  * Dans ce mode la solution est affichée dès le début. Cela permet de tester le bon comportement
  * de l'application en cas de bonne ou de mauvaise réponse de l'utilisateur.
- * Ceci est à réaliser avec les mécanismes suivants :
+ * On peut passer en mode développeur de deux manières :
  * <ul>
- * <li>Passage d'un paramètre au lancement de l'application</li>
- * <li>Propriété spécifique dans le fichier de configuration</li>
+ * <li>Passage d'un paramètre "dev" au lancement de l'application</li>
+ * <li>Passer la propriété "mode.dev" à 1 dans le fichier de configuration</li>
  *</ul>
- *<p>Un fichier de configuration (config.properties) permettra de paramétrer l'application, notamment :
+ *<p>Le fichier de configuration (config.properties) permet de paramétrer l'application, notamment :
  * Pour chaque jeu :
  *<ul>
  *<li>le nombre de cases de la combinaison secrète</li>
  *<li>le nombre d'essais possibles</li>
  *</ul>
- *<p>Un fichier de configuration (log4j2.xml) permettra de paramétrer les logs de l'application.
- * La gestion des logs se fera avec Apache Log4j</p>.
+ *<p>Le fichier log4j2.xml permet de paramétrer les logs de l'application.
+ * La gestion des logs se fait avec Apache Log4j, et les logs sortent dans le fichier logs.log</p>.
  */
 public class Main {
 
     private static final Logger logger = LogManager.getLogger(Main.class);
-    public static int mainParam;
+    public static String mainParam;
 
     public static void main(String[] args)throws Exception {
         if(args.length!=0) {
-            mainParam = Integer.parseInt(Utils.myTrimString(args[0]));
+            mainParam = Utils.myTrimString(args[0]);
         }
         showModeDevOn();
 
-                Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+           Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             public void uncaughtException(Thread t, Throwable e) {
                 StringWriter sw = new StringWriter();
                 e.printStackTrace(new PrintWriter(sw));

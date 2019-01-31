@@ -423,7 +423,7 @@ public class UtilsGameMecanics {
      * Méthode sert à afficher que le jeu est lancé en mode développeur si c'est le cas.
      */
     public static void showModeDevOn(){
-        if(modeDevOrNot()==true|| Main.mainParam == 1) {
+        if(modeDevOrNot()==true|| Main.mainParam.equals("dev")) {
             System.out.println("-------------------");
             System.out.println("Mode développeur ON");
             System.out.println("-------------------");

@@ -86,7 +86,7 @@ public class MastermindDuel {
         int[] secretCodeForUser = computedSecretCode();
         int[] secretCodeForAI = inputSecretCode();
         //affichage du code secret pour mode développeur
-        if(modeDevOrNot()==true || Main.mainParam == 1) {
+        if(modeDevOrNot()==true || Main.mainParam.equals("dev")) {
             System.out.println( showSecretCode(secretCodeForUser ));
         }
         int max = maxTries();
