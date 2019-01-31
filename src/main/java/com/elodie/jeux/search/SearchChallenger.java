@@ -69,7 +69,7 @@ public class SearchChallenger {
         //génération du code secret
         int[] secretCode = computedSecretCode();
         //affichage du code secret pour mode développeur
-        if(modeDevOrNot()==true || Main.mainParam.equals("dev")) {
+        if(showModeDevOn()==true) {
             System.out.println(showSecretCode(secretCode));
         }
         int max = maxTries();

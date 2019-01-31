@@ -54,7 +54,7 @@ public class SearchDefenseur {
      * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
      * @see UtilsGameMecanics#tryOutCheckSearchGame(ArrayList, int[], String)
      * <p>Si l'ordinateur trouve alors apparait "====", la partie s'arrête.
-     * <p>Si l'ordinateur ne trouve pas en moins de 6 essais, la partie s'arrête.</p>
+     * <p>Si l'ordinateur ne trouve pas en moins de x essais, la partie s'arrête.</p>
      * @see UtilsGameMecanics#showSecretCode(int[])
      */
     public SearchDefenseur(){

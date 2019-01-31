@@ -56,7 +56,7 @@ public class MastermindChallenger {
      * <p>On compare à la combinaison secrète puis affiche si les chiffres sont bien placés ou au moins présents.</p>
      * @see UtilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
      * <p>Si l'utilisateur trouve alors apparait "4 bien placés", la partie s'arrête.</p>
-     * <p>Si l'utilisateur ne trouve pas en moins de 6 essais, la partie s'arrête et on affiche la solution.</p>
+     * <p>Si l'utilisateur ne trouve pas en moins de x essais, la partie s'arrête et on affiche la solution.</p>
      * @see UtilsGameMecanics#showSecretCode(int[])
      **/
     public MastermindChallenger(){
@@ -69,7 +69,7 @@ public class MastermindChallenger {
         //génération du code secret
         int[] secretCode = computedSecretCode();
         //affichage du code secret pour mode développeur
-        if(modeDevOrNot()==true || Main.mainParam.equals("dev")) {
+        if(showModeDevOn()==true) {
             System.out.println( showSecretCode( secretCode ) );
         }
         int max = maxTries();
