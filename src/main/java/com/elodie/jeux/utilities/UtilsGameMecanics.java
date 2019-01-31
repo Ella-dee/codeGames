@@ -147,11 +147,13 @@ public class UtilsGameMecanics {
         boolean catched;
         final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
         String indicesReponse = "";
+
         do{
             try{
                 catched = false;
-                System.out.println( "\nQuelle est votre proposition?" );
-                userInput = sc.nextLine();
+
+                    System.out.println("\nQuelle est votre proposition?");
+                    userInput = sc.nextLine();
                 userInputListe = createArrayListeFromInput( userInput );
                 if(!checkOccurencesFromListInArray(userInputListe, nbr)){
                     throw new ExceptionNaN();
@@ -232,7 +234,7 @@ public class UtilsGameMecanics {
         else if(somewhere >1){
             output.add( somewhere+" présents" );
         }
-        else if(somewhere==0){
+        else if(somewhere==0 && found == 0){
             output.add( "aucun chiffre trouvé" );
         }
         String outputToString = trimStringKeepFormat(output.toString());

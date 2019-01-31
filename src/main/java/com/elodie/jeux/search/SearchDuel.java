@@ -92,10 +92,10 @@ public class SearchDuel {
         Scanner sc = new Scanner( System.in );
         boolean catched;
         ArrayList userInputToArray = new ArrayList();
-
+        ArrayList tried = new ArrayList();
         do{
             //Tour de l'utilisateur
-            verifReponseUser = playerTurnSearchGame( userInput, userInputToArray, secretCodeForUser );
+            verifReponseUser = playerTurnSearchGame(userInput, userInputToArray, secretCodeForUser );
             counterUser++;
             if(!(verifReponseUser.equals( winwin ))) {
 
@@ -104,37 +104,40 @@ public class SearchDuel {
                 System.out.println( "\nProposition de l'ordinateur:" );
                 //Si des essais ont déjà été faits par l'AI:
                 if (counterAI!=0) {
-                    compInputToArray.clear(); // on vide la liste de l'essai AI
-                    for (int i = 0; i < verifReponseAI.length(); i++) {
-                        //On garde le chiffre donné s'il est bon
-                        if (verifReponseAI.charAt( i ) == '=') {
-                            String ok = "" + getNumericValue( compInput.charAt( i ) );
-                            compInputToArray.add( ok );
+                    do {
+                        compInputToArray.clear(); // on vide la liste de l'essai AI
+                        for (int i = 0; i < verifReponseAI.length(); i++) {
+                            //On garde le chiffre donné s'il est bon
+                            if (verifReponseAI.charAt(i) == '=') {
+                                String ok = "" + getNumericValue(compInput.charAt(i));
+                                compInputToArray.add(ok);
+                            }
+                            //S'il est supérieur à celui du code secret, on lance un random avec en entier max ce chiffre essai
+                            else if (verifReponseAI.charAt(i) == '-') {
+                                int minus = getNumericValue(compInput.charAt(i));
+                                minus = randomInRange(-1, minus);
+                                compInputToArray.add(minus);
+                            }
+                            //S'il est inférieur à celui du code secret, on lance un random avec en entier min ce chiffre essai
+                            else if (verifReponseAI.charAt(i) == '+') {
+                                int plus = getNumericValue(compInput.charAt(i));
+                                plus = randomInRange(plus - 1, nbr.length - 1);
+                                compInputToArray.add(plus);
+                            }
                         }
-                        //TODO écarter les propositions déjà faites
-                        //S'il est supérieur à celui du code secret, on lance un random avec en entier max ce chiffre essai
-                        else if (verifReponseAI.charAt( i ) == '-') {
-                            int minus = getNumericValue( compInput.charAt( i ) );
-                            minus = randomInRange( -1, minus );
-                            compInputToArray.add( minus );
-                        }
-                        //S'il est inférieur à celui du code secret, on lance un random avec en entier min ce chiffre essai
-                        else if (verifReponseAI.charAt( i ) == '+') {
-                            int plus = getNumericValue( compInput.charAt( i ) );
-                            plus = randomInRange( plus - 1, nbr.length - 1 );
-                            compInputToArray.add( plus );
-                        }
-                    }
-                    compInput = myTrimString( compInputToArray.toString() );
+                        compInput = myTrimString(compInputToArray.toString());
+                    }while (tried.contains(compInput)) ;
+                    tried.add(compInput);
                 }
-
                 //Si c'est le premier essai, on lance des randoms
                 else {
                     for(int i = 0; i<secretCodeForAI.length;i++) {
                         compInputToArray.add( (int) (Math.random() * 10));
                     }
                     compInput = myTrimString( compInputToArray.toString() );
+                    tried.add(compInput);
                 }
+
                 try {
                     Thread.sleep( 2000 );
                 } catch (InterruptedException e) {

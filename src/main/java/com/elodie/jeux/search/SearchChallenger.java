@@ -77,7 +77,7 @@ public class SearchChallenger {
         ArrayList inputToArray = new ArrayList();
 
         do{
-            verifReponse = playerTurnSearchGame( userInput, inputToArray, secretCode );
+            verifReponse = playerTurnSearchGame(userInput, inputToArray, secretCode );
             counter++;
         }while(!(verifReponse.equals( winwin )) && counter < max);
         if(verifReponse.equals( winwin )){

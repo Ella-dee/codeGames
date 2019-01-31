@@ -65,41 +65,44 @@ public class MastermindDefenseur {
         //génération du code secret
         int[] secretCode = inputSecretCode();
         int max = maxTries();
-
+        ArrayList tried = new ArrayList();
         ArrayList inputToArray = new ArrayList();
         //On lance le jeu
         do {
-            System.out.println( "Proposition de l'ordinateur." );
             //Si des essais ont déjà été faits par l'AI:
-            if(counter!=0){
+            if(counter!=0) {
                 // on vide la liste de l'essai AI
                 inputToArray.clear();
-                for (int i = 0; i < compInput.length(); i++) {
-                    //On garde le chiffre donné s'il est bon et à la bonne place
-                    if (compInput.charAt(i) == secretCode[i]) {
-                        String goodAnswer = ""+ getNumericValue( compInput.charAt(i));
-                        inputToArray.add( goodAnswer );
-                        System.out.println( goodAnswer );
+                do {
+                    for (int i = 0; i < secretCode.length; i++) {
+                        //On garde le chiffre donné s'il est bon et à la bonne place
+                        if (getNumericValue(compInput.charAt(i))== secretCode[i]) {
+                            String goodAnswer = "" + getNumericValue(compInput.charAt(i));
+                            inputToArray.add(goodAnswer);
+                        }
+                        //S'il est bon mais pas à la bonne place
+                        else if ((getNumericValue(compInput.charAt(i)) != secretCode[i]) && (Arrays.asList(secretCode).contains(getNumericValue(compInput.charAt(i))))) {
+                            //TODO à implémenter (random en attendant,
+                            // mais on écarte les proposition déjà faites grâce à la liste tried")
+                            inputToArray.add((int) (Math.random() * 10));
+                        }
+                        //Si non trouvé
+                        else {
+                            inputToArray.add((int) (Math.random() * 10));
+                        }
                     }
-                    //TODO écarter les propositions déjà faites
-                    //S'il est bon mais pas à la bonne place
-                    else if((compInput.charAt(i) != secretCode[i]) && (Arrays.asList( secretCode ).contains( compInput.charAt(i)))){
-                        //TODO si chiffre présent mais mal placé: à implémenter (random en attendant)
-                        inputToArray.add((int) (Math.random() * 10));
-                    }
-                    //Si non trouvé
-                    else{
-                        inputToArray.add((int) (Math.random() * 10));
-                    }
-                }
-                compInput = myTrimString(inputToArray.toString());
+                    compInput = myTrimString(inputToArray.toString());
+                } while (tried.contains(compInput));
+                tried.add(compInput);
             }
+
             //Si c'est le premier essai, on lance des randoms
             else {
                 for (int i = 0; i < secretCode.length; i++) {
                     inputToArray.add( (int) (Math.random() * 10) );
                     compInput = myTrimString( inputToArray.toString() );
                 }
+                tried.add(compInput);
             }
             try {
                 Thread.sleep(2000);

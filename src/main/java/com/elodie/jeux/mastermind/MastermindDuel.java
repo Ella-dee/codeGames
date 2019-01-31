@@ -93,7 +93,7 @@ public class MastermindDuel {
         Scanner sc = new Scanner( System.in );
         boolean catched;
         ArrayList userInputToArray = new ArrayList();
-
+        ArrayList tried = new ArrayList();
         //Tour de l'utilisateur
         do{
             do{
@@ -127,19 +127,19 @@ public class MastermindDuel {
                 System.out.println( "\nProposition de l'ordinateur:" );
                 //Si des essais ont déjà été faits par l'AI:
                 if (counterAI!=0) {
+                    do {
                     // on vide la liste de l'essai AI
                     compInputToArray.clear();
                     for (int i = 0; i < compInput.length(); i++) {
                         //On garde le chiffre donné s'il est bon et à la bonne place
-                        if (compInput.charAt( i ) == secretCodeForAI[i]) {
+                        if (getNumericValue(compInput.charAt(i)) == secretCodeForAI[i]) {
                             String goodAnswer = "" + getNumericValue( compInput.charAt( i ) );
                             compInputToArray.add( goodAnswer );
-                            System.out.println( goodAnswer );
                         }
-                        //TODO écarter les propositions déjà faites
                         //S'il est bon mais pas à la bonne place
-                        else if ((compInput.charAt( i ) != secretCodeForAI[i]) && (Arrays.asList( secretCodeForAI ).contains( compInput.charAt( i ) ))) {
-                            //TODO à implémenter (random en attendant)
+                        else if ((getNumericValue(compInput.charAt(i)) != secretCodeForAI[i]) && (Arrays.asList( secretCodeForAI ).contains( getNumericValue(compInput.charAt(i)) ))) {
+                            //TODO à implémenter (random en attendant,
+                            // mais on écarte les proposition déjà faites grâce à la liste tried")
                             compInputToArray.add( (int) (Math.random() * 10) );
                         }
                         //Si non trouvé
@@ -147,7 +147,9 @@ public class MastermindDuel {
                             compInputToArray.add( (int) (Math.random() * 10) );
                         }
                     }
-                    compInput = myTrimString( compInputToArray.toString() );
+                        compInput = myTrimString(compInputToArray.toString());
+                    }while (tried.contains(compInput)) ;
+                    tried.add(compInput);
                 }
                 //Si c'est le premier essai, on lance des randoms
                 else {
@@ -155,6 +157,7 @@ public class MastermindDuel {
                         compInputToArray.add( (int) (Math.random() * 10));
                     }
                     compInput = myTrimString( compInputToArray.toString() );
+                    tried.add(compInput);
                 }
                 try {
                     Thread.sleep( 2000 );
