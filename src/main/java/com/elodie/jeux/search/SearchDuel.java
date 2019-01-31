@@ -53,14 +53,14 @@ public class SearchDuel {
 
     /**
      * Méthode comprend la mécanique du jeu pour le Mode Duel (ustilisateur et AI à chaque tour).
-     * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
-     * @see UtilsGameMecanics#chooseCodeLenght()
      * <p>On créée une combinaison secrète.</p>
      * @see UtilsGameMecanics#computedSecretCode()
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
      * @see UtilsGameMecanics#inputSecretCode()
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
      * @see UtilsGameMecanics#modeDevOrNot()
+     * <p>On charge le nombre d'essais maximal à ne pas dépasser.</p>
+     * @see UtilsGameMecanics#maxTries()
      * <p>Tour de l'utilisateur:</p>
      * @see UtilsGameMecanics#playerTurnSearchGame(String, ArrayList, int[])
      * <p>Puis c'est au tour de l'ordinateur de jouer:
@@ -80,17 +80,13 @@ public class SearchDuel {
         System.out.println( "-----------------------------------------" );
         //Si le mode développeur est activé, on l'affiche
         showModeDevOn();
-        //choix du nombre de cases à deviner
-        chooseCodeLenght();
         //génération du code secret
         int[] secretCodeForUser = computedSecretCode();
         int[] secretCodeForAI = inputSecretCode();
         //affichage du code secret pour mode développeur
-        if(modeDevOrNot()==true) {
-            System.out.println( secretCodeForUser );
+        if(modeDevOrNot()==true || Main.mainParam == 1) {
+            System.out.println(showSecretCode(secretCodeForUser));
         }
-        //choix du nombre d'essais max
-        chooseMaxTries();
         int max = maxTries();
 
         Scanner sc = new Scanner( System.in );

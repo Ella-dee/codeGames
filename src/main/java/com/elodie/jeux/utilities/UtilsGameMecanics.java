@@ -8,93 +8,11 @@ import org.apache.logging.log4j.Logger;
 import java.util.*;
 import static com.elodie.jeux.utilities.Utils.*;
 import static com.elodie.jeux.utilities.UtilsPropreties.getConfigProprety;
-import static com.elodie.jeux.utilities.UtilsPropreties.replaceProprety;
 
 public class UtilsGameMecanics {
 
     private static final Logger logger = LogManager.getLogger( Main.class);
     //Méthodes communes
-    /**
-     * Méthode permet de choisir la longueur du code secret à deviner (entre 4 et 10).
-     * On demande à l'utilisateur de choisir la longueur du code.
-     * On vérifie qu'il s'agit bien d'un chifrre et qu'il est bien compris entre 4 et 10.
-     * @see ExceptionNaN
-     * On remplace la propriété max.cases dans config.propreties par le choix de l'utilisateur.
-     */
-    public static void chooseCodeLenght(){
-        boolean catched = false;
-        String cases = "";
-        int casesParsed = 0;
-        ArrayList inputToArray = new ArrayList(  );
-        Scanner sc = new Scanner( System.in );
-        final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
-        do{
-            try {
-                catched = false;
-                System.out.println( "De combien de chiffres souhaitez-vous composer le code secret: (4 - 10)" );
-                cases = sc.nextLine();
-                inputToArray = createArrayListeFromInput( cases );
-
-                if (!checkOccurencesFromListInArray( inputToArray, nbr )) {
-                    throw new ExceptionNaN();
-                }
-                else {
-                    replaceProprety("max.cases", cases);
-                    casesParsed = Integer.parseInt( cases );
-                }
-            } catch (ExceptionNaN e) {
-                catched = true;
-                logger.error( "NotANumber catched = "+cases );
-            }finally {
-                if (casesParsed > 10 || casesParsed<4) {
-                    System.out.print( "Vous devez saisir une combinaison entre 4 et 10 chiffres." );
-                    catched = true;
-                    logger.error( "Bad size catched = "+cases+", expected 4>=?<=10" );
-
-                }
-            }
-        }while(catched);
-    }
-    /**
-     * Méthode permet de choisir le nombre d'essais maximum.
-     * On demande à l'utilisateur de choisir le nombre d'essais possibles.
-     * On vérifie qu'il s'agit bien d'un chifrre et qu'il est bien compris entre 4 et 10.
-     * @see ExceptionNaN
-     * On remplace la propriété max.tries dans config.propreties par le choix de l'utilisateur.
-     */
-    public static void chooseMaxTries(){
-        boolean catched = false;
-        String tries = "";
-        int triesParsed = 0;
-        ArrayList inputToArray = new ArrayList(  );
-        Scanner sc = new Scanner( System.in );
-        final String[] nbr = {"0","1","2","3","4","5","6","7","8","9"};
-        do{
-            try {
-                catched = false;
-                System.out.println( "A combien d'essais souhaitez-vous stopper la partie: (4 - 10)" );
-                tries = sc.nextLine();
-                inputToArray = createArrayListeFromInput( tries );
-                if (!checkOccurencesFromListInArray( inputToArray, nbr )) {
-                    throw new ExceptionNaN();
-                }
-                else{
-                    replaceProprety( "max.tries", tries );
-                    triesParsed = Integer.parseInt( tries );
-                }
-            } catch (ExceptionNaN e) {
-                catched = true;
-                logger.error( "NotANumber catched = "+tries );
-            } finally {
-                if (triesParsed > 10 || triesParsed<4) {
-                    System.out.print( "Vous devez saisir une combinaison entre 4 et 10 chiffres." );
-                    catched = true;
-                    logger.error( "Bad size catched = "+tries+", expected 4>=?<=10" );
-                }
-            }
-        }while(catched);
-    }
-
     /**
      * Méthode génère un code aléatoire du nombre de chiffres définis par l'utilisateur et compris entre 0 et 9
      * @return un code secret sous forme de tableau d'entiers
@@ -490,12 +408,12 @@ public class UtilsGameMecanics {
 
     /**
      * Méthode vérifie si le jeu est lancé en mode développeur afin d'afficher.
-     * @return un booléen true si le mode développeur est "on"
+     * @return un booléen true si le mode développeur est égal à 1
      */
     public static boolean modeDevOrNot(){
         boolean devMode = false;
-        String mode_dev_value = UtilsPropreties.getConfigProprety( "mode.dev");
-        if (mode_dev_value.equals("on")) {
+        int mode_dev_value = Integer.parseInt(UtilsPropreties.getConfigProprety( "mode.dev"));
+        if (mode_dev_value == 1) {
             devMode = true;
         }
         return devMode;
@@ -505,7 +423,7 @@ public class UtilsGameMecanics {
      * Méthode sert à afficher que le jeu est lancé en mode développeur si c'est le cas.
      */
     public static void showModeDevOn(){
-        if(modeDevOrNot()==true) {
+        if(modeDevOrNot()==true|| Main.mainParam == 1) {
             System.out.println("-------------------");
             System.out.println("Mode développeur ON");
             System.out.println("-------------------");

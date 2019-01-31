@@ -37,45 +37,7 @@ public class UtilsPropreties {
         }
         return prop;
     }
-    /**
-     * Méthode récupère la valeur d'une propriété
-     * @param key chaine de caractère représentant le nom de la propriété
-     * @param newKeyValue chaine de caractère représentant la nouvelle valeur à prendre en compte
-     */
-    public static void replaceProprety(String key, String newKeyValue){
-        Logger logger = LogManager.getLogger( Main.class);
-        UtilsPropreties demo = new UtilsPropreties();
-        try {
-            String propertiesFileLocation = "config.propreties";
-            Properties loadedProps = demo.loadProperties( propertiesFileLocation );
-            loadedProps.replace( key, newKeyValue );
-            // On stocke le fichier sur le disque
-            demo.saveProperties( loadedProps, propertiesFileLocation, "Sauvegarde config.propreties" );
-        }catch (FileNotFoundException e){
-            System.out.println( "le fichier spécifié est introuvable" );
-            logger.error( "le fichier spécifié est introuvable" );
-        }catch (IOException e){
-            System.out.println( "erreur lors de la lecture du fichier" );
-            logger.error( "erreur lors de la lecture du fichier" );
-            e.printStackTrace();
-        }
-        logger.info( key+" changed to "+getConfigProprety(key));
-    }
 
-    /**
-     * Cette méthode stocke le fichier UtilsPropreties à l'emplacement spécifié
-     * @param props Le fichier à stocker
-     * @param fileLocation L'emplacement où le fichier doit être stocké
-     * @param comments Commentaires à insérer en tête du fichier
-     * @throws FileNotFoundException si le fichier n'est pas trouvé
-     * @throws IOException si une erreur est survenue lors de l'écriture du fichier
-     * */
-    public void saveProperties(Properties props, String fileLocation, String comments) throws FileNotFoundException, IOException {
-        OutputStream out = new FileOutputStream(fileLocation);
-        props.store(out, comments);
-        out.flush();
-        out.close();
-    }
     /**
      * Cette méthode lit et charge un fichier UtilsPropreties à l'emplacement spécifié
      * @param propertiesFileLocation L'emplacement du fichier
@@ -83,10 +45,10 @@ public class UtilsPropreties {
      * @throws FileNotFoundException si le fichier n'a pas été trouvé
      * @throws IOException si une erreur est survenue durant la lecture
      * */
-    public java.util.Properties loadProperties(String propertiesFileLocation) throws FileNotFoundException, IOException {
+    public Properties loadProperties(String propertiesFileLocation) throws FileNotFoundException, IOException {
         Properties props = new Properties();
-        InputStream i = getClassLoader().getResourceAsStream(propertiesFileLocation);
-        props.load(i);
+        InputStream in = getClassLoader().getResourceAsStream(propertiesFileLocation);
+        props.load(in);
         return props;
     }
     /**

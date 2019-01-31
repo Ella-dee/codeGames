@@ -45,11 +45,9 @@ public class MastermindDefenseur {
 
     /**
      * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
-     * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
-     * @see UtilsGameMecanics#chooseCodeLenght()
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
      * @see UtilsGameMecanics#inputSecretCode()
-     * <p>On demande à l'utilisateur le nombre d'essais maximal à ne pas dépasser.</p>
+     * <p>On charge le nombre d'essais maximal à ne pas dépasser.</p>
      * @see UtilsGameMecanics#maxTries()
      * <p>On lance le jeu</p>
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
@@ -64,12 +62,8 @@ public class MastermindDefenseur {
         //Si le mode développeur est activé, on l'affiche
         showModeDevOn();
         int counter = 0;
-        //choix du nombre de cases à deviner
-        chooseCodeLenght();
         //génération du code secret
         int[] secretCode = inputSecretCode();
-        //choix du nombre d'essais max
-        chooseMaxTries();
         int max = maxTries();
 
         ArrayList inputToArray = new ArrayList();

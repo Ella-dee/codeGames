@@ -53,14 +53,14 @@ public class MastermindDuel {
     private static final Logger logger = LogManager.getLogger( Main.class);
     /**
      * Méthode comprend la mécanique du jeu.
-     * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
-     * @see UtilsGameMecanics#chooseCodeLenght()
      * <p>On créée une combinaison secrète.</p>
      * @see UtilsGameMecanics#computedSecretCode()
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
      * @see UtilsGameMecanics#inputSecretCode()
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
      * @see UtilsGameMecanics#modeDevOrNot()
+     * <p>On charge le nombre d'essais maximal à ne pas dépasser.</p>
+     * @see UtilsGameMecanics#maxTries()
      * <p>Tour de l'utilisateur.</p>
      * <p>On demande à l'utilisateur d'entrer une combinaison</p>
      * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
@@ -82,17 +82,13 @@ public class MastermindDuel {
         System.out.println( "-----------------------------------------" );
         //Si le mode développeur est activé, on l'affiche
         showModeDevOn();
-        //choix du nombre de cases à deviner
-        chooseCodeLenght();
         //génération du code secret
         int[] secretCodeForUser = computedSecretCode();
         int[] secretCodeForAI = inputSecretCode();
         //affichage du code secret pour mode développeur
-        if(modeDevOrNot()==true) {
-            System.out.println( secretCodeForUser );
+        if(modeDevOrNot()==true || Main.mainParam == 1) {
+            System.out.println( showSecretCode(secretCodeForUser ));
         }
-        //choix du nombre d'essais max
-        chooseMaxTries();
         int max = maxTries();
         Scanner sc = new Scanner( System.in );
         boolean catched;

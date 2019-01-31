@@ -8,10 +8,10 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.Properties;
 
 import static com.elodie.jeux.utilities.UtilsGameMecanics.*;
-import static com.elodie.jeux.utilities.UtilsPropreties.getConfigProprety;
-import static com.elodie.jeux.utilities.UtilsPropreties.replaceProprety;
+import static com.elodie.jeux.utilities.UtilsPropreties.*;
 
 /**
  * <b>Développement en mode console d'une application proposant des jeux de logique. </b>
@@ -53,15 +53,13 @@ import static com.elodie.jeux.utilities.UtilsPropreties.replaceProprety;
 public class Main {
 
     private static final Logger logger = LogManager.getLogger(Main.class);
+    public static int mainParam;
 
     public static void main(String[] args)throws Exception {
-        if(args.length>0) {
-            String mainParam = args[0];
-            if (mainParam.equals("on")) {
-                replaceProprety("mode.dev", mainParam);
-                showModeDevOn();
-            }
+        if(args.length!=0) {
+            mainParam = Integer.parseInt(Utils.myTrimString(args[0]));
         }
+        showModeDevOn();
 
                 Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             public void uncaughtException(Thread t, Throwable e) {

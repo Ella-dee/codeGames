@@ -43,12 +43,12 @@ public class SearchChallenger {
 
     /**
      * Méthode comprend la mécanique du jeu pour le Mode Challenger (utilisateur VS AI).
-     * <p>On demande à l'utilisateur la longueur du code avec laquelle il souhaite jouer.</p>
-     * @see UtilsGameMecanics#chooseCodeLenght()
      * <p>On créée une combinaison secrète.</p>
      * @see UtilsGameMecanics#computedSecretCode()
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
      * @see UtilsGameMecanics#modeDevOrNot()
+     * <p>On charge le nombre d'essais maximal à ne pas dépasser.</p>
+     * @see UtilsGameMecanics#maxTries()
      * <p>On demande à l'utilisateur le nombre d'essais maximal à ne pas dépasser.</p>
      * @see UtilsGameMecanics#maxTries()
      * <p>Tour de jeu de l'utilisateur.</p>
@@ -66,16 +66,12 @@ public class SearchChallenger {
 
         //Si le mode développeur est activé, on l'affiche
         showModeDevOn();
-        //choix du nombre de cases à deviner
-        chooseCodeLenght();
         //génération du code secret
         int[] secretCode = computedSecretCode();
         //affichage du code secret pour mode développeur
-        if(modeDevOrNot()==true) {
-            System.out.println( secretCode );
+        if(modeDevOrNot()==true || Main.mainParam == 1) {
+            System.out.println(showSecretCode(secretCode));
         }
-        //choix du nombre d'essais max
-        chooseMaxTries();
         int max = maxTries();
 
         ArrayList inputToArray = new ArrayList();
