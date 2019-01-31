@@ -31,9 +31,9 @@
 
 <p>Il est possible de lancer l'application dans un mode "développeur" pour afficher la solution dès le début. 
 <ul>
-<li>dans le fichier config.propreties, passer le paramètre "mode.dev" en "on".</li>
+<li>dans le fichier config.propreties, passer le paramètre "mode.dev" à 1.</li>
 <li>en passant un argument en la ligne de commande, récupéré à l'aide de String args[]: </br>
-<i><b>java -jar nom-du-jeu.jar 1</b></i></li>
+<i><b>java -jar nom-du-jeu.jar dev</b></i></li>
 </ul>
 <p> Au démarrage, l'utilisateur choisi le jeu auquel il veut jouer parmi les choix proposés.
 Il sélectionne le mode de son choix. L'application lance le jeu sélectionné.
