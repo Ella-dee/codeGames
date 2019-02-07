@@ -177,8 +177,6 @@ public class UtilsGameMecanics {
     }
 
 //TODO SearchGame: mutualiser le tour de jeu de l'ordinateur pour ne pas répéter deux fois dans duel et défenseur
-//TODO Mastermind: mutualiser les tours de jeu pour ne pas répéter deux fois dans duel et défenseur pour l'ordinateur,
-// et duel et challenger pour l'utilisateur
 
     //Méthode pour le jeu mastermind
     /**
@@ -334,19 +332,20 @@ public class UtilsGameMecanics {
      */
     public static void numberNotFound(ArrayList chiffreEssaye, int i, int chiffre, ArrayList maybe, ArrayList inputToArray, ArrayList defNot, ArrayList maybeNot) {
         int otherNbr = 0;
-        //On ajoute la combinaison case-chiffre dans la liste maybeNot.
-        maybeNot.add(i + "" + chiffre);
+        //On ajoute le chiffre dans la liste maybeNot.
+        String chiffreToString = String.valueOf(chiffre);
+        maybeNot.add(chiffreToString);
         int count = 0;
         ListIterator<String> it = maybeNot.listIterator() ;
         //On compte les occurences de cette combinaison dans la liste.
         while (it.hasNext()) {
             String element = it.next();
-            if (element.equals(i + "" + chiffre)) {
+            if (element.equals(chiffreToString)) {
                 count++;
             }
         }
         //Si elle apparait plus d'une fois, on place le chiffre dans la liste defNot car il ne fait pas parti du code.
-        if(count>1){
+        if(count>=2){
             defNot.add(chiffre);
         }
 
@@ -559,7 +558,7 @@ public class UtilsGameMecanics {
     public static boolean modeDevOrNot(){
         boolean devMode = false;
         int mode_dev_value = Integer.parseInt(UtilsPropreties.getConfigProprety( "mode.dev"));
-        if (mode_dev_value == 1) {
+        if (mode_dev_value == 1  || Main.mainParam.equals("dev")) {
             devMode = true;
         }
         return devMode;
@@ -572,7 +571,7 @@ public class UtilsGameMecanics {
     public static boolean showModeDevOn(){
         boolean devOn = false;
         try {
-            if (modeDevOrNot() == true || Main.mainParam.equals("dev")) {
+            if (modeDevOrNot() == true) {
                 System.out.println("-------------------");
                 System.out.println("Mode développeur ON");
                 System.out.println("-------------------");

@@ -376,3 +376,66 @@
 2019-02-07 13:16:08.635 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
 2019-02-07 13:16:10.105 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
 2019-02-07 13:16:10.105 [main] INFO  com.elodie.jeux.Main - Exiting application.
+2019-02-07 15:32:10.085 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-07 15:32:11.866 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-07 15:32:12.181 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-07 15:32:13.510 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4512)
+2019-02-07 15:32:15.010 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+	at com.elodie.jeux.utilities.UtilsGameMecanics.numberNotFound(UtilsGameMecanics.java:341)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:104)
+	at com.elodie.jeux.Main.main(Main.java:143)
+
+2019-02-07 15:34:17.611 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-07 15:34:19.141 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-07 15:34:19.438 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-07 15:34:20.673 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4651)
+2019-02-07 15:34:22.189 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+	at com.elodie.jeux.utilities.UtilsGameMecanics.numberNotFound(UtilsGameMecanics.java:342)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:104)
+	at com.elodie.jeux.Main.main(Main.java:143)
+
+2019-02-07 15:35:39.968 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-07 15:35:41.582 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-07 15:35:41.926 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-07 15:35:42.801 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-07 15:35:44.313 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+	at com.elodie.jeux.utilities.UtilsGameMecanics.numberNotFound(UtilsGameMecanics.java:341)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:104)
+	at com.elodie.jeux.Main.main(Main.java:143)
+
+2019-02-07 15:36:57.244 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-07 15:36:58.729 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-07 15:36:59.010 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-07 15:37:00.215 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-07 15:37:01.715 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+	at com.elodie.jeux.utilities.UtilsGameMecanics.numberNotFound(UtilsGameMecanics.java:341)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:104)
+	at com.elodie.jeux.Main.main(Main.java:143)
+
+2019-02-07 15:37:31.363 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-07 15:37:32.748 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-07 15:37:33.029 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-07 15:37:33.826 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-07 15:37:35.327 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+	at com.elodie.jeux.utilities.UtilsGameMecanics.numberNotFound(UtilsGameMecanics.java:341)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:104)
+	at com.elodie.jeux.Main.main(Main.java:143)
+
+2019-02-07 15:38:37.565 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-07 15:38:39.286 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-07 15:38:39.567 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-07 15:38:41.350 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 6531)
+2019-02-07 15:38:42.850 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+	at com.elodie.jeux.utilities.UtilsGameMecanics.numberNotFound(UtilsGameMecanics.java:343)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:104)
+	at com.elodie.jeux.Main.main(Main.java:143)
+
+2019-02-07 15:39:21.984 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-07 15:39:23.593 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-07 15:39:23.875 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-07 15:39:26.299 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 6531)
+2019-02-07 15:39:27.814 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+	at com.elodie.jeux.utilities.UtilsGameMecanics.numberNotFound(UtilsGameMecanics.java:342)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:104)
+	at com.elodie.jeux.Main.main(Main.java:143)
+

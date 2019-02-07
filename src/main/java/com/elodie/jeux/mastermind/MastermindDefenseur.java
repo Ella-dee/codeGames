@@ -118,7 +118,7 @@ public class MastermindDefenseur {
                 combinaisonEssayees.add(compInput);
             }
             try {
-                Thread.sleep(2000);
+                Thread.sleep(1500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -127,7 +127,7 @@ public class MastermindDefenseur {
             counter++;
         }while(!verifReponse.equals(winwin) && counter < max);
         if(verifReponse.equals( winwin )) {
-            System.out.println( "\nL'ordinateur a trouvé votre combinaison!" );
+            System.out.println( "\nL'ordinateur a trouvé votre combinaison en "+counter+" coups!" );
             logger.info( "combinaison trouvée." );
         }
         else {

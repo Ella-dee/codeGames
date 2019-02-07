@@ -174,7 +174,7 @@ public class MastermindDuel {
                     combinaisonEssayees.add(compInput);
                 }
                 try {
-                    Thread.sleep( 2000 );
+                    Thread.sleep( 1500 );
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -188,7 +188,7 @@ public class MastermindDuel {
             logger.info( "combinaison trouvée." );
         }
         else if(verifReponseAI.equals( winwin )) {
-            System.out.println( "\nL'ordinateur a trouvé votre combinaison !" );
+            System.out.println( "\nL'ordinateur a trouvé votre combinaison en "+counterAI+" coups!" );
             logger.info( "combinaison trouvée." );
             System.out.println( "La combinaison de l'ordinateur était: "+ secretCodeForUser );
         }

@@ -46,10 +46,9 @@ public class SearchChallenger {
      * <p>On créée une combinaison secrète.</p>
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
      * <p>On charge le nombre d'essais maximal à ne pas dépasser.</p>
-     * <p>On demande à l'utilisateur le nombre d'essais maximal à ne pas dépasser.</p>
      * <p>Tour de jeu de l'utilisateur.</p>
      * <p>Si l'utilisateur trouve alors apparait "====", la partie s'arrête.</p>
-     * <p>Si l'utilisateur ne trouve pas en moins de 6 essais, la partie s'arrête et on affiche la solution.</p>
+     * <p>Si l'utilisateur ne trouve pas en moins de x essais, la partie s'arrête et on affiche la solution.</p>
      * @see UtilsGameMecanics#showSecretCode(int[])
      * @see UtilsGameMecanics#computedSecretCode()
      * @see UtilsGameMecanics#modeDevOrNot()

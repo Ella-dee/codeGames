@@ -7,63 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6781709c-d3eb-49a0-9e27-7ad06333bef0" name="Default Changelist" comment="ajout exception nullpointer dans showmodedevon,qui retourne maintenant un booléen true si mode développeur activé">
-      <change beforePath="$PROJECT_DIR$/javadoc/allclasses-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/Main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/exceptions/ExceptionNaL.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/exceptions/ExceptionNaN.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/exceptions/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/exceptions/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/exceptions/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/mastermind/MastermindChallenger.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/mastermind/MastermindDefenseur.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/mastermind/MastermindDuel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/mastermind/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/mastermind/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/mastermind/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/search/SearchChallenger.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/search/SearchDefenseur.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/search/SearchDuel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/search/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/search/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/search/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/utilities/Utils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/utilities/UtilsGameMecanics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/utilities/UtilsLogs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/utilities/UtilsPropreties.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/utilities/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/utilities/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/elodie/jeux/utilities/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/constant-values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/deprecated-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-10.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-11.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-12.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-13.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-14.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-15.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/overview-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/overview-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/package-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/serialized-form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/jeux_jar/jeux.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindDefenseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindDefenseur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindDuel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindDuel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/elodie/jeux/search/SearchChallenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elodie/jeux/search/SearchChallenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/elodie/jeux/utilities/UtilsGameMecanics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elodie/jeux/utilities/UtilsGameMecanics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/elodie/jeux/search/searchChallenger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/elodie/jeux/search/searchChallenger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/elodie/jeux/utilities/utilsGameMecanics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/elodie/jeux/utilities/utilsGameMecanics.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -94,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindDefenseur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-156">
-              <caret line="71" column="43" selection-start-line="71" selection-start-column="43" selection-end-line="72" selection-end-column="45" />
+            <state relative-caret-position="223">
+              <caret line="103" selection-start-line="103" selection-end-line="104" />
             </state>
           </provider>
         </entry>
@@ -103,8 +54,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/utilities/UtilsGameMecanics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="346" column="6" selection-start-line="346" selection-start-column="6" selection-end-line="346" selection-end-column="6" />
+            <state relative-caret-position="-267">
+              <caret line="347" column="18" selection-start-line="347" selection-start-column="18" selection-end-line="347" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindChallenger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-391">
+              <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,6 +83,22 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logs.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider">
+            <state relative-caret-position="-6470" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/utilities/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="102" selection-start-line="102" selection-end-line="105" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -228,10 +207,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/utilities/Utils.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config.propreties" />
         <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindChallenger.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/search/SearchChallenger.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/search/SearchDefenseur.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/search/SearchDuel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/search/SearchChallenger.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindDefenseur.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindDuel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/elodie/jeux/utilities/UtilsGameMecanics.java" />
@@ -405,7 +384,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549543928823" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549550588029" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -618,7 +597,7 @@
       <workItem from="1549440496533" duration="26505000" />
       <workItem from="1549489926082" duration="2701000" />
       <workItem from="1549494307286" duration="786000" />
-      <workItem from="1549526419300" duration="14134000" />
+      <workItem from="1549526419300" duration="20296000" />
     </task>
     <task id="LOCAL-00008" summary="Mastermind: ajout du jeu de base">
       <created>1547108262509</created>
@@ -999,7 +978,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79548000" />
+    <option name="totallyTimeSpent" value="85710000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1012,6 +991,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19591528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1027,7 +1007,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3289689" />
@@ -1264,35 +1244,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindChallenger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462">
-          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/search/SearchDefenseur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="57" column="77" selection-start-line="57" selection-start-column="77" selection-end-line="57" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/search/SearchDuel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="70" column="77" selection-start-line="70" selection-start-column="77" selection-end-line="70" selection-end-column="77" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-5806" />
-      </provider>
-      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/exceptions/ExceptionNaL.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1301,34 +1258,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/search/SearchChallenger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/utilities/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-168">
-          <caret line="71" column="39" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/utilities/UtilsLogs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/utilities/UtilsPropreties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-219">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1345,24 +1278,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindDuel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/search/SearchChallenger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="101" column="45" selection-start-line="101" selection-start-column="45" selection-end-line="101" selection-end-column="45" />
+        <state relative-caret-position="-162">
+          <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/utilities/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="102" selection-start-line="102" selection-end-line="105" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/search/SearchDefenseur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="95" column="25" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindChallenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/utilities/UtilsPropreties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-219">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindDuel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="190" column="89" selection-start-line="190" selection-start-column="89" selection-end-line="190" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-6470" />
+      </provider>
+      <provider editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/mastermind/MastermindDefenseur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-156">
-          <caret line="71" column="43" selection-start-line="71" selection-start-column="43" selection-end-line="72" selection-end-column="45" />
+        <state relative-caret-position="223">
+          <caret line="103" selection-start-line="103" selection-end-line="104" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/elodie/jeux/utilities/UtilsGameMecanics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="346" column="6" selection-start-line="346" selection-start-column="6" selection-end-line="346" selection-end-column="6" />
+        <state relative-caret-position="-267">
+          <caret line="347" column="18" selection-start-line="347" selection-start-column="18" selection-end-line="347" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
