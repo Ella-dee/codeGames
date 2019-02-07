@@ -102,7 +102,7 @@ public class MastermindChallenger {
             //vérification réponse/code
             verifReponse = tryOutCheckMastermindGame(inputToArray, secretCode, userInput);
             counter++;
-        }while(!(verifReponse.equals( winwin )) && counter < 6);
+        }while(!(verifReponse.equals( winwin )) && counter < max);
         if(verifReponse.equals( winwin )){
             System.out.println( "\nBravo vous avez trouvé la combinaison !" );
             logger.info( "combinaison trouvée." );

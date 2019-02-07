@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.*;
 import static com.elodie.jeux.utilities.Utils.*;
 import static com.elodie.jeux.utilities.UtilsPropreties.getConfigProprety;
+import static java.lang.Character.getNumericValue;
 
 public class UtilsGameMecanics {
 
@@ -243,6 +244,128 @@ public class UtilsGameMecanics {
         return outputToString;
     }
 
+    /**
+     * Méthode enregistre tous les chiffres quand aucun ne compose le code secret dans une liste
+     * @param secretCode tableau représentant le code secret
+     * @param compInput chaine de caractères représentant l'entrée AI
+     * @param defNot liste enregistrée contenant les chiffres qui ne composent pas le code
+     */
+    public static void noNumbersFoundAtAll(int[] secretCode, String compInput, ArrayList defNot){
+    for (int i = 0; i < secretCode.length; i++) {
+        int chiffre = getNumericValue((compInput.charAt(i)));
+        int chiffreSoluce = secretCode[i];
+        if (!defNot.contains(chiffre)) {
+            defNot.add(chiffre);
+        }
+    }
+}
+
+    /**
+     * Méthode enregistre le chiffre si à la bonne place et le garde à celle ci
+     * @param chiffre entier représentant le chiffre proposé
+     * @param inputToArray liste représentant le code de sortie de chiffres proposés
+     * @param i entier représentant la case du chiffre que l'on teste
+     */
+    public static void numberFoundRightPlace(int chiffre, ArrayList inputToArray, int i){
+    String goodAnswer = "" + chiffre;
+    inputToArray.set(i, goodAnswer);
+}
+
+    /**
+     * Méthode concerne un chiffre présent dans le code mais proposé à une autre place que la sienne
+     * Si le chiffre n'est pas contenu dans la liste maybe on l'y rajoute.
+     * Si la combinaison case-chiffre n'est pas contenu dans la liste chiffreEssaye on l'y rajoute.
+     * On choisi un chiffre contenu dans la liste maybe aléatoirement.
+     * Si le chiffre choisi n'a pas déjà été proposé à cette case, on l'enregistre pour la proposition.
+     * Sinon on lance la fonction randomizeNumber().
+     * @see UtilsGameMecanics#randomizeNumber(ArrayList, ArrayList, int, ArrayList)
+     * @param maybe liste contenant les chiffres enregistrés comme présents dans le code
+     * @param chiffre  entier représentant le chiffre proposé
+     * @param chiffreEssaye liste contenant les combinaison case-chiffre déjà essayées
+     * @param i entier représentant la case du chiffre que l'on teste
+     * @param inputToArray liste représentant le code de sortie de chiffres proposés
+     * @param defNot liste enregistrée contenant les chiffres qui ne composent pas le code
+     */
+    public static void numberFoundElsewhere(ArrayList maybe, int chiffre, ArrayList chiffreEssaye, int i, ArrayList inputToArray, ArrayList defNot ){
+        int otherNbr = 0;
+        if(!maybe.contains(chiffre)) {
+            maybe.add(chiffre);
+        }
+        if(!chiffreEssaye.contains(i+""+chiffre)) {
+            chiffreEssaye.add(i+""+chiffre);
+        }
+
+        //On génère un chiffre de la liste maybe
+        ListIterator<String> it = chiffreEssaye.listIterator() ;
+        int index = (int) (Math.random() * maybe.size());
+        int maybeNbr = (Integer) maybe.get(index);
+        //on l'affecte à la case s'il n'a pas déjà été proposé
+        if(maybeNbr != chiffre && !chiffreEssaye.contains(i+""+maybeNbr)){
+            inputToArray.set(i, maybeNbr);
+        }
+        //Si le chiffre maybe a déjà été proposé dans la case présente on lance un random non proposé pour cette case
+        else {
+            while (it.hasNext()) {
+                String element = it.next();
+                if (element.equals(i + "" + maybeNbr)) {
+                    randomizeNumber(defNot, chiffreEssaye,i, inputToArray);
+                }
+            }
+        }
+    }
+
+    /**
+     *Méthode concerne un chiffre non présent dans le code.
+     * Si la combinaison case-chiffre n'est pas contenu dans la liste chiffreEssaye on l'y rajoute.
+     * On choisi un chiffre contenu dans la liste maybe aléatoirement.
+     * Si le chiffre choisi n'a pas déjà été proposé à cette case, on l'enregistre pour la proposition.
+     * Sinon on lance la fonction randomizeNumber().
+     * @see UtilsGameMecanics#randomizeNumber(ArrayList, ArrayList, int, ArrayList)
+     * @param maybe liste contenant les chiffres enregistrés comme présents dans le code
+     * @param chiffre  entier représentant le chiffre proposé
+     * @param chiffreEssaye liste contenant les combinaison case-chiffre déjà essayées
+     * @param i entier représentant la case du chiffre que l'on teste
+     * @param inputToArray liste représentant le code de sortie de chiffres proposés
+     * @param defNot liste enregistrée contenant les chiffres qui ne composent pas le code
+     */
+    public static void numberNotFound(ArrayList chiffreEssaye, int i, int chiffre, ArrayList maybe, ArrayList inputToArray, ArrayList defNot) {
+        int otherNbr = 0;
+        System.out.println(chiffre+" ne fait pas parti du code ajout defnot?");
+        if (!chiffreEssaye.contains(i + "" + chiffre)) {
+            chiffreEssaye.add(i + "" + chiffre);
+        }
+        if (maybe.size() > 0) {
+            int index = (int) (Math.random() * maybe.size());
+            int maybeNbr = (Integer) maybe.get(index);
+            if (maybeNbr != chiffre && !chiffreEssaye.contains(i + "" + otherNbr)) {
+                inputToArray.set(i, maybeNbr);
+            }
+            //Si le chiffre maybe a déjà été proposé dans la case présente on lance un random non proposé pour cette case
+            else {
+                randomizeNumber(defNot, chiffreEssaye, i, inputToArray);
+            }
+        }
+        else {
+            randomizeNumber(defNot, chiffreEssaye, i, inputToArray);
+        }
+    }
+
+    /**
+     *Méthode choisi un chiffre aléatoirement en vérifiant qu'il n'ait pas déjà été proposés.
+     * @param chiffreEssaye liste contenant les combinaison case-chiffre déjà essayées
+     * @param i entier représentant la case du chiffre que l'on teste
+     * @param inputToArray liste représentant le code de sortie de chiffres proposés
+     * @param defNot liste enregistrée contenant les chiffres qui ne composent pas le code
+     * @return entier représentant le chiffre à enregistrer pour la proposition
+     */
+    public static int randomizeNumber(ArrayList defNot, ArrayList chiffreEssaye, int i, ArrayList inputToArray){
+        int otherNbr = 0;
+        do {
+            otherNbr = (int) (Math.random() * 10);
+        } while (defNot.contains(otherNbr)&& !chiffreEssaye.contains(i+""+otherNbr));
+        inputToArray.set(i, otherNbr);
+        return otherNbr;
+    }
     //Méthodes pour le menu principal
     /**
      * Méthode qui demande à l'utilisateur s'il souhaite refaire une partie d'un autre jeu.
@@ -391,13 +514,12 @@ public class UtilsGameMecanics {
     }
     //Pour le mode Développeur
     /**
-     * Méthode affiche le code secret à trouver, si le mode développeur est enclenché.
+     * Méthode affiche le code secret à trouver, si le mode développeur est enclenché ou à la fin si l'utilisateur n'a pas trouvé le code.
      * @see UtilsGameMecanics#modeDevOrNot()
      * @param code le tableau d'entiers représentant le code secret
      * @return une chaine de caractères représentant le code secret
      */
     public static String showSecretCode(int[] code){
-        //affichage du code secret pour mode développeur
         StringBuilder sb = new StringBuilder();
         sb.append( "(Code Secret: " );
         for (int i = 0; i < code.length; i++) {

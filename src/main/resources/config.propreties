@@ -3,7 +3,7 @@
 game.2=jeu mastermind
 game.1=jeu recherche+/-
 max.cases=4
-max.tries=8
+max.tries=10
 mode.3=mode duel
 mode.2=mode defenseur
 mode.dev=0

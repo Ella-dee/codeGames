@@ -5,8 +5,8 @@ import com.elodie.jeux.utilities.UtilsGameMecanics;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
+
 import static com.elodie.jeux.utilities.Utils.*;
 import static com.elodie.jeux.utilities.UtilsGameMecanics.*;
 import static java.lang.Character.getNumericValue;
@@ -51,6 +51,8 @@ public class MastermindDefenseur {
      * @see UtilsGameMecanics#maxTries()
      * <p>On lance le jeu</p>
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
+     * <p>On vérifie qu'un chiffre n'a pas été déjà proposé à un emplacement donné</p>
+     * <p>On vérifie qu'une combinais on n'ai pas été déjà proposée</p>
      * <p>On compare à la combinaison secrète puis affiche les indices bien placés ou présents</p>
      * @see UtilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
      * <p>Si l'ordinateur trouve alors apparait "4 bien placés", le jeu s'arrête</p>
@@ -65,35 +67,45 @@ public class MastermindDefenseur {
         //génération du code secret
         int[] secretCode = inputSecretCode();
         int max = maxTries();
-        ArrayList tried = new ArrayList();
+        ArrayList combinaisonEssayees = new ArrayList();
         ArrayList inputToArray = new ArrayList();
+        ArrayList defNot = new ArrayList();
+        ArrayList maybe = new ArrayList();
+        ArrayList chiffreEssaye = new ArrayList();
+        int maybeNbr = 0;
+        int indexOfMaybeToTry = 0;
+        int otherNbr = 0;
         //On lance le jeu
         do {
             //Si des essais ont déjà été faits par l'AI:
             if(counter!=0) {
-                // on vide la liste de l'essai AI
-                inputToArray.clear();
+                // do  while (combinaisonEssayees.contains(compInput));
                 do {
+                    //Si aucun chiffre n'est trouvé on les ajoutes à liste defnot pour ne pas les reproposer
+                    if (Objects.equals(verifReponse, "aucun chiffre trouvé")) {
+                        noNumbersFoundAtAll(secretCode, compInput, defNot);
+                    }
+
                     for (int i = 0; i < secretCode.length; i++) {
+                        int chiffre = getNumericValue((compInput.charAt(i)));
+                        int chiffreSoluce = secretCode[i];
+
                         //On garde le chiffre donné s'il est bon et à la bonne place
-                        if (getNumericValue(compInput.charAt(i))== secretCode[i]) {
-                            String goodAnswer = "" + getNumericValue(compInput.charAt(i));
-                            inputToArray.add(goodAnswer);
+                        if (chiffre == chiffreSoluce) {
+                            numberFoundRightPlace(chiffre, inputToArray, i);
                         }
-                        //S'il est bon mais pas à la bonne place
-                        else if ((getNumericValue(compInput.charAt(i)) != secretCode[i]) && (Arrays.asList(secretCode).contains(getNumericValue(compInput.charAt(i))))) {
-                            //TODO à implémenter (random en attendant,
-                            // mais on écarte les proposition déjà faites grâce à la liste tried")
-                            inputToArray.add((int) (Math.random() * 10));
+                        //Si le chiffre est présent, on l'ajoute à la liste maybe et à la liste de combi chiffreEssayé
+                        else if (appearsinArray(chiffre, secretCode) && chiffre != chiffreSoluce) {
+                            numberFoundElsewhere(maybe, chiffre, chiffreEssaye, i, inputToArray, defNot );
                         }
-                        //Si non trouvé
+                        //Sinon on essaye un chiffre de la liste maybe si elle n'est pas vide et si le chiffre n'a pas déjà été proposé
                         else {
-                            inputToArray.add((int) (Math.random() * 10));
+                            numberNotFound(chiffreEssaye, i, chiffre, maybe, inputToArray, defNot);
                         }
                     }
                     compInput = myTrimString(inputToArray.toString());
-                } while (tried.contains(compInput));
-                tried.add(compInput);
+                } while (combinaisonEssayees.contains(compInput));
+                combinaisonEssayees.add(compInput);
             }
 
             //Si c'est le premier essai, on lance des randoms
@@ -102,7 +114,7 @@ public class MastermindDefenseur {
                     inputToArray.add( (int) (Math.random() * 10) );
                     compInput = myTrimString( inputToArray.toString() );
                 }
-                tried.add(compInput);
+                combinaisonEssayees.add(compInput);
             }
             try {
                 Thread.sleep(2000);

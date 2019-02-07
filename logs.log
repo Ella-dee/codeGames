@@ -43,3 +43,328 @@
 2019-01-31 14:12:57.454 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
 2019-01-31 14:13:03.032 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
 2019-01-31 14:13:03.032 [main] INFO  com.elodie.jeux.Main - Exiting application.
+2019-02-06 09:31:38.466 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 09:31:40.242 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 09:31:40.867 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 09:31:42.932 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 1234)
+2019-02-06 09:31:46.965 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.util.ArrayList.rangeCheckForAdd(ArrayList.java:665)
+	at java.util.ArrayList.add(ArrayList.java:477)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:96)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 09:35:09.024 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 09:35:11.215 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 09:35:11.700 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 09:35:13.373 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 1234)
+2019-02-06 09:35:17.375 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 3, Size: 1
+	at java.util.ArrayList.rangeCheckForAdd(ArrayList.java:665)
+	at java.util.ArrayList.add(ArrayList.java:477)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:96)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 09:38:21.762 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 09:38:23.388 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 09:38:24.060 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 09:38:26.044 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 09:38:30.061 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.util.ArrayList.rangeCheckForAdd(ArrayList.java:665)
+	at java.util.ArrayList.add(ArrayList.java:477)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:96)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 09:47:54.318 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 09:47:56.534 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 09:47:59.300 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 09:48:00.692 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 09:48:04.693 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.util.ArrayList.rangeCheckForAdd(ArrayList.java:665)
+	at java.util.ArrayList.add(ArrayList.java:477)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:100)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 09:49:36.042 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 09:49:37.529 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 09:49:37.794 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 09:49:39.232 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 09:49:43.234 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.util.ArrayList.rangeCheckForAdd(ArrayList.java:665)
+	at java.util.ArrayList.add(ArrayList.java:477)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:99)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 09:54:13.484 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 09:54:15.177 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 09:54:16.708 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 09:54:18.865 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 09:54:22.881 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.util.ArrayList.rangeCheckForAdd(ArrayList.java:665)
+	at java.util.ArrayList.add(ArrayList.java:477)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:101)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 10:08:49.999 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 10:08:52.250 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 10:08:52.547 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 10:08:53.375 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 10:08:59.389 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 4, Size: 4
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.set(ArrayList.java:448)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:96)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 11:55:04.421 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 11:55:06.327 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 11:55:06.829 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 11:55:07.752 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 11:55:09.768 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ArrayIndexOutOfBoundsException: -1
+	at java.util.ArrayList.elementData(ArrayList.java:422)
+	at java.util.ArrayList.set(ArrayList.java:450)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:101)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 12:01:44.536 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 12:01:46.074 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 12:01:46.355 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 12:01:47.216 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 12:01:53.233 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:99)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 13:16:21.855 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 13:16:24.778 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 13:16:25.654 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 13:16:28.643 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 13:16:36.646 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:99)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 13:20:28.603 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 13:20:33.121 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 13:20:33.527 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 13:20:34.417 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 13:20:38.420 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:100)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 13:22:09.310 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 13:22:10.750 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 13:22:11.595 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 13:22:12.422 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 13:22:14.423 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:100)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 13:23:00.903 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 13:23:02.453 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 13:23:02.703 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 13:23:03.484 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 13:23:05.485 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:100)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 13:25:55.639 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 13:25:57.015 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 13:25:57.296 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 13:25:58.061 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 13:26:00.062 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:102)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 13:27:20.678 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 13:27:22.226 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 13:27:22.569 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 13:27:24.210 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 13:27:28.227 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:104)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 13:29:24.900 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 13:29:26.230 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 13:29:26.527 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 13:29:27.527 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 13:29:29.528 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:104)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 13:31:13.428 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 13:31:14.825 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 13:31:15.122 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 13:31:15.908 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 13:31:17.923 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:104)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 14:12:50.906 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 14:12:52.874 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 14:12:53.220 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 14:12:54.923 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 14:13:06.934 [main] INFO  com.elodie.jeux.Main - combinaison trouvée.
+2019-02-06 14:13:11.529 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): O
+2019-02-06 14:13:14.436 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 9658)
+2019-02-06 14:13:30.456 [main] INFO  com.elodie.jeux.Main - combinaison non trouvée.
+2019-02-06 14:13:33.285 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
+2019-02-06 14:13:35.348 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
+2019-02-06 14:13:35.348 [main] INFO  com.elodie.jeux.Main - Exiting application.
+2019-02-06 14:20:15.500 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 14:20:17.091 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 14:20:18.278 [main] INFO  com.elodie.jeux.Main - mode duel
+2019-02-06 14:20:18.278 [main] INFO  com.elodie.jeux.Main - code secret de 4 cases: (Code Secret: 1791)
+2019-02-06 14:20:21.185 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 14:20:36.128 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.set(ArrayList.java:448)
+	at com.elodie.jeux.mastermind.MastermindDuel.<init>(MastermindDuel.java:150)
+	at com.elodie.jeux.Main.main(Main.java:132)
+
+2019-02-06 14:23:49.171 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 14:23:50.938 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 14:23:51.313 [main] INFO  com.elodie.jeux.Main - mode duel
+2019-02-06 14:23:51.313 [main] INFO  com.elodie.jeux.Main - code secret de 4 cases: (Code Secret: 9474)
+2019-02-06 14:23:53.376 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 14:24:42.958 [main] INFO  com.elodie.jeux.Main - combinaison non trouvée.
+2019-02-06 14:24:47.585 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): O
+2019-02-06 14:24:47.585 [main] INFO  com.elodie.jeux.Main - code secret de 4 cases: (Code Secret: 3403)
+2019-02-06 14:24:52.023 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 1234)
+2019-02-06 14:25:36.523 [main] INFO  com.elodie.jeux.Main - combinaison non trouvée.
+2019-02-06 14:26:11.360 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
+2019-02-06 14:26:12.391 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
+2019-02-06 14:26:12.391 [main] INFO  com.elodie.jeux.Main - Exiting application.
+2019-02-06 14:32:18.853 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 14:32:20.462 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 14:32:20.838 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 14:32:23.775 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 1256)
+2019-02-06 14:32:39.781 [main] INFO  com.elodie.jeux.Main - combinaison non trouvée.
+2019-02-06 14:32:43.548 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
+2019-02-06 14:35:47.770 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): O
+2019-02-06 14:35:49.691 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 14:35:51.912 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 14:35:53.631 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 14:36:09.643 [main] INFO  com.elodie.jeux.Main - combinaison non trouvée.
+2019-02-06 14:36:11.456 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
+2019-02-06 14:36:11.769 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
+2019-02-06 14:36:11.769 [main] INFO  com.elodie.jeux.Main - Exiting application.
+2019-02-06 14:53:17.202 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 14:53:22.759 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 14:53:27.915 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 14:53:30.275 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 14:53:32.276 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.StringIndexOutOfBoundsException: String index out of range: 4
+	at java.lang.String.charAt(String.java:658)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:99)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 15:05:53.808 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 15:05:55.363 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 15:05:55.769 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 15:05:56.816 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 15:06:00.818 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.StringIndexOutOfBoundsException: String index out of range: 4
+	at java.lang.String.charAt(String.java:658)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:101)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 16:06:39.595 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 16:06:41.392 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 16:06:41.752 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 16:06:42.752 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 16:06:44.752 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 1, Size: 1
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:101)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 16:09:09.558 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 16:09:11.065 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 16:09:11.393 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 16:09:12.268 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 16:09:14.268 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 2, Size: 2
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:105)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 16:10:13.715 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 16:10:15.538 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 16:10:15.881 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 16:10:16.757 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 16:10:18.757 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 1, Size: 1
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:106)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 16:53:05.853 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 16:53:07.559 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 16:53:07.871 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 16:53:09.356 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4562)
+2019-02-06 16:53:15.389 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:99)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 16:55:26.487 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 16:55:30.571 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 16:55:30.915 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 16:55:32.025 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 16:55:34.025 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+	at java.util.ArrayList.rangeCheckForAdd(ArrayList.java:665)
+	at java.util.ArrayList.add(ArrayList.java:477)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:100)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 16:57:50.526 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 16:57:52.418 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 16:57:52.731 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 16:57:53.558 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 16:57:57.567 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.util.ArrayList.rangeCheckForAdd(ArrayList.java:665)
+	at java.util.ArrayList.add(ArrayList.java:477)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:108)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 16:58:30.016 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 16:58:32.400 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 16:58:33.010 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 16:58:33.792 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 16:58:39.821 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:103)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 17:21:02.513 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 17:21:04.091 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 17:21:04.498 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 17:21:05.593 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4563)
+2019-02-06 17:21:07.593 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:114)
+	at com.elodie.jeux.Main.main(Main.java:125)
+
+2019-02-06 22:57:10.955 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-06 22:57:24.772 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-06 22:57:26.021 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-06 22:57:29.228 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 3456)
+2019-02-06 22:57:45.306 [main] INFO  com.elodie.jeux.Main - combinaison trouvée.
+2019-02-06 22:57:53.901 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
+2019-02-06 22:57:54.245 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
+2019-02-06 22:57:54.245 [main] INFO  com.elodie.jeux.Main - Exiting application.
+2019-02-07 09:40:28.094 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-07 09:40:29.583 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-07 09:40:30.787 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-07 09:40:32.460 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 4561)
+2019-02-07 09:40:52.548 [main] INFO  com.elodie.jeux.Main - combinaison non trouvée.
+2019-02-07 09:41:43.294 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): O
+2019-02-07 09:41:45.856 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 8412)
+2019-02-07 09:41:47.871 [main] FATAL com.elodie.jeux.Main - uncaught exception: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at com.elodie.jeux.utilities.UtilsGameMecanics.numberNotFound(UtilsGameMecanics.java:277)
+	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:152)
+	at com.elodie.jeux.Main.main(Main.java:125)
+

@@ -66,6 +66,27 @@ public class Utils {
     }
 
     /**
+    * Méthode prend un chiffre, et on parcours un tableau.
+     *si une entrée du tableau correspond au chiffre on ajoute 1 à un compteur.
+     * @param n un chiffre entier
+     * @param code un tableau d'enriers
+     * @return un booléen "appears" qui renvoie "true" si une ou plusieurs entrées de la liste sont dans le tableau
+     */
+    public static boolean appearsinArray(int n, int[] code){
+    boolean appears = true;
+    int count = 0;
+    for(int i = 0; i <code.length;i++) {
+        if (n == code[i]) {
+            count += 1;
+        }
+    }
+        if(count >= 1){
+            appears = true;
+        }
+        else appears = false;
+    return appears;
+}
+    /**
      * Méthode prend la réponse de l'utilisateur et transforme chaque chiffre en élément de liste
      * @param str une chaîne de caractère donnée
      * @return une liste remplie de chaque chiffre composant la réponse utilisateur
