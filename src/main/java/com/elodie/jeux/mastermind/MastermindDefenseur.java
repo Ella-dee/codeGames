@@ -46,16 +46,16 @@ public class MastermindDefenseur {
     /**
      * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
-     * @see UtilsGameMecanics#inputSecretCode()
      * <p>On charge le nombre d'essais maximal à ne pas dépasser.</p>
-     * @see UtilsGameMecanics#maxTries()
      * <p>On lance le jeu</p>
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
      * <p>On vérifie qu'un chiffre n'a pas été déjà proposé à un emplacement donné</p>
      * <p>On vérifie qu'une combinais on n'ai pas été déjà proposée</p>
      * <p>On compare à la combinaison secrète puis affiche les indices bien placés ou présents</p>
-     * @see UtilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
      * <p>Si l'ordinateur trouve alors apparait "4 bien placés", le jeu s'arrête</p>
+     * @see UtilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
+     * @see UtilsGameMecanics#maxTries()
+     * @see UtilsGameMecanics#inputSecretCode()
      */
     public MastermindDefenseur(){
         System.out.println( "-----------------------------------------" );
@@ -70,6 +70,7 @@ public class MastermindDefenseur {
         ArrayList combinaisonEssayees = new ArrayList();
         ArrayList inputToArray = new ArrayList();
         ArrayList defNot = new ArrayList();
+        ArrayList maybeNot = new ArrayList();
         ArrayList maybe = new ArrayList();
         ArrayList chiffreEssaye = new ArrayList();
         int maybeNbr = 0;
@@ -100,7 +101,7 @@ public class MastermindDefenseur {
                         }
                         //Sinon on essaye un chiffre de la liste maybe si elle n'est pas vide et si le chiffre n'a pas déjà été proposé
                         else {
-                            numberNotFound(chiffreEssaye, i, chiffre, maybe, inputToArray, defNot);
+                            numberNotFound(chiffreEssaye, i, chiffre, maybe, inputToArray, defNot, maybeNot);
                         }
                     }
                     compInput = myTrimString(inputToArray.toString());

@@ -55,27 +55,27 @@ public class MastermindDuel {
     /**
      * Méthode comprend la mécanique du jeu.
      * <p>On créée une combinaison secrète.</p>
-     * @see UtilsGameMecanics#computedSecretCode()
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
-     * @see UtilsGameMecanics#inputSecretCode()
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
-     * @see UtilsGameMecanics#modeDevOrNot()
      * <p>On charge le nombre d'essais maximal à ne pas dépasser.</p>
-     * @see UtilsGameMecanics#maxTries()
      * <p>Tour de l'utilisateur.</p>
      * <p>On demande à l'utilisateur d'entrer une combinaison</p>
      * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
-     * @see ExceptionNaN#ExceptionNaN()
      * <p>On compare à la combinaison secrète puis affiche si les chiffres sont bien placés ou au moins présents.</p>
-     * @see UtilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
      * <p>Puis c'est au tour de l'ordinateur de jouer:
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
      *  <p>On vérifie qu'un chiffre n'a pas été déjà proposé à un emplacement donné</p>
      * <p>On vérifie qu'une combinais on n'ai pas été déjà proposée</p>
      * <p>On compare à la combinaison secrète puis affiche les indices bien placés ou présents</p>
-     * @see UtilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
      * <p>Si l'utilisateur ou l'ordinateur trouve la bonne combinaison alors apparait "4 bien placés", la partie s'arrête.
      * @see UtilsGameMecanics#stopOuEncore()
+     * @see UtilsGameMecanics#modeDevOrNot()
+     * @see UtilsGameMecanics#inputSecretCode()
+     * @see UtilsGameMecanics#computedSecretCode()
+     * @see UtilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
+     * @see UtilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
+     * @see UtilsGameMecanics#maxTries()
+     * @see ExceptionNaN#ExceptionNaN()
      **/
     public MastermindDuel(){
         int counterUser = 0;
@@ -99,6 +99,7 @@ public class MastermindDuel {
         ArrayList compInputToArray = new ArrayList();
         ArrayList combinaisonEssayees = new ArrayList();
         ArrayList defNot = new ArrayList();
+        ArrayList maybeNot = new ArrayList();
         ArrayList maybe = new ArrayList();
         ArrayList chiffreEssaye = new ArrayList();
         int maybeNbr = 0;
@@ -157,7 +158,7 @@ public class MastermindDuel {
                             }
                             //Sinon on essaye un chiffre de la liste maybe si elle n'est pas vide et si le chiffre n'a pas déjà été proposé
                             else {
-                                numberNotFound(chiffreEssaye, i, chiffre, maybe, compInputToArray, defNot);
+                                numberNotFound(chiffreEssaye, i, chiffre, maybe, compInputToArray, defNot, maybeNot);
                             }
                         }
                         compInput = myTrimString(compInputToArray.toString());

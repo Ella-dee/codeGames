@@ -44,20 +44,20 @@ public class MastermindChallenger {
     /**
      * Méthode comprend la mécanique du jeu.
      * <p>On créée une combinaison secrète.</p>
-     * @see UtilsGameMecanics#computedSecretCode()
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
-     * @see UtilsGameMecanics#modeDevOrNot()
      * <p>On charge le nombre d'essais maximal à ne pas dépasser.</p>
-     * @see UtilsGameMecanics#maxTries()
      * <p>Tour de jeu de l'utilisateur.</p>
      * <p>On demande à l'utilisateur d'entrer une combinaison</p>
      * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
-     * @see ExceptionNaN#ExceptionNaN()
      * <p>On compare à la combinaison secrète puis affiche si les chiffres sont bien placés ou au moins présents.</p>
-     * @see UtilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
      * <p>Si l'utilisateur trouve alors apparait "4 bien placés", la partie s'arrête.</p>
      * <p>Si l'utilisateur ne trouve pas en moins de x essais, la partie s'arrête et on affiche la solution.</p>
+     * @see UtilsGameMecanics#maxTries()
+     * @see UtilsGameMecanics#modeDevOrNot()
      * @see UtilsGameMecanics#showSecretCode(int[])
+     * @see UtilsGameMecanics#tryOutCheckMastermindGame(ArrayList, int[], String)
+     * @see UtilsGameMecanics#computedSecretCode()
+     * @see ExceptionNaN#ExceptionNaN()
      **/
     public MastermindChallenger(){
         int counter = 0;

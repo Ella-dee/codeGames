@@ -32,8 +32,8 @@ public class UtilsGameMecanics {
     /**
      * Méthode renvoie un nombre limite d'essais.
      * Récupère le paramètre dans config.propreties
-     * @see UtilsPropreties#getConfigProprety(String)
      * @return un entier représentant le nombre max d'essais.
+     * @see UtilsPropreties#getConfigProprety(String)
      */
     public static int maxTries(){
         int max = 0;
@@ -46,9 +46,9 @@ public class UtilsGameMecanics {
      * Méthode génère un code de x chiffres compris entre 0 et 9 donné par l'utilisateur.
      * On demande à l'utilisateur de saisir un code secret.
      * On vérifie qu'il s'agit d'un nombre et qu'il est composé du nombre de chiffres attendus.
+     * @return un code secret sous forme de tableau d'entiers
      * @see ExceptionNaN
      * @see UtilsPropreties#getConfigProprety(String)
-     * @return un code secret sous forme de tableau d'entiers
      */
     public static int[] inputSecretCode(){
         int cases = 0;
@@ -135,13 +135,13 @@ public class UtilsGameMecanics {
      * Méthode représente le tour de jeu de l'utilisateur.
      * <p>On demande à l'utilisateur d'entrer une combinaison</p>
      * <p>On vérifie qu'il s'agit bien de chiffres et que le nombre de chiffres correspond à celui du code secret</p>
-     * @see ExceptionNaN#ExceptionNaN()
      * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see UtilsGameMecanics#tryOutCheckSearchGame(ArrayList, int[], String)
      * @param userInput chaine de caractères représentant les entrées utilisateur
      * @param userInputListe liste contenant la chaine userInput
      * @param secret tableau d'entiers représentant le code secret
      * @return une chaine de caractère représetnant les indices "-,+,=" de la réponse utilisateur.
+     * @see ExceptionNaN#ExceptionNaN()
+     * @see UtilsGameMecanics#tryOutCheckSearchGame(ArrayList, int[], String)
      */
     public static String playerTurnSearchGame(String userInput, ArrayList userInputListe, int[] secret){
         Scanner sc = new Scanner( System.in );
@@ -278,13 +278,13 @@ public class UtilsGameMecanics {
      * On choisi un chiffre contenu dans la liste maybe aléatoirement.
      * Si le chiffre choisi n'a pas déjà été proposé à cette case, on l'enregistre pour la proposition.
      * Sinon on lance la fonction randomizeNumber().
-     * @see UtilsGameMecanics#randomizeNumber(ArrayList, ArrayList, int, ArrayList)
      * @param maybe liste contenant les chiffres enregistrés comme présents dans le code
      * @param chiffre  entier représentant le chiffre proposé
      * @param chiffreEssaye liste contenant les combinaison case-chiffre déjà essayées
      * @param i entier représentant la case du chiffre que l'on teste
      * @param inputToArray liste représentant le code de sortie de chiffres proposés
      * @param defNot liste enregistrée contenant les chiffres qui ne composent pas le code
+     * @see UtilsGameMecanics#randomizeNumber(ArrayList, ArrayList, int, ArrayList)
      */
     public static void numberFoundElsewhere(ArrayList maybe, int chiffre, ArrayList chiffreEssaye, int i, ArrayList inputToArray, ArrayList defNot ){
         int otherNbr = 0;
@@ -316,24 +316,45 @@ public class UtilsGameMecanics {
 
     /**
      *Méthode concerne un chiffre non présent dans le code.
+     * On ajoute la combinaison case-chiffre dans la liste maybeNot.
+     * On compte les occurences de cette combinaison dans la liste.
+     * Si elle apparait plus d'une fois, on place le chiffre dans la liste defNot car il ne fait pas parti du code.
      * Si la combinaison case-chiffre n'est pas contenu dans la liste chiffreEssaye on l'y rajoute.
      * On choisi un chiffre contenu dans la liste maybe aléatoirement.
      * Si le chiffre choisi n'a pas déjà été proposé à cette case, on l'enregistre pour la proposition.
      * Sinon on lance la fonction randomizeNumber().
-     * @see UtilsGameMecanics#randomizeNumber(ArrayList, ArrayList, int, ArrayList)
      * @param maybe liste contenant les chiffres enregistrés comme présents dans le code
+     * @param maybeNot liste contenant les chiffres non présents dans le code ayant été utilisés
      * @param chiffre  entier représentant le chiffre proposé
      * @param chiffreEssaye liste contenant les combinaison case-chiffre déjà essayées
      * @param i entier représentant la case du chiffre que l'on teste
      * @param inputToArray liste représentant le code de sortie de chiffres proposés
      * @param defNot liste enregistrée contenant les chiffres qui ne composent pas le code
+     * @see UtilsGameMecanics#randomizeNumber(ArrayList, ArrayList, int, ArrayList)
      */
-    public static void numberNotFound(ArrayList chiffreEssaye, int i, int chiffre, ArrayList maybe, ArrayList inputToArray, ArrayList defNot) {
+    public static void numberNotFound(ArrayList chiffreEssaye, int i, int chiffre, ArrayList maybe, ArrayList inputToArray, ArrayList defNot, ArrayList maybeNot) {
         int otherNbr = 0;
-        System.out.println(chiffre+" ne fait pas parti du code ajout defnot?");
+        //On ajoute la combinaison case-chiffre dans la liste maybeNot.
+        maybeNot.add(i + "" + chiffre);
+        int count = 0;
+        ListIterator<String> it = maybeNot.listIterator() ;
+        //On compte les occurences de cette combinaison dans la liste.
+        while (it.hasNext()) {
+            String element = it.next();
+            if (element.equals(i + "" + chiffre)) {
+                count++;
+            }
+        }
+        //Si elle apparait plus d'une fois, on place le chiffre dans la liste defNot car il ne fait pas parti du code.
+        if(count>1){
+            defNot.add(chiffre);
+        }
+
+        //On ajoute la combinaison case-chiffre dans la liste chiffreEssaye s'il n'y est pas déjà.
         if (!chiffreEssaye.contains(i + "" + chiffre)) {
             chiffreEssaye.add(i + "" + chiffre);
         }
+        //Si maybe n'est pas vide, on prend aléatoirement un chiffre de cette liste
         if (maybe.size() > 0) {
             int index = (int) (Math.random() * maybe.size());
             int maybeNbr = (Integer) maybe.get(index);
@@ -345,6 +366,7 @@ public class UtilsGameMecanics {
                 randomizeNumber(defNot, chiffreEssaye, i, inputToArray);
             }
         }
+        //Si maybe est vide, on choisi un chiffre aléatoirement en vérifiant qu'il n'ait pas déjà été proposés.
         else {
             randomizeNumber(defNot, chiffreEssaye, i, inputToArray);
         }
@@ -371,8 +393,8 @@ public class UtilsGameMecanics {
      * Méthode qui demande à l'utilisateur s'il souhaite refaire une partie d'un autre jeu.
      * On demande à l'utilisateur s'il souhaite jouer à un autre jeu.
      * On vérifie que sa réponse est bien une lettre et qu'elle correspond à 'N' ou 'O'.
-     * @see ExceptionNaL
      * @return chaine de caractère représentant O ou N
+     * @see ExceptionNaL
      */
     public static String backToMenu(){
         boolean catched;
@@ -403,8 +425,8 @@ public class UtilsGameMecanics {
     /**
      * Méthode demande à l'utilisateur de choisir un jeu.
      * On vérifie que son choix est viable, puis on enregistre son choix.
-     * @see ExceptionNaN
      * @return un entier représentant le jeu choisi
+     * @see ExceptionNaN
      */
     public static int chooseModeForGame(){
         boolean catched = false;
@@ -444,8 +466,8 @@ public class UtilsGameMecanics {
      * Méthode qui demande à l'utilisateur s'il souhaite refaire une partie du même jeu.
      * On demande à l'utilisateur s'il souhaite refaire une partie du même jeu.
      * On vérifie que sa réponse est bien une lettre et qu'elle correspond à 'N' ou 'O'.
-     * @see ExceptionNaL
      * @return chaine de caractère représentant O ou N
+     * @see ExceptionNaL
      */
     public static String stopOuEncore(){
         boolean catched;
@@ -472,13 +494,12 @@ public class UtilsGameMecanics {
         }while (catched);
         return playAgain;
     }
-
     /**
      * Méthode permet de sélectionner un jeu.
      * On demande à l'utilisateur à quel jeu il souhaite jouer.
      * On vérifie que sa réponse est viable et on enregistre son choix.
-     * @see ExceptionNaN
      * @return un entier représentant le jeu choisi
+     * @see ExceptionNaN
      */
     public static int menuJeu() {
         boolean catched = false;
@@ -512,12 +533,13 @@ public class UtilsGameMecanics {
         chosenGameParsed = Integer.parseInt( chosenGame );
         return chosenGameParsed;
     }
+
     //Pour le mode Développeur
     /**
      * Méthode affiche le code secret à trouver, si le mode développeur est enclenché ou à la fin si l'utilisateur n'a pas trouvé le code.
-     * @see UtilsGameMecanics#modeDevOrNot()
      * @param code le tableau d'entiers représentant le code secret
      * @return une chaine de caractères représentant le code secret
+     * @see UtilsGameMecanics#modeDevOrNot()
      */
     public static String showSecretCode(int[] code){
         StringBuilder sb = new StringBuilder();
@@ -545,6 +567,7 @@ public class UtilsGameMecanics {
 
     /**
      * Méthode sert à afficher que le jeu est lancé en mode développeur si c'est le cas.
+     * @return booléen true si le mode développeur est activé
      */
     public static boolean showModeDevOn(){
         boolean devOn = false;

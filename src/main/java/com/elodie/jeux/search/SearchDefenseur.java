@@ -46,16 +46,16 @@ public class SearchDefenseur {
     /**
      * <b>Méthode comprend la mécanique du jeu pour le Mode Défenseur (AI vs utilisateur)</b>
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
-     * @see UtilsGameMecanics#inputSecretCode()
      * <p>On charge le nombre d'essais maximal à ne pas dépasser.</p>
-     * @see UtilsGameMecanics#maxTries()
      * <p>On lance le jeu</p>
      * <p>On demande à l'AI d'entrer une combinaison de chiffres</p>
      * <p>On compare à la combinaison secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see UtilsGameMecanics#tryOutCheckSearchGame(ArrayList, int[], String)
      * <p>Si l'ordinateur trouve alors apparait "====", la partie s'arrête.
      * <p>Si l'ordinateur ne trouve pas en moins de x essais, la partie s'arrête.</p>
      * @see UtilsGameMecanics#showSecretCode(int[])
+     * @see UtilsGameMecanics#inputSecretCode()
+     * @see UtilsGameMecanics#maxTries()
+     * @see UtilsGameMecanics#tryOutCheckSearchGame(ArrayList, int[], String)
      */
     public SearchDefenseur(){
         int counter = 0;

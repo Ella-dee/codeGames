@@ -368,3 +368,11 @@
 	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:152)
 	at com.elodie.jeux.Main.main(Main.java:125)
 
+2019-02-07 13:14:30.669 [main] INFO  com.elodie.jeux.Main - Entering application.
+2019-02-07 13:14:48.064 [main] INFO  com.elodie.jeux.Main - jeu mastermind
+2019-02-07 13:14:48.628 [main] INFO  com.elodie.jeux.Main - mode defenseur
+2019-02-07 13:14:50.612 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 6532)
+2019-02-07 13:15:08.620 [main] INFO  com.elodie.jeux.Main - combinaison trouvée.
+2019-02-07 13:16:08.635 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
+2019-02-07 13:16:10.105 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
+2019-02-07 13:16:10.105 [main] INFO  com.elodie.jeux.Main - Exiting application.

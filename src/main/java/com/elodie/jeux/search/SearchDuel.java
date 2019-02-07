@@ -54,21 +54,21 @@ public class SearchDuel {
     /**
      * Méthode comprend la mécanique du jeu pour le Mode Duel (ustilisateur et AI à chaque tour).
      * <p>On créée une combinaison secrète.</p>
-     * @see UtilsGameMecanics#computedSecretCode()
      * <p>On demande à l'utilisateur de créer une combinaison secrète.</p>
-     * @see UtilsGameMecanics#inputSecretCode()
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
-     * @see UtilsGameMecanics#modeDevOrNot()
      * <p>On charge le nombre d'essais maximal à ne pas dépasser.</p>
-     * @see UtilsGameMecanics#maxTries()
      * <p>Tour de l'utilisateur:</p>
-     * @see UtilsGameMecanics#playerTurnSearchGame(String, ArrayList, int[])
      * <p>Puis c'est au tour de l'ordinateur de jouer:
      * <p>On demande à l'AI d'entrer une combinaison de chiffres, on compare à la combinaison
      * secrète puis affiche les indices "+", "-", ou "="</p>
-     * @see UtilsGameMecanics#tryOutCheckSearchGame(ArrayList, int[], String)
      * <p>Si l'utilisateur ou l'ordinateur trouve la bonne combinaison alors apparait "====", la partie s'arrête.
      * @see UtilsGameMecanics#stopOuEncore()
+     * @see UtilsGameMecanics#computedSecretCode()
+     * @see UtilsGameMecanics#inputSecretCode()
+     * @see UtilsGameMecanics#modeDevOrNot()
+     * @see UtilsGameMecanics#maxTries()
+     * @see UtilsGameMecanics#playerTurnSearchGame(String, ArrayList, int[])
+     * @see UtilsGameMecanics#tryOutCheckSearchGame(ArrayList, int[], String)
      */
 
     public SearchDuel() {

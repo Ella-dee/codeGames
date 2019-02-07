@@ -44,18 +44,18 @@ public class SearchChallenger {
     /**
      * Méthode comprend la mécanique du jeu pour le Mode Challenger (utilisateur VS AI).
      * <p>On créée une combinaison secrète.</p>
-     * @see UtilsGameMecanics#computedSecretCode()
      * <p>On vérifie si on est en mode développeur ou non, si c'est le cas on affiche le code secret à trouver.</p>
-     * @see UtilsGameMecanics#modeDevOrNot()
      * <p>On charge le nombre d'essais maximal à ne pas dépasser.</p>
-     * @see UtilsGameMecanics#maxTries()
      * <p>On demande à l'utilisateur le nombre d'essais maximal à ne pas dépasser.</p>
-     * @see UtilsGameMecanics#maxTries()
      * <p>Tour de jeu de l'utilisateur.</p>
-     * @see UtilsGameMecanics#playerTurnSearchGame(String, ArrayList, int[])
      * <p>Si l'utilisateur trouve alors apparait "====", la partie s'arrête.</p>
      * <p>Si l'utilisateur ne trouve pas en moins de 6 essais, la partie s'arrête et on affiche la solution.</p>
      * @see UtilsGameMecanics#showSecretCode(int[])
+     * @see UtilsGameMecanics#computedSecretCode()
+     * @see UtilsGameMecanics#modeDevOrNot()
+     * @see UtilsGameMecanics#maxTries()
+     * @see UtilsGameMecanics#maxTries()
+     * @see UtilsGameMecanics#playerTurnSearchGame(String, ArrayList, int[])
      */
 
     public SearchChallenger() {
