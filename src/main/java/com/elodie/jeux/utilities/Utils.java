@@ -100,6 +100,12 @@ public class Utils {
         return arr;
     }
 
+    /**
+     * méthode génère un nombre aléatoire compris entre deux chiffres
+     * @param arg1 chiffre minimum exclus
+     * @param arg2 chiffre maximum inclus
+     * @return un entier aléatoire entre arg1 et arg2
+     */
     public static int randomInRange(int arg1, int arg2) {
         int i = (int)Math.ceil(Math.random() * (arg1 - arg2) + arg2);
         return i;
