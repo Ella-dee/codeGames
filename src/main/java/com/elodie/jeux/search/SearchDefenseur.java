@@ -91,7 +91,7 @@ public class SearchDefenseur {
                         //S'il est inférieur à celui du code secret, on lance un random avec en entier min ce chiffre essai
                         else if (verifReponseComp.charAt(i) == '+') {
                             int plus = getNumericValue(compInput.charAt(i));
-                            plus = randomInRange(plus - 1, nbr.length - 1);
+                            plus = randomInRange(plus, nbr.length - 1);
                             compInputToArray.add(plus);
                         }
                     }
