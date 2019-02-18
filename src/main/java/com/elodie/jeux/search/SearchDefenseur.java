@@ -85,13 +85,13 @@ public class SearchDefenseur {
                         //S'il est supérieur à celui du code secret, on lance un random avec en entier max ce chiffre essai
                         else if (verifReponseComp.charAt(i) == '-') {
                             int minus = getNumericValue(compInput.charAt(i));
-                            minus = randomInRange(0, minus-1);
+                            minus = randomInRange(-1, minus);
                             compInputToArray.add(minus);
                         }
                         //S'il est inférieur à celui du code secret, on lance un random avec en entier min ce chiffre essai
                         else if (verifReponseComp.charAt(i) == '+') {
                             int plus = getNumericValue(compInput.charAt(i));
-                            plus = randomInRange(plus, nbr.length - 1);
+                            plus = randomInRange(plus - 1, nbr.length - 1);
                             compInputToArray.add(plus);
                         }
                     }

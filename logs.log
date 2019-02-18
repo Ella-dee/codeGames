@@ -439,20 +439,3 @@
 	at com.elodie.jeux.mastermind.MastermindDefenseur.<init>(MastermindDefenseur.java:104)
 	at com.elodie.jeux.Main.main(Main.java:143)
 
-2019-02-07 15:55:11.440 [main] INFO  com.elodie.jeux.Main - Entering application.
-2019-02-07 15:55:24.132 [main] ERROR com.elodie.jeux.Main - NotANumber catched = z
-2019-02-07 15:55:24.132 [main] ERROR com.elodie.jeux.Main - Not 1 or 2 catched = 0
-2019-02-07 15:55:28.039 [main] ERROR com.elodie.jeux.Main - Not 1 or 2 catched = 9
-2019-02-07 15:55:30.072 [main] INFO  com.elodie.jeux.Main - jeu mastermind
-2019-02-07 15:55:31.134 [main] ERROR com.elodie.jeux.Main - NotANumber catched = z
-2019-02-07 15:55:31.134 [main] ERROR com.elodie.jeux.Main - Not 1 or 2 catched = 0
-2019-02-07 15:55:32.025 [main] ERROR com.elodie.jeux.Main - Not 1 or 2 catched = 9
-2019-02-07 15:55:34.518 [main] INFO  com.elodie.jeux.Main - mode defenseur
-2019-02-07 15:55:36.925 [main] ERROR com.elodie.jeux.Main - NotANumber catched = 4
-2019-02-07 15:55:36.925 [main] ERROR com.elodie.jeux.Main - Bad size catched = 1, expected size = 4
-2019-02-07 15:55:40.128 [main] ERROR com.elodie.jeux.Main - Bad size catched = 16, expected size = 4
-2019-02-07 15:55:43.614 [main] INFO  com.elodie.jeux.Main - code secret avec 4 cases: (Code Secret: 1234)
-2019-02-07 15:55:57.167 [main] INFO  com.elodie.jeux.Main - combinaison trouvée.
-2019-02-07 15:56:00.151 [main] INFO  com.elodie.jeux.Main - réponse à stopouencore(): N
-2019-02-07 15:56:00.745 [main] INFO  com.elodie.jeux.Main - réponse à backToMenu(): N
-2019-02-07 15:56:00.745 [main] INFO  com.elodie.jeux.Main - Exiting application.

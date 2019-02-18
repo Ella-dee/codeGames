@@ -182,7 +182,7 @@ public class UtilsGameMecanics {
     /**
      * Méthode pour le jeu mastermind:
      * affiche le résultat de l'essai pour trouver la combinaison.
-     * On récupère une liste composée des essais, qu'on compare avec les entrées du code secret.
+     * On récupère une liste composée des essais, qu'on compare avec lse entrées d'un tableau de chiffres.
      * Selon si les entrées de la liste sont trouvées et à la bonne place, ou présentes dans la combinaison
      * mais mal placées, on affichera en sortie "x bien placé" ou "x présent".
      * Ces résultats seront stocker dans une liste, puis transformés en chaine de caractères pour l'affichage sortie.
